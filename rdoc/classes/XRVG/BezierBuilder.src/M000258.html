@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>lissage (XRVG::BezierBuilder)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezierbuilders.rb, line 49</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BezierBuilder</span>.<span class="ruby-identifier">lissage</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">factor</span>=<span class="ruby-value">1.0</span> )
+    <span class="ruby-identifier">result</span> = [[<span class="ruby-identifier">:vector</span>] <span class="ruby-operator">+</span> (<span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>))[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>]]
+    <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">pieces</span>.<span class="ruby-identifier">pairs</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">piece1</span>, <span class="ruby-identifier">piece2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p</span> = <span class="ruby-identifier">piece1</span>.<span class="ruby-identifier">lastpoint</span>;<span class="ruby-comment cmt"># equal to piece2.firstpoint</span>
+      <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span> = [<span class="ruby-operator">-</span><span class="ruby-identifier">piece1</span>.<span class="ruby-identifier">lastvector</span>, <span class="ruby-identifier">piece2</span>.<span class="ruby-identifier">firstvector</span>]
+      <span class="ruby-identifier">mean</span> = (<span class="ruby-identifier">v1</span><span class="ruby-operator">..</span><span class="ruby-identifier">v2</span>).<span class="ruby-identifier">mean</span>
+      <span class="ruby-identifier">newv1</span> = (<span class="ruby-identifier">v1</span><span class="ruby-operator">..</span><span class="ruby-identifier">mean</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">factor</span> )
+      <span class="ruby-identifier">newv2</span> = (<span class="ruby-identifier">v2</span><span class="ruby-operator">..</span><span class="ruby-identifier">mean</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">factor</span> )
+      <span class="ruby-identifier">result</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">p</span>,<span class="ruby-operator">-</span><span class="ruby-identifier">newv1</span>]
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">:vector</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">newv2</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">+=</span> (<span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>))[<span class="ruby-value">-2</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+    <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">multi</span>( <span class="ruby-identifier">result</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

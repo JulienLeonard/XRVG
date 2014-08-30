@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>subbezier (XRVG::Bezier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezier.rb, line 344</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">subbezier</span>( <span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span>)
+    <span class="ruby-comment cmt"># return Bezier.new( :pieces, self.subpieces( t1, t2 ) )</span>
+    <span class="ruby-identifier">ranges</span> = (<span class="ruby-value">0</span><span class="ruby-value">.0</span><span class="ruby-operator">..</span><span class="ruby-value">1.0</span>).<span class="ruby-identifier">modulos</span>( (<span class="ruby-identifier">t1</span><span class="ruby-operator">..</span><span class="ruby-identifier">t2</span>) )
+    <span class="ruby-comment cmt"># Trace(&quot;Bezier::subbezier t1 #{t1} t2 #{t2} ranges #{ranges.inspect}&quot;)</span>
+    <span class="ruby-identifier">pieces</span> = []
+    <span class="ruby-identifier">ranges</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">range</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">range</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">sort</span>
+      <span class="ruby-identifier">pieces</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">subpieces</span>( <span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span> )
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">bezier</span> = <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">:pieces</span>, <span class="ruby-identifier">pieces</span> )
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">t1</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t2</span>
+      <span class="ruby-identifier">bezier</span> = <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">reverse</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">bezier</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

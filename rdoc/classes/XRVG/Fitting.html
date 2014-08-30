@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: XRVG::Fitting</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">XRVG::Fitting</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/fitting_rb.html">
+                lib/fitting.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1><a href="Fitting.html">Fitting</a> computation class</h1>
+<h2>Intro</h2>
+<p>
+Used to <a href="Fitting.html#M000104">compute</a> cubic curve fitting on a
+list of points (that is sampling inverse operation). Only 2D.
+</p>
+<h2>Example</h2>
+<p>
+Compute the most fitting single piece bezier curve given list of points
+</p>
+<pre>
+ bezier    = Fitting.compute( points )
+</pre>
+<p>
+Compute multipieces bezier curve given list of points
+</p>
+<pre>
+ bezier    = Fitting.adaptative_compute( points )
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000105">adaptative_compute</a>&nbsp;&nbsp;
+      <a href="#M000103">bezierpiece</a>&nbsp;&nbsp;
+      <a href="#M000104">compute</a>&nbsp;&nbsp;
+      <a href="#M000107">error</a>&nbsp;&nbsp;
+      <a href="#M000108">iterate</a>&nbsp;&nbsp;
+      <a href="#M000106">renormalize</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000105.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000105.html');return false;">
+          <span class="method-name">adaptative_compute</span><span class="method-args">( pointlist, maxerror=0.0001, maxiter=10, tlength=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+adaptative computation with automatic splitting if <a
+href="Fitting.html#M000107">error</a> not low enough, or if convergence is
+not fast enough
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000103.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000103.html');return false;">
+          <span class="method-name">bezierpiece</span><span class="method-args">( a, b, c, d )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Fitting.html#M000104">compute</a> control points from polynomial
+bezier representation
+</p>
+<p>
+a, b, c, d are such as
+</p>
+<pre>
+ piece( t ) = at3 + bt2 + ct + d
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000104.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000104.html');return false;">
+          <span class="method-name">compute</span><span class="method-args">( pointlist, maxerror=0.01, maxiter=100 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Base method
+</p>
+<p>
+Given a pointlist, <a href="Fitting.html#M000104">compute</a> the closest
+matching cubic bezier curve
+</p>
+<p>
+Result is in the form [p1, pc1, pc2, p2], with [p1, pc1, pc2, p2] <a
+href="V2D.html">V2D</a>
+</p>
+<p>
+maxerror is normalized with curve length. In case of good match (that is
+pointlist can be modelized by cubic bezier curve), result <a
+href="Fitting.html#M000107">error</a> will be under maxerror. If not,
+result may be above maxerror. In that case, computation is stopped because
+<a href="Fitting.html#M000107">error</a> no longer decrease, or because
+iteration is too long.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000107.html');return false;">
+          <span class="method-name">error</span><span class="method-args">( bezier, pointlist, parameters )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Fitting.html#M000107">error</a> is max <a
+href="Fitting.html#M000107">error</a> between points in pointlist and
+points sampled from bezier with parameters
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000108.html');return false;">
+          <span class="method-name">iterate</span><span class="method-args">( pointlist, parameters )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Fitting.html#M000108">iterate</a> method <a
+href="Fitting.html#M000104">compute</a> new bezier parameters from
+pointlist and previous bezier parameters
+</p>
+<p>
+Algo comes from <a
+href="http://www.tinaja.com/glib/bezdist.pdf">www.tinaja.com/glib/bezdist.pdf</a>
+</p>
+<p>
+TODO : optimized
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
+
+        <div class="method-heading">
+          <a href="Fitting.src/M000106.html" target="Code" class="method-signature"
+            onclick="popupCode('Fitting.src/M000106.html');return false;">
+          <span class="method-name">renormalize</span><span class="method-args">( bezier, coeffs, pointlist, parameters )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+algo comes from <a
+href="http://www.tinaja.com/glib/bezdist.pdf">www.tinaja.com/glib/bezdist.pdf</a>
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

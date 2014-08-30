@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>compute_arc (XRVG::Ondulation)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/beziertools.rb, line 207</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compute_arc</span>( <span class="ruby-identifier">abs1</span>, <span class="ruby-identifier">abs2</span>, <span class="ruby-identifier">amplitude</span>, <span class="ruby-identifier">sens</span> )
+    <span class="ruby-identifier">mabs</span> = (<span class="ruby-identifier">abs1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">abs2</span>)<span class="ruby-operator">/</span><span class="ruby-value">2.0</span>
+    <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">halfpoint</span>, <span class="ruby-identifier">p2</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">support</span>.<span class="ruby-identifier">points</span>( [<span class="ruby-identifier">abs1</span>, <span class="ruby-identifier">mabs</span>, <span class="ruby-identifier">abs2</span>] )
+    <span class="ruby-comment cmt"># Trace(&quot;mabs #{mabs} abs1 #{abs1} abs2 #{abs2} halfpoint #{halfpoint.inspect} p1 #{p1.inspect} p2 #{p2.inspect}&quot;)</span>
+    <span class="ruby-identifier">halfnormal</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">support</span>.<span class="ruby-identifier">normal</span>( <span class="ruby-identifier">mabs</span> ).<span class="ruby-identifier">norm</span> <span class="ruby-operator">*</span> ( <span class="ruby-identifier">sens</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">amplitude</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">p2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>).<span class="ruby-identifier">length</span>)
+    <span class="ruby-comment cmt"># Trace(&quot;halfnormal #{halfnormal.inspect}&quot;)</span>
+    <span class="ruby-identifier">newpoint</span> = <span class="ruby-identifier">halfpoint</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">halfnormal</span>
+    <span class="ruby-identifier">tpoint</span> = <span class="ruby-identifier">halfpoint</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">halfnormal</span> <span class="ruby-operator">*</span> <span class="ruby-value">3.0</span>
+    <span class="ruby-identifier">t1</span> = (<span class="ruby-identifier">tpoint</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span> ) <span class="ruby-operator">/</span> <span class="ruby-value">6.0</span>
+    <span class="ruby-identifier">t2</span> = (<span class="ruby-identifier">tpoint</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p2</span> ) <span class="ruby-operator">/</span> <span class="ruby-value">6.0</span>
+    <span class="ruby-comment cmt"># Trace(&quot;newpoint #{newpoint.inspect} p1 #{p1.inspect} (newpoint - p1) #{(newpoint - p1).inspect}&quot;)</span>
+    <span class="ruby-comment cmt"># TODO: following lines repetitive</span>
+    <span class="ruby-identifier">halftangent</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">support</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">mabs</span> ).<span class="ruby-identifier">norm</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">newpoint</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>).<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+    <span class="ruby-identifier">halftangent</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">support</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">mabs</span> ).<span class="ruby-identifier">norm</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">p2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>).<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+    <span class="ruby-comment cmt"># Trace(&quot;halftangent #{halftangent.inspect} t1 #{t1.inspect} t2 #{t2.inspect}&quot;)</span>
+    <span class="ruby-keyword kw">return</span> [[<span class="ruby-identifier">:vector</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">t1</span>, <span class="ruby-identifier">newpoint</span>, <span class="ruby-operator">-</span><span class="ruby-identifier">halftangent</span>], [<span class="ruby-identifier">:vector</span>, <span class="ruby-identifier">newpoint</span>, <span class="ruby-identifier">halftangent</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">t2</span>]]
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

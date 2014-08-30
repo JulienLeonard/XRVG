@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>compute (XRVG::AttributeMotifIterator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezierbuilders.rb, line 140</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compute</span>
+    <span class="ruby-identifier">result</span> = []
+    <span class="ruby-identifier">attrvalues</span> = []
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">attrvalues</span> <span class="ruby-operator">+=</span> [<span class="ruby-identifier">name</span>, <span class="ruby-constant">Samplable</span>.<span class="ruby-identifier">build</span>( <span class="ruby-identifier">spec</span> ).<span class="ruby-identifier">samples</span>( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">nmotifs</span> )]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">curvesampler</span>.<span class="ruby-identifier">splits</span>( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">nmotifs</span> ).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subbezier</span>,<span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pair</span> = [<span class="ruby-identifier">subbezier</span>.<span class="ruby-identifier">firstpoint</span>, <span class="ruby-identifier">subbezier</span>.<span class="ruby-identifier">lastpoint</span>]
+      <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span> = <span class="ruby-identifier">pair</span>
+      <span class="ruby-identifier">args</span> = [<span class="ruby-identifier">:support</span>, <span class="ruby-identifier">pair</span>]
+      <span class="ruby-identifier">attrvalues</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">args</span> <span class="ruby-operator">+=</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span>[<span class="ruby-identifier">index</span>]]
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">newbezier</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">motifclass</span>[ <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> ]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">closed</span>
+        <span class="ruby-identifier">newbezier</span> = <span class="ruby-identifier">newbezier</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">subbezier</span>.<span class="ruby-identifier">reverse</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">newbezier</span>.<span class="ruby-identifier">data</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: XRVG::GSpiral</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">XRVG::GSpiral</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/spiral_rb.html">
+                lib/spiral.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Curve.html">
+                Curve
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+abstract class to define spiral types
+</p>
+<p>
+use <a href="GSpiral.html#M000245">compute_radius</a> to compute nsamples
+reference points, before interpolating with <a
+href="SimpleBezier.html">SimpleBezier</a>
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000238">acc</a>&nbsp;&nbsp;
+      <a href="#M000250">apply_sample</a>&nbsp;&nbsp;
+      <a href="#M000248">bezier</a>&nbsp;&nbsp;
+      <a href="#M000247">compute_bezier</a>&nbsp;&nbsp;
+      <a href="#M000246">compute_maxangle</a>&nbsp;&nbsp;
+      <a href="#M000245">compute_radius</a>&nbsp;&nbsp;
+      <a href="#M000235">contour</a>&nbsp;&nbsp;
+      <a href="#M000241">maxangle</a>&nbsp;&nbsp;
+      <a href="#M000239">new</a>&nbsp;&nbsp;
+      <a href="#M000240">parameter_range</a>&nbsp;&nbsp;
+      <a href="#M000243">point</a>&nbsp;&nbsp;
+      <a href="#M000242">pointfromparameter</a>&nbsp;&nbsp;
+      <a href="#M000249">refpoints</a>&nbsp;&nbsp;
+      <a href="#M000236">svg</a>&nbsp;&nbsp;
+      <a href="#M000244">tangent</a>&nbsp;&nbsp;
+      <a href="#M000237">viewbox</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="ParametricLength.html">ParametricLength</a></span>
+        <span class="include-name"><a href="Samplable.html">Samplable</a></span>
+        <span class="include-name"><a href="Splittable.html">Splittable</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">angle0</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">maxangle</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">r0</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000239.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000239.html');return false;">
+          <span class="method-name">new</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+builder
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000238.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000238.html');return false;">
+          <span class="method-name">acc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000250" class="method-detail">
+        <a name="M000250"></a>
+
+        <div class="method-heading">
+          <span class="method-name">apply_sample</span><span class="method-args">( l, container=nil )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="GSpiral.html#M000243">point</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000248" class="method-detail">
+        <a name="M000248"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000248.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000248.html');return false;">
+          <span class="method-name">bezier</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000247" class="method-detail">
+        <a name="M000247"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000247.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000247.html');return false;">
+          <span class="method-name">compute_bezier</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000246" class="method-detail">
+        <a name="M000246"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000246.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000246.html');return false;">
+          <span class="method-name">compute_maxangle</span><span class="method-args">( r0, angle0, curvature )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000245" class="method-detail">
+        <a name="M000245"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000245.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000245.html');return false;">
+          <span class="method-name">compute_radius</span><span class="method-args">( r0, angle0, curvature, angle )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000235.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000235.html');return false;">
+          <span class="method-name">contour</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+delegate interfaces unknown for spiral to <a
+href="GSpiral.html#M000248">bezier</a> :length is computed by <a
+href="ParametricLength.html">ParametricLength</a> extend Forwardable
+def_delegators :<a href="GSpiral.html#M000248">bezier</a>, :<a
+href="GSpiral.html#M000235">contour</a>, :<a
+href="GSpiral.html#M000236">svg</a>, :<a
+href="GSpiral.html#M000237">viewbox</a>, :<a
+href="GSpiral.html#M000238">acc</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000241.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000241.html');return false;">
+          <span class="method-name">maxangle</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000240" class="method-detail">
+        <a name="M000240"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000240.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000240.html');return false;">
+          <span class="method-name">parameter_range</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000243" class="method-detail">
+        <a name="M000243"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000243.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000243.html');return false;">
+          <span class="method-name">point</span><span class="method-args">( l, container=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute a <a href="GSpiral.html#M000243">point</a> at curviligne abscissa
+</p>
+<p>
+curve method redefinition
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000242" class="method-detail">
+        <a name="M000242"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000242.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000242.html');return false;">
+          <span class="method-name">pointfromparameter</span><span class="method-args">( parameter, container )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000249" class="method-detail">
+        <a name="M000249"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000249.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000249.html');return false;">
+          <span class="method-name">refpoints</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000236.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000236.html');return false;">
+          <span class="method-name">svg</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000244" class="method-detail">
+        <a name="M000244"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000244.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000244.html');return false;">
+          <span class="method-name">tangent</span><span class="method-args">( l, container=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute <a href="GSpiral.html#M000244">tangent</a> at curviligne abscissa
+</p>
+<p>
+curve method redefinition
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="GSpiral.src/M000237.html" target="Code" class="method-signature"
+            onclick="popupCode('GSpiral.src/M000237.html');return false;">
+          <span class="method-name">viewbox</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

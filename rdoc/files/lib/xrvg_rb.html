@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: xrvg.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>xrvg.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/xrvg.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sat Dec 06 12:55:50 +0100 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This file has to be included if you want to start a <a
+href="../../classes/XRVG.html">XRVG</a> script
+</p>
+<p>
+Please refer to README for <a href="../../classes/XRVG.html">XRVG</a>
+introduction
+</p>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      enumerator&nbsp;&nbsp;
+      trace&nbsp;&nbsp;
+      samplation&nbsp;&nbsp;
+      attributable&nbsp;&nbsp;
+      interpolation&nbsp;&nbsp;
+      parametriclength&nbsp;&nbsp;
+      utils&nbsp;&nbsp;
+      geometry2D&nbsp;&nbsp;
+      intersection&nbsp;&nbsp;
+      color&nbsp;&nbsp;
+      frame&nbsp;&nbsp;
+      shape&nbsp;&nbsp;
+      render&nbsp;&nbsp;
+      bezier&nbsp;&nbsp;
+      fitting&nbsp;&nbsp;
+      bezierbuilders&nbsp;&nbsp;
+      beziermotifs&nbsp;&nbsp;
+      beziertools&nbsp;&nbsp;
+      interbezier&nbsp;&nbsp;
+      geovariety&nbsp;&nbsp;
+      spiral&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">XRVG_VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0.0.83&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../../classes/XRVG.html">XRVG</a> version (used in rakefile)
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

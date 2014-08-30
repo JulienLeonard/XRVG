@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>sides (XRVG::Bezier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezier.rb, line 192</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sides</span>
+    <span class="ruby-identifier">result</span> = []
+    <span class="ruby-comment cmt"># Trace(&quot;pieces pointlist:&quot;)</span>
+    <span class="ruby-comment cmt"># self.pieces.each do |piece|</span>
+    <span class="ruby-comment cmt">#   Trace(&quot;- #{piece.pointlist(:vector).inspect}&quot;)</span>
+    <span class="ruby-comment cmt"># end</span>
+    <span class="ruby-identifier">v0</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>)[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">v1</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>)[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">subpieces</span> = [<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">0</span>]]
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pieces</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">fv</span> = <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>)[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( (<span class="ruby-identifier">fv</span> <span class="ruby-operator">*</span> <span class="ruby-value">-1.0</span>).<span class="ruby-identifier">norm</span>, <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">norm</span>, <span class="ruby-value">0</span><span class="ruby-value">.01</span> )
+        <span class="ruby-comment cmt"># Trace(&quot;fv #{fv.inspect} v1 #{v1.inspect}&quot;)</span>
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subpieces</span>
+        <span class="ruby-identifier">subpieces</span> = []
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">subpieces</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">piece</span>
+      <span class="ruby-identifier">v1</span> = <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>)[<span class="ruby-value">3</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( (<span class="ruby-identifier">v0</span> <span class="ruby-operator">*</span> <span class="ruby-value">-1.0</span>).<span class="ruby-identifier">norm</span>, <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">norm</span>, <span class="ruby-value">0</span><span class="ruby-value">.01</span> )
+      <span class="ruby-comment cmt"># Trace(&quot;v0 #{v0.inspect} v1 #{v1.inspect}&quot;)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] =  <span class="ruby-identifier">subpieces</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">result</span> = [<span class="ruby-identifier">subpieces</span>]
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">subpieces</span> = []
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subpieces</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">newresult</span> = []
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subpieces</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">newresult</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Bezier</span>[ <span class="ruby-identifier">:pieces</span>, <span class="ruby-identifier">subpieces</span> ]
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">newresult</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

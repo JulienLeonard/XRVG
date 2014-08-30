@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>build_interpolators (XRVG::Palette)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/color.rb, line 449</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_interpolators</span>()
+    <span class="ruby-identifier">vlists</span> = [[],[],[],[]]
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">colorlist</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">color</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">values</span> = []
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">interpoldomain</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:rgb</span>
+        <span class="ruby-identifier">values</span> = <span class="ruby-identifier">color</span>.<span class="ruby-identifier">rgba</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">interpoldomain</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:hsv</span>
+        <span class="ruby-identifier">values</span> = <span class="ruby-identifier">color</span>.<span class="ruby-identifier">hsva</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">interpoldomain</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:hsl</span>
+        <span class="ruby-identifier">values</span> = <span class="ruby-identifier">color</span>.<span class="ruby-identifier">hsla</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">RuntimeError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{self.interpoldomain} is an unknown color scheme.&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">vlists</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">values</span>[<span class="ruby-value">0</span>] ]
+      <span class="ruby-identifier">vlists</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">values</span>[<span class="ruby-value">1</span>] ]
+      <span class="ruby-identifier">vlists</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">values</span>[<span class="ruby-value">2</span>] ]
+      <span class="ruby-identifier">vlists</span>[<span class="ruby-value">3</span>] <span class="ruby-operator">+=</span> [<span class="ruby-identifier">index</span>, <span class="ruby-identifier">values</span>[<span class="ruby-value">3</span>] ]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@interpolators</span> = <span class="ruby-identifier">vlists</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">samplelist</span><span class="ruby-operator">|</span> <span class="ruby-constant">Interpolator</span>[ <span class="ruby-identifier">:samplelist</span>, <span class="ruby-identifier">samplelist</span>, <span class="ruby-identifier">:interpoltype</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">interpoltype</span>]}
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

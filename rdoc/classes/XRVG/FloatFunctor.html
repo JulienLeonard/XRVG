@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: XRVG::FloatFunctor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">XRVG::FloatFunctor</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/samplation_rb.html">
+                lib/samplation.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Base module to define float lists processing and computation.
+</p>
+<h1>Design principle</h1>
+<p>
+Composite design pattern, to be able to chain functors
+</p>
+<h1>Concepts</h1>
+<p>
+on each functor object :
+</p>
+<ul>
+<li>&quot;<a href="FloatFunctor.html#M000058">trigger</a>&quot; method triggers
+float processing, that is
+
+<ul>
+<li>if arg is integer, call &quot;<a
+href="FloatFunctor.html#M000064">generate</a>&quot; to get values
+
+</li>
+<li>else (array float values), just keep them
+
+</li>
+</ul>
+</li>
+<li>pass inputs to &quot;<a href="FloatFunctor.html#M000060">process</a>&quot;
+method, which wraps &quot;<a
+href="FloatFunctor.html#M000059">compute</a>&quot; method to be able to
+call block and iterate
+
+</li>
+<li>&quot;<a href="FloatFunctor.html#M000059">compute</a>&quot; method first
+call &quot;<a href="FloatFunctor.html#M000061">modify</a>&quot; which is
+the recursive processing function
+
+</li>
+<li>then call &quot;<a href="FloatFunctor.html#M000066">apply</a>&quot; which
+is specific processing method of the functor
+
+</li>
+<li>&quot;<a href="FloatFunctor.html#M000066">apply</a>&quot; then dispatchs
+processing according to the processing &quot;type&quot;, ie
+&quot;sample&quot; or &quot;split&quot;
+
+</li>
+<li>by default, <a href="FloatFunctor.html">FloatFunctor</a> provides &quot;<a
+href="FloatFunctor.html#M000062">transforms</a>&quot; and &quot;<a
+href="FloatFunctor.html#M000063">transform</a>&quot; to be used by
+&quot;type&quot; processing
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000057">addfilter</a>&nbsp;&nbsp;
+      <a href="#M000073">alternate</a>&nbsp;&nbsp;
+      <a href="#M000066">apply</a>&nbsp;&nbsp;
+      <a href="#M000065">applyhash</a>&nbsp;&nbsp;
+      <a href="#M000059">compute</a>&nbsp;&nbsp;
+      <a href="#M000074">filter</a>&nbsp;&nbsp;
+      <a href="#M000064">generate</a>&nbsp;&nbsp;
+      <a href="#M000067">geo</a>&nbsp;&nbsp;
+      <a href="#M000068">geofull</a>&nbsp;&nbsp;
+      <a href="#M000061">modify</a>&nbsp;&nbsp;
+      <a href="#M000060">process</a>&nbsp;&nbsp;
+      <a href="#M000070">random</a>&nbsp;&nbsp;
+      <a href="#M000072">shuffle</a>&nbsp;&nbsp;
+      <a href="#M000069">sin</a>&nbsp;&nbsp;
+      <a href="#M000071">ssort</a>&nbsp;&nbsp;
+      <a href="#M000063">transform</a>&nbsp;&nbsp;
+      <a href="#M000062">transforms</a>&nbsp;&nbsp;
+      <a href="#M000058">trigger</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000057.html');return false;">
+          <span class="method-name">addfilter</span><span class="method-args">( newfilter )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+building recursivity method
+</p>
+<p>
+is private =&gt; no for <a href="../Array.html">Array</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000073.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000073.html');return false;">
+          <span class="method-name">alternate</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="FloatFunctor.html#M000073">alternate</a> <a
+href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000066.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000066.html');return false;">
+          <span class="method-name">apply</span><span class="method-args">( data, type, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+must not be overloaded (apart from <a href="Samplable.html">Samplable</a>
+containers)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000065.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000065.html');return false;">
+          <span class="method-name">applyhash</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+must be refactored with some meta hooks
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000059.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000059.html');return false;">
+          <span class="method-name">compute</span><span class="method-args">( indata, type, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+hook for <a href="../Array.html">Array</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000074.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000074.html');return false;">
+          <span class="method-name">filter</span><span class="method-args">(samplemethod=:sample,&amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to build a sampler from self and a block
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000064.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000064.html');return false;">
+          <span class="method-name">generate</span><span class="method-args">( nsamples )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+default generator method
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000067.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000067.html');return false;">
+          <span class="method-name">geo</span><span class="method-args">( speed )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+geometric <a href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000068" class="method-detail">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000068.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000068.html');return false;">
+          <span class="method-name">geofull</span><span class="method-args">( factor )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+geometric <a href="FloatFunctor.html#M000074">filter</a> full
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000061.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000061.html');return false;">
+          <span class="method-name">modify</span><span class="method-args">( inputs, type )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+recursive method to compose modifications.
+</p>
+<p>
+must not be overloaded
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000060.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000060.html');return false;">
+          <span class="method-name">process</span><span class="method-args">( indata, type, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+hook for rand()
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000070.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000070.html');return false;">
+          <span class="method-name">random</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="FloatFunctor.html#M000070">random</a> <a
+href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000072" class="method-detail">
+        <a name="M000072"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000072.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000072.html');return false;">
+          <span class="method-name">shuffle</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="FloatFunctor.html#M000072">shuffle</a> <a
+href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000069.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000069.html');return false;">
+          <span class="method-name">sin</span><span class="method-args">( speed=1.0, phase=0.0 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="FloatFunctor.html#M000069">sin</a> <a
+href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000071" class="method-detail">
+        <a name="M000071"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000071.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000071.html');return false;">
+          <span class="method-name">ssort</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+sorting <a href="FloatFunctor.html#M000074">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000063.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000063.html');return false;">
+          <span class="method-name">transform</span><span class="method-args">( abs )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+to be overloaded
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000062.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000062.html');return false;">
+          <span class="method-name">transforms</span><span class="method-args">( inputs, type )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+to be overloaded if needed
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
+
+        <div class="method-heading">
+          <a href="FloatFunctor.src/M000058.html" target="Code" class="method-signature"
+            onclick="popupCode('FloatFunctor.src/M000058.html');return false;">
+          <span class="method-name">trigger</span><span class="method-args">( nsamples, type, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+must not be overloaded
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

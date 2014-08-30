@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>init_interpolation_structures (XRVG::InterBezier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/interbezier.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_interpolation_structures</span>
+    <span class="ruby-identifier">beziers</span> = []
+    <span class="ruby-identifier">indexes</span> = []
+    <span class="ruby-ivar">@bezierlist</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">bezier</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">bezier</span> )
+      <span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">index</span> )
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># TODO: lengthH is useless </span>
+    <span class="ruby-identifier">lengthH</span> = {}
+    <span class="ruby-identifier">alllengths</span> = []
+    <span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">bezier</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">lengths</span> = <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">piecelengths</span>
+      <span class="ruby-comment cmt"># Trace(&quot;bezier lengths #{lengths.inspect}&quot;)</span>
+      <span class="ruby-identifier">lengthH</span>[ <span class="ruby-identifier">bezier</span> ] = <span class="ruby-identifier">lengths</span>
+      <span class="ruby-identifier">alllengths</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">lengths</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">alllengths</span> = <span class="ruby-constant">Float</span>.<span class="ruby-identifier">sort_float_list</span>( <span class="ruby-identifier">alllengths</span> )
+    <span class="ruby-comment cmt"># Trace(&quot;alllengths #{alllengths.inspect}&quot;)</span>
+    
+    <span class="ruby-identifier">newbezierlist</span> = []
+    <span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">bezier</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">newpieces</span> = []
+      <span class="ruby-identifier">initlengths</span> = <span class="ruby-identifier">lengthH</span>[ <span class="ruby-identifier">bezier</span> ]
+      <span class="ruby-identifier">alllengths</span>.<span class="ruby-identifier">pairs</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l1</span>, <span class="ruby-identifier">l2</span><span class="ruby-operator">|</span> 
+        <span class="ruby-identifier">newpieces</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">subbezier</span>( <span class="ruby-identifier">l1</span>, <span class="ruby-identifier">l2</span> ).<span class="ruby-identifier">pieces</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">newbezier</span> = <span class="ruby-constant">Bezier</span>[ <span class="ruby-identifier">:pieces</span>, <span class="ruby-identifier">newpieces</span> ]
+      <span class="ruby-identifier">newbezierlist</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">newbezier</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># Trace(&quot;newbezierlist #{newbezierlist.length}&quot;)</span>
+    <span class="ruby-identifier">beziers</span> = <span class="ruby-identifier">newbezierlist</span>
+    <span class="ruby-identifier">bezierpointlists</span> = <span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">bezier</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">:vector</span>) }
+    <span class="ruby-comment cmt"># Trace(&quot;bezierpointlists #{bezierpointlists.map {|list| list.length}.inspect}&quot;)</span>
+    <span class="ruby-identifier">pointsequencelist</span> = <span class="ruby-identifier">bezierpointlists</span>.<span class="ruby-identifier">forzip</span>
+    <span class="ruby-ivar">@interpolatorlist</span> = []
+    <span class="ruby-identifier">pointsequencelist</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">size</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pointsequence</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">interlist</span> = [<span class="ruby-identifier">indexes</span>, <span class="ruby-identifier">pointsequence</span>].<span class="ruby-identifier">forzip</span>
+      <span class="ruby-ivar">@interpolatorlist</span>.<span class="ruby-identifier">push</span>( <span class="ruby-constant">Interpolator</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">:samplelist</span>, <span class="ruby-identifier">interlist</span> ) )
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

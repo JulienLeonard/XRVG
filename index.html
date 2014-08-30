@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>XRVG</title>
+    <meta name="generator" content="muse.el">
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/styles.css" />
+  </head>
+  <body>
+  <h1>XRVG</h1>
+
+<p>
+<a href="http://xrvg.rubyforge.org/changes.html">Recent Changes</a>
+</p>
+
+<h2>Introduction</h2>
+
+<p>
+XRVG stands for "eXtended Ruby Vector Graphics". The purpose of this project is to define and implement a high-level and powerful programming environment for vector graphics generation. 
+</p>
+
+<p>
+XRVG does not consist in "yet another" graphical front end to draw vector graphics. XRVG even does not produce images by itself. 
+</p>
+
+<p>
+XRVG must rather be viewed as an abstract and computational way of designing graphics by programmatic means (see <a href="XRVGPhilosophy.html">philosophy</a> for further discussion).
+</p>
+
+<p>
+XRVG is a <a href="http://www.ruby-lang.org">Ruby</a> extension, that generates <a href="http://www.w3.org/Graphics/SVG/">SVG</a> content.
+</p>
+
+<h2>Sample</h2>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/sample.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[ <span style="color: #9b30ff;">:filename</span>, <span style="color: #008b00;">"sample.svg"</span> ]
+
+palette  = <span style="color: #4682b4;">Palette</span>[ <span style="color: #9b30ff;">:colorlist</span>, [ 0.0, <span style="color: #4682b4;">Color</span>.blue,   0.25,  <span style="color: #4682b4;">Color</span>.orange,  
+                                  0.5, <span style="color: #4682b4;">Color</span>.yellow, 0.75,  <span style="color: #4682b4;">Color</span>.green,
+                                  1.0, <span style="color: #4682b4;">Color</span>.blue] ]
+<span style="color: #4682b4;">SyncS</span>[<span style="color: #4682b4;">Circle</span>[], palette, (0.1..0.02).random()].samples(25) <span style="color: #ee0000;">do</span> |point, color, radius|
+  render.add( <span style="color: #4682b4;">Circle</span>[ <span style="color: #9b30ff;">:center</span>, point, <span style="color: #9b30ff;">:radius</span>, radius ], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, color ])
+<span style="color: #ee0000;">end</span>
+
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+If you want to see (far) more advanced examples, you may be interested in the following <a href="http://www.fractalyze.blogspot.com/">Blog</a>.
+</p>
+
+<h2>Documentations</h2>
+
+<p>
+Several <a href="XRVGTutorials.html">tutorial</a> pages are available. 
+While being  for me an efficient way of rethinking XRVG design and functionalities, I hope these pages might be quite useful to get you into using XRVG, and stimulate your creativity :-)
+</p>
+
+<p>
+An extensive <a href="http://xrvg.rubyforge.org/rdoc/index.html">reference</a> documentation, generated with <a href="http://rdoc.sourceforge.net/">rdoc</a>, is also available.
+</p>
+
+<h2>Credits</h2>
+
+<p>
+First things first: thanks to the Tcl, Ruby and SVG communities.
+</p>
+
+<p>
+I would also like thank the Emacs community in a whole, since I also heavily use Emacs for code edition, debugging, personal information management (planner), and documentation generation (muse) !
+</p>
+
+<h2>Licencing</h2>
+
+<p>
+XRVG in a whole, that is code source but also documentation, is provided under the <a href="http://en.wikipedia.org/wiki/MIT_license">MIT licence</a>, reproduced hereafter
+</p>
+
+<pre class="example">
+Copyright (c) 2008 J. LEONARD
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+</pre>
+
+  </body>
+</html>

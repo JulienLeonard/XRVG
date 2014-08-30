@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>intersections (XRVG::Bezier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezier.rb, line 566</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">intersections</span>( <span class="ruby-identifier">c1</span>, <span class="ruby-identifier">c2</span> )
+      <span class="ruby-identifier">samples</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">samples</span>( <span class="ruby-value">100</span> )
+      
+      <span class="ruby-comment cmt"># sample curves</span>
+      <span class="ruby-identifier">vs</span> = []
+      [<span class="ruby-identifier">c1</span>,<span class="ruby-identifier">c2</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">subvs</span> = []
+        <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">subvs</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">t</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span> )]
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">vs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subvs</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># detect segment intersections and keep corresponding coords</span>
+      <span class="ruby-identifier">rawresult</span> = []
+      <span class="ruby-identifier">vs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">pairs</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s01</span>, <span class="ruby-identifier">s02</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">vs</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">pairs</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s11</span>, <span class="ruby-identifier">s12</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">inter</span> = <span class="ruby-constant">V2DS</span>[<span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">s02</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">intersection</span>( <span class="ruby-constant">V2DS</span>[<span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">s12</span>[<span class="ruby-value">1</span>]] )
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">inter</span>
+            <span class="ruby-comment cmt"># compute distances rapport</span>
+            <span class="ruby-identifier">r0</span> = (<span class="ruby-identifier">inter</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">s02</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span>
+            <span class="ruby-identifier">r1</span> = (<span class="ruby-identifier">inter</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">s12</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span>
+            <span class="ruby-comment cmt"># Trace(&quot;Bezier.intersections rapports r0 #{r0} r1 #{r1} s0 V2DS #{V2DS[s01[1], s02[1]].inspect} s1 V2DS #{V2DS[s11[1], s12[1]].inspect}&quot;)</span>
+            <span class="ruby-identifier">rawresult</span> <span class="ruby-operator">+=</span> [<span class="ruby-identifier">s01</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">s02</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r0</span>, <span class="ruby-identifier">s11</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">s12</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r1</span>]
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-comment cmt"># Trace(&quot;Bezier.intersections rawresult #{rawresult.inspect}&quot;)</span>
+
+      <span class="ruby-comment cmt"># compute accurately coords</span>
+      <span class="ruby-comment cmt"># for the moment, just return mean</span>
+      <span class="ruby-identifier">result</span> = []
+      <span class="ruby-identifier">rawresult</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span>, <span class="ruby-identifier">r12</span>, <span class="ruby-identifier">t3</span>, <span class="ruby-identifier">t4</span>, <span class="ruby-identifier">r34</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> [(<span class="ruby-identifier">t1</span><span class="ruby-operator">..</span><span class="ruby-identifier">t2</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">r12</span> ), (<span class="ruby-identifier">t3</span><span class="ruby-operator">..</span><span class="ruby-identifier">t4</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">r34</span> )]
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># Trace(&quot;Bezier.intersections result #{result.inspect}&quot;)</span>
+      
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

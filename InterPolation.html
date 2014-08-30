@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Interpolation</title>
+    <meta name="generator" content="muse.el">
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/styles.css" />
+  </head>
+  <body>
+  <h1>Interpolation</h1>
+
+<h2>Principle</h2>
+
+<p>
+Interpolation is the reverse operation of sampling. From a list of objects of same dimension D, it must build an object of dimension D+1.
+</p>
+
+<h2>Curve</h2>
+
+<p>
+Point interpolation => linear or bezier curve
+</p>
+
+<h2>Color</h2>
+
+<h3>Linear</h3>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/colorlinear.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>, <span style="color: #008b00;">"3cm"</span> ]
+palette  = <span style="color: #4682b4;">Palette</span>[ <span style="color: #9b30ff;">:colorlist</span>, [ 0.0, <span style="color: #4682b4;">Color</span>.blue,   0.25,  <span style="color: #4682b4;">Color</span>.orange,  
+                                  0.5, <span style="color: #4682b4;">Color</span>.yellow, 0.75,  <span style="color: #4682b4;">Color</span>.green,
+                                  1.0, <span style="color: #4682b4;">Color</span>.blue],
+                    <span style="color: #9b30ff;">:interpoltype</span>, <span style="color: #9b30ff;">:linear</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.black ]
+line = <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+<span style="color: #4682b4;">SyncS</span>[line, palette].samples( 100 ) <span style="color: #ee0000;">do</span> |point, color|
+  style.fill = color
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, point, <span style="color: #9b30ff;">:radius</span>, 0.01 ], style)
+<span style="color: #ee0000;">end</span>
+
+curves = []
+palette.interpolators.each <span style="color: #ee0000;">do</span> |interpol|
+  points = []
+  interpol.samples( 100 ).each_with_index <span style="color: #ee0000;">do</span> |y, index|
+    points &lt;&lt; <span style="color: #4682b4;">V2D</span>[ index.to_f/100.0, y ]
+  <span style="color: #ee0000;">end</span>
+  curves &lt;&lt; <span style="color: #4682b4;">SimpleBezier</span>[ <span style="color: #9b30ff;">:support</span>, points  ]
+<span style="color: #ee0000;">end</span>
+
+curves.each <span style="color: #ee0000;">do</span> |curve|
+  render.add( curve, <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.black, <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ] )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<h3>Bezier</h3>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/colorbezier.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>, <span style="color: #008b00;">"20cm"</span> ]
+palette  = <span style="color: #4682b4;">Palette</span>[ <span style="color: #9b30ff;">:colorlist</span>, [ 0.0, <span style="color: #4682b4;">Color</span>.blue,
+                                  0.1, <span style="color: #4682b4;">Color</span>.grey(0.5),
+                                  0.3, <span style="color: #4682b4;">Color</span>.grey(0.25),
+                                  0.5, <span style="color: #4682b4;">Color</span>.grey(0.75),
+                                  0.7, <span style="color: #4682b4;">Color</span>.grey(0.25),
+                                  0.9, <span style="color: #4682b4;">Color</span>.grey(0.5),
+                                  1.0, <span style="color: #4682b4;">Color</span>.yellow],
+                    <span style="color: #9b30ff;">:interpoltype</span>, <span style="color: #9b30ff;">:simplebezier</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.black ]
+line = <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+<span style="color: #4682b4;">SyncS</span>[line, palette].samples( 100 ) <span style="color: #ee0000;">do</span> |point, color|
+  style.fill = color
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, point, <span style="color: #9b30ff;">:radius</span>, 0.01 ], style)
+<span style="color: #ee0000;">end</span>
+
+curves = []
+palette.interpolators.each <span style="color: #ee0000;">do</span> |interpol|
+  curves &lt;&lt; interpol.getcurve
+<span style="color: #ee0000;">end</span>
+
+curves.each <span style="color: #ee0000;">do</span> |curve|
+  render.add( curve, <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.black, <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ] )
+  curve.gdebug( render )
+<span style="color: #ee0000;">end</span>
+
+
+line = <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ].translate( <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">Y</span> * 0.1 )
+palette.interpoltype = <span style="color: #9b30ff;">:linear</span>
+<span style="color: #4682b4;">SyncS</span>[line, palette].samples( 100 ) <span style="color: #ee0000;">do</span> |point, color|
+  style.fill = color
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, point, <span style="color: #9b30ff;">:radius</span>, 0.01 ], style)
+<span style="color: #ee0000;">end</span>
+
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>build (XRVG::BezierMotif)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/beziermotifs.rb, line 21</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">BezierMotif</span>.<span class="ruby-identifier">build</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+    <span class="ruby-identifier">builder</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+    <span class="ruby-identifier">result</span> = []
+    <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">support</span>.<span class="ruby-identifier">pairs</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p1</span>,<span class="ruby-identifier">p2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">support</span> = [<span class="ruby-identifier">p1</span>,<span class="ruby-identifier">p2</span>]
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">multi</span>( <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">compute</span> )
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sum</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

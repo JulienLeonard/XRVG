@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>rawtransforms (XRVG::RandomFilter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/samplation.rb, line 407</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rawtransforms</span>(<span class="ruby-identifier">nsamples</span>)
+    <span class="ruby-identifier">size</span>  = <span class="ruby-value">1.0</span>
+    <span class="ruby-identifier">nsplit</span> = <span class="ruby-identifier">nsamples</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">rsize</span> = <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">nsplit</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@mindiff</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rsize</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span><span class="ruby-value">.0</span>
+      <span class="ruby-identifier">raise</span>(<span class="ruby-node">&quot;RandomFilter rawtransforms error: nsamples #{nsamples} mindiff #{@mindiff} are incompatible&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">mindiffs</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">nsplit</span>, <span class="ruby-ivar">@mindiff</span> )
+    
+    <span class="ruby-comment cmt"># compute now nsplit values whose sum is &lt;= to rsize</span>
+    <span class="ruby-identifier">randarray</span> = [<span class="ruby-value">0</span><span class="ruby-value">.0</span>]
+    <span class="ruby-identifier">subarray</span> = (<span class="ruby-value">0</span><span class="ruby-value">.0</span><span class="ruby-operator">..</span><span class="ruby-identifier">rsize</span>).<span class="ruby-identifier">rand</span>( <span class="ruby-identifier">nsplit</span><span class="ruby-operator">-</span><span class="ruby-value">1</span> )
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">subarray</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">subarray</span> = [<span class="ruby-identifier">subarray</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">randarray</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">subarray</span>
+    <span class="ruby-identifier">randarray</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">rsize</span> )
+    <span class="ruby-identifier">randarray</span>.<span class="ruby-identifier">sort!</span>
+
+    <span class="ruby-identifier">rsizes</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">randarray</span>.<span class="ruby-identifier">each_cons</span>(<span class="ruby-value">2</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rsizes</span>.<span class="ruby-identifier">push</span>( (<span class="ruby-value">0</span><span class="ruby-value">.0</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span><span class="ruby-operator">-</span><span class="ruby-identifier">min</span>).<span class="ruby-identifier">rand</span> ) }
+
+    <span class="ruby-identifier">rsum</span> = <span class="ruby-identifier">rsizes</span>.<span class="ruby-identifier">sum</span>
+    <span class="ruby-identifier">root</span> = (<span class="ruby-value">0</span><span class="ruby-value">.0</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">rsize</span><span class="ruby-operator">-</span><span class="ruby-identifier">rsum</span>)).<span class="ruby-identifier">rand</span>
+
+    <span class="ruby-comment cmt"># Trace(&quot;mindiffs #{mindiffs.inspect} rsizes #{rsizes.inspect} rsize #{rsize} rsum #{rsum} root #{root}&quot;)</span>
+
+    <span class="ruby-identifier">preresult</span> = []
+    <span class="ruby-identifier">mindiffs</span>.<span class="ruby-identifier">zip</span>( <span class="ruby-identifier">rsizes</span> ) {<span class="ruby-operator">|</span><span class="ruby-identifier">mindiff</span>, <span class="ruby-identifier">rsize</span><span class="ruby-operator">|</span> <span class="ruby-identifier">preresult</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">mindiff</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rsize</span> )}
+
+    <span class="ruby-identifier">result</span> = [<span class="ruby-identifier">root</span>]
+    <span class="ruby-identifier">preresult</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">newv</span> = <span class="ruby-identifier">result</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">v</span>; <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">newv</span> }
+
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

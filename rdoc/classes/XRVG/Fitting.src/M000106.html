@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>renormalize (XRVG::Fitting)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/fitting.rb, line 114</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">renormalize</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+    <span class="ruby-identifier">a3</span>, <span class="ruby-identifier">a2</span>, <span class="ruby-identifier">a1</span>, <span class="ruby-identifier">a0</span> = <span class="ruby-identifier">coeffs</span>
+    <span class="ruby-identifier">dxdu</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-value">3.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">a3</span>.<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-identifier">u</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">a2</span>.<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-identifier">u</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">x</span>}
+    <span class="ruby-identifier">dydu</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-value">3.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">a3</span>.<span class="ruby-identifier">y</span><span class="ruby-operator">*</span><span class="ruby-identifier">u</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.0</span><span class="ruby-operator">*</span><span class="ruby-identifier">a2</span>.<span class="ruby-identifier">y</span><span class="ruby-operator">*</span><span class="ruby-identifier">u</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">y</span>}
+    <span class="ruby-identifier">container</span> = <span class="ruby-constant">V2D</span>[]
+    <span class="ruby-identifier">z</span>    = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span>,<span class="ruby-identifier">p4</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> = <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">u</span>, <span class="ruby-identifier">container</span>, <span class="ruby-identifier">:parameter</span> ); (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p4</span>.<span class="ruby-identifier">x</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">dxdu</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">u</span> ) <span class="ruby-operator">+</span> (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p4</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">dydu</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">u</span> )}
+    <span class="ruby-identifier">newparameters</span> = []
+    [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">parameter</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">u1</span> = <span class="ruby-identifier">parameter</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span><span class="ruby-value">.99</span>
+        <span class="ruby-identifier">u2</span> = <span class="ruby-identifier">parameter</span> <span class="ruby-operator">+</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">u2</span> = <span class="ruby-identifier">parameter</span> <span class="ruby-operator">-</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">z1</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u1</span>,<span class="ruby-identifier">point</span>)
+      <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">z1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">z2</span>
+        <span class="ruby-identifier">u2</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>
+        <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">z1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">z2</span>
+        <span class="ruby-identifier">u2</span> <span class="ruby-operator">-=</span> <span class="ruby-value">0</span><span class="ruby-value">.01</span>
+        <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">newparameters</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">z2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">u1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">z1</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">u2</span>)<span class="ruby-operator">/</span>(<span class="ruby-identifier">z2</span><span class="ruby-operator">-</span><span class="ruby-identifier">z1</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">newparameters</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>svg (XRVG::Bezier)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/bezier.rb, line 446</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">svg</span>()
+    <span class="ruby-comment cmt"># Trace(&quot;Bezier::svg #{self.inspect}&quot;)</span>
+    <span class="ruby-identifier">path</span>     = <span class="ruby-value str">&quot;&quot;</span>
+    <span class="ruby-identifier">previous</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pieces</span>().<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span>, <span class="ruby-identifier">pc2</span>, <span class="ruby-identifier">p2</span> = <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">pointlist</span>
+      <span class="ruby-comment cmt"># Trace(&quot;previous #{previous.inspect} p1 #{p1.inspect}&quot;)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">previous</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">not</span> (<span class="ruby-identifier">previous</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>).<span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span><span class="ruby-value">.0000001</span>
+        <span class="ruby-comment cmt"># Trace(&quot;svg bezier not equal =&gt; M&quot;)</span>
+        <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;M #{p1.x},#{p1.y}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">previous</span> = <span class="ruby-identifier">p2</span>
+      <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;C #{pc1.x},#{pc1.y} #{pc2.x},#{pc2.y} #{p2.x},#{p2.y}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">firstpoint</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">lastpoint</span>
+      <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot; z&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;&lt;path d=\&quot;#{path}\&quot;/&gt;&quot;</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

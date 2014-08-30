@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: XRVG::Bezier</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">XRVG::Bezier</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/bezier_rb.html">
+                lib/bezier.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Curve.html">
+                Curve
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>Base class for cubic <a href="Bezier.html#M000126">bezier</a> curves</h1>
+<h2>Basics</h2>
+<p>
+See <a
+href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve">en.wikipedia.org/wiki/B%C3%A9zier_curve</a>
+</p>
+<h2>Examples</h2>
+<p>
+Basically, a <a href="Bezier.html">Bezier</a> curve is a <a
+href="Bezier.html#M000115">multi</a>-pieces cubic <a
+href="Bezier.html#M000126">bezier</a> curve. As a first example, you can
+create <a href="Bezier.html#M000126">bezier</a> curves as follows :
+</p>
+<pre>
+ b = Bezier[ :pieces, [[:raw, p1, pc1, pc2, p2]] ]; # raw description, as SVG
+ b = Bezier[ :pieces, [[:vector, p1, v1, p2, v2]] ]; # more &quot;symetrical&quot; description.
+</pre>
+<p>
+For more extensive description, see <a
+href="http://xrvg.rubyforge.org/XRVGBezierCurve.html">xrvg.rubyforge.org/XRVGBezierCurve.html</a>
+</p>
+<h2>Discussion</h2>
+<p>
+In <a href="../XRVG.html">XRVG</a>, <a
+href="Bezier.html#M000126">bezier</a> curves must be also viewed as a way
+to create smooth and non linear interpolation between values (see <tt><a
+href="Interpolation.html">Interpolation</a></tt>)
+</p>
+<p>
+Other <a href="Bezier.html#M000128">point</a> : to run along a <a
+href="Bezier.html#M000126">bezier</a> curve, you can use two different
+parametrization :
+</p>
+<ul>
+<li>the curve generic one, that is &quot;curviligne&quot; abscissa, that is <a
+href="Bezier.html#M000142">length</a>
+
+</li>
+<li>the <a href="Bezier.html#M000126">bezier</a> parameter, as <a
+href="Bezier.html#M000126">bezier</a> curves are parametrized curves. For
+<a href="Bezier.html#M000115">multi</a>-pieces curve, by extension,
+parameter goes from one integer value to the next one
+
+</li>
+</ul>
+<p>
+As <a href="Bezier.html">Bezier</a> class provides several methods with a
+parameter input, it is necessary to specify with parameter type you want to
+use ! For example, to compute a <a href="Bezier.html#M000128">point</a>
+from a <a href="Bezier.html#M000126">bezier</a> curve, <a
+href="Bezier.html">Bezier</a> class defines the <a
+href="Bezier.html#M000128">point</a> method as follows :
+</p>
+<pre>
+  def point( t, parametertype=:length )
+</pre>
+<p>
+This is a general declaration : every method with a parameter input will
+propose such a kind of interface :
+</p>
+<ul>
+<li>t as <a href="../Float.html">Float</a> parameter value
+
+</li>
+<li>parametertype, by default :<a href="Bezier.html#M000142">length</a>, that
+can have two values, :<a href="Bezier.html#M000142">length</a> or
+:parameter. :parameter is kept because is far faster than other indexation.
+
+</li>
+</ul>
+<h2>Attributes</h2>
+<pre>
+ attribute :pieces
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000139">+</a>&nbsp;&nbsp;
+      <a href="#M000110">[]</a>&nbsp;&nbsp;
+      <a href="#M000130">acc</a>&nbsp;&nbsp;
+      <a href="#M000146">apply_sample</a>&nbsp;&nbsp;
+      <a href="#M000137">axesym</a>&nbsp;&nbsp;
+      <a href="#M000126">bezier</a>&nbsp;&nbsp;
+      <a href="#M000124">beziers</a>&nbsp;&nbsp;
+      <a href="#M000127">data</a>&nbsp;&nbsp;
+      <a href="#M000145">filter</a>&nbsp;&nbsp;
+      <a href="#M000122">firstpoint</a>&nbsp;&nbsp;
+      <a href="#M000131">frame</a>&nbsp;&nbsp;
+      <a href="#M000141">gdebug</a>&nbsp;&nbsp;
+      <a href="#M000144">intersections</a>&nbsp;&nbsp;
+      <a href="#M000123">lastpoint</a>&nbsp;&nbsp;
+      <a href="#M000142">length</a>&nbsp;&nbsp;
+      <a href="#M000115">multi</a>&nbsp;&nbsp;
+      <a href="#M000118">piece</a>&nbsp;&nbsp;
+      <a href="#M000143">piecelengths</a>&nbsp;&nbsp;
+      <a href="#M000119">piecenumber</a>&nbsp;&nbsp;
+      <a href="#M000128">point</a>&nbsp;&nbsp;
+      <a href="#M000121">pointlist</a>&nbsp;&nbsp;
+      <a href="#M000112">raw</a>&nbsp;&nbsp;
+      <a href="#M000116">raws</a>&nbsp;&nbsp;
+      <a href="#M000133">reverse</a>&nbsp;&nbsp;
+      <a href="#M000135">rotate</a>&nbsp;&nbsp;
+      <a href="#M000147">sampler</a>&nbsp;&nbsp;
+      <a href="#M000125">sides</a>&nbsp;&nbsp;
+      <a href="#M000138">similar</a>&nbsp;&nbsp;
+      <a href="#M000111">single</a>&nbsp;&nbsp;
+      <a href="#M000132">subbezier</a>&nbsp;&nbsp;
+      <a href="#M000140">svg</a>&nbsp;&nbsp;
+      <a href="#M000136">sym</a>&nbsp;&nbsp;
+      <a href="#M000129">tangent</a>&nbsp;&nbsp;
+      <a href="#M000134">translate</a>&nbsp;&nbsp;
+      <a href="#M000113">vector</a>&nbsp;&nbsp;
+      <a href="#M000114">vectorreg</a>&nbsp;&nbsp;
+      <a href="#M000117">vectors</a>&nbsp;&nbsp;
+      <a href="#M000120">viewbox</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Samplable.html">Samplable</a></span>
+        <span class="include-name"><a href="Splittable.html">Splittable</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">O</td>
+          <td>=</td>
+          <td class="context-item-value">Bezier.raw( V2D::O, V2D::O, V2D::O, V2D::O )</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="Bezier.html#M000126">bezier</a> <a
+href="Bezier.html#M000128">point</a>, as
+
+<pre>
+  Bezier[:raw, V2D::O, V2D::O, V2D::O, V2D::O]
+</pre>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000110.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Initialize with the <a href="Attributable.html">Attributable</a> format
+</p>
+<p>
+Licit formats :
+</p>
+<pre>
+  b = Bezier.new( :pieces, [BezierSpline[:raw, p1, pc1, pc2, p2]] )
+  b = Bezier[ :pieces, [BezierSpline[:vector, p1, v1, p2, v2]] ]
+</pre>
+<p>
+However, prefer the use of the following builders
+</p>
+<pre>
+  b = Bezier.vector( p1, v1, p2, v2 )
+  b = Bezier.raw( p1, pc1, pc2, p2 )
+  b = Bezier.single( :raw, p1, pc1, pc2, p2 )
+  b = Bezier.multi( [[:raw, p1, pc1, pc2, p2], [:raw, p1, pc1, pc2, p2]] )
+</pre>
+<p>
+The two last syntaxes are provided as shortcuts, as used quite frequently,
+and must be used instead of :pieces attributable builder
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000144.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000144.html');return false;">
+          <span class="method-name">intersections</span><span class="method-args">( c1, c2 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return a list of <a href="Bezier.html#M000126">bezier</a> params [a1,a2,
+b1, b2 &#8230;] stating intersection points for each curve Algo:
+</p>
+<pre>
+ - compute segment approximations of 2 curves, by keeping parameter values
+ - for the moment, brute algorithm: try to match every segment of one curve with every of the other
+</pre>
+<ul>
+<li>for every match, dychotomie to get precise parameter value
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000115.html');return false;">
+          <span class="method-name">multi</span><span class="method-args">( rawpieces )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Basic Multi <a href="Bezier.html">Bezier</a> builder
+</p>
+<p>
+<a href="Bezier.html#M000112">raw</a> pieces must be an array of arrays of
+the form [type, p1, p2, p3, p4] as defined for <a
+href="Bezier.html#M000111">single</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000112.html');return false;">
+          <span class="method-name">raw</span><span class="method-args">( p1, pc1, pc2, p2 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uni <a href="Bezier.html">Bezier</a> builder in :<a
+href="Bezier.html#M000112">raw</a> format
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000116.html');return false;">
+          <span class="method-name">raws</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&quot;regular&quot; Multi <a href="Bezier.html">Bezier</a> :<a
+href="Bezier.html#M000112">raw</a> specification
+</p>
+<p>
+args is a list of points and control points as [p1, pc1, p2, pc2, p3, pc3]
+</p>
+<p>
+Beware that
+</p>
+<pre>
+ Bezier.raw( p1, pc1, pc2, p2 ) == Bezier.raws( p1, pc1, p2, p2 + (p2-pc2))
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000111.html');return false;">
+          <span class="method-name">single</span><span class="method-args">( type, p1, p2, p3, p4 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uni <a href="Bezier.html">Bezier</a> builder
+</p>
+<p>
+type can be :<a href="Bezier.html#M000112">raw</a> or :<a
+href="Bezier.html#M000113">vector</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000113.html');return false;">
+          <span class="method-name">vector</span><span class="method-args">( p1, v1, p2, v2 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uni <a href="Bezier.html">Bezier</a> builder in :<a
+href="Bezier.html#M000113">vector</a> format
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000114.html');return false;">
+          <span class="method-name">vectorreg</span><span class="method-args">( p1, v1, p2, v2 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uni <a href="Bezier.html">Bezier</a> builder in :<a
+href="Bezier.html#M000113">vector</a> format, with <a
+href="Bezier.html#M000113">vector</a> <a
+href="Bezier.html#M000142">length</a> normalized at 1/3 dist between points
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000117.html');return false;">
+          <span class="method-name">vectors</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&quot;regular&quot; Multi <a href="Bezier.html">Bezier</a> :<a
+href="Bezier.html#M000113">vector</a> specification
+</p>
+<p>
+args is a list of points and control points as [p1, v1, p2, v2, p3, v3]
+</p>
+<p>
+Beware that
+</p>
+<pre>
+ Bezier.vector( p1, v1, p2, v2 ) == Bezier.vectors( p1, v1, p2, -v2)
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000139.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000139.html');return false;">
+          <span class="method-name">+</span><span class="method-args">( other )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Bezier.html">Bezier</a> curve concatenation
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000130.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000130.html');return false;">
+          <span class="method-name">acc</span><span class="method-args">( t, container=nil, parametertype=:length )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute acceleration at curviligne abscissa or parameter t
+</p>
+<p>
+curve method redefinition
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
+
+        <div class="method-heading">
+          <span class="method-name">apply_sample</span><span class="method-args">( t, container=nil, parametertype=:length )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Bezier.html#M000128">point</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000137.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000137.html');return false;">
+          <span class="method-name">axesym</span><span class="method-args">( point, v )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+axis symetry
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000126.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000126.html');return false;">
+          <span class="method-name">bezier</span><span class="method-args">( index )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to retrieve a <a href="Bezier.html#M000118">piece</a> as an
+<a href="Bezier.html">Bezier</a> object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000124.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000124.html');return false;">
+          <span class="method-name">beziers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to build <a href="Bezier.html">Bezier</a> objects from each
+<a href="Bezier.html#M000118">piece</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000127.html');return false;">
+          <span class="method-name">data</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to retrieve <a href="Bezier.html#M000127">data</a> list of
+a <a href="Bezier.html#M000126">bezier</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000145.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000145.html');return false;">
+          <span class="method-name">filter</span><span class="method-args">(type=:point, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Bezier.html#M000145">filter</a>, <a
+href="Bezier.html#M000147">sampler</a> methods
+</p>
+<p>
+just a shortcut to define easily specific <a
+href="Bezier.html#M000147">sampler</a> on <a
+href="Bezier.html#M000126">bezier</a> curve
+</p>
+<p>
+TODO : must be defined on <a href="Curve.html">Curve</a> interface !!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000122.html');return false;">
+          <span class="method-name">firstpoint</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to get curve first <a href="Bezier.html#M000128">point</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000131.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000131.html');return false;">
+          <span class="method-name">frame</span><span class="method-args">( t, container=nil, parametertype=:length )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+curve method redefinition to factorize parametermapping
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000141.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000141.html');return false;">
+          <span class="method-name">gdebug</span><span class="method-args">(render)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Display <a href="Bezier.html">Bezier</a> curve decorated with points and
+control points
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000123.html');return false;">
+          <span class="method-name">lastpoint</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to get curve last <a href="Bezier.html#M000128">point</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000142.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000142.html');return false;">
+          <span class="method-name">length</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the <a href="Bezier.html#M000142">length</a> of the <a
+href="Bezier.html#M000126">bezier</a> curve
+</p>
+<p>
+simply add pieces lengths
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000118.html');return false;">
+          <span class="method-name">piece</span><span class="method-args">( index, parametertype=:length )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Bezier.html#M000118">piece</a> of index
+&quot;index&quot;,as BezierSpline object
+</p>
+<p>
+index can be
+</p>
+<ul>
+<li>integer : in that case, simple return @pieces[index]
+
+</li>
+<li>float : in that case, use second default argument
+
+</li>
+</ul>
+<p>
+this method must actually be very rarely called, as usually we want to
+compute something with index, and in that case we want to delegate
+computation to a BezierSpline, with parameter mapping parametermapping
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000143.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000143.html');return false;">
+          <span class="method-name">piecelengths</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+utilitary method for interbezier
+</p>
+<p>
+return list of <a href="Bezier.html#M000118">piece</a> lengths relatives to
+total <a href="Bezier.html#M000126">bezier</a> lengths, and cumulated
+</p>
+<pre>
+ Bezier.new( :pieces, [piece1, piece2] ).piecelengths; =&gt; [0.0, piece1.length / bezier.length, 1.0]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000119.html');return false;">
+          <span class="method-name">piecenumber</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return number of pieces
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000128.html');return false;">
+          <span class="method-name">point</span><span class="method-args">( t, container=nil, parametertype=:length )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute a <a href="Bezier.html#M000128">point</a> at curviligne abscissa or
+parameter t
+</p>
+<p>
+curve method redefinition
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000121.html');return false;">
+          <span class="method-name">pointlist</span><span class="method-args">( type=:raw )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+generic method to return points list of a curve
+</p>
+<pre>
+  b = Bezier[ :pieces, [[:raw, p1, pc1, pc2, p2], [:raw, p2, pc2b, pc3, p3]] ]
+  b.pointlist        #=&gt; equiv to b.pointlist(:raw)
+  b.pointlist(:raw)  #=&gt; [p1, pc1, pc2, p2, p2, pc2b, pc3, p3]
+</pre>
+<p>
+if you want to get a particular <a href="Bezier.html#M000118">piece</a> <a
+href="Bezier.html#M000121">pointlist</a>, do
+</p>
+<pre>
+  b.piece( t ).pointlist(nil|:raw|:vector)
+</pre>
+<p>
+TODO : result must be cached by type
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000133.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000133.html');return false;">
+          <span class="method-name">reverse</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return a new <a href="Bezier.html">Bezier</a> curve reversed from current
+one
+</p>
+<p>
+simply <a href="Bezier.html#M000133">reverse</a> BezierSpline pieces, both
+internally and in the :pieces list
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000135" class="method-detail">
+        <a name="M000135"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000135.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000135.html');return false;">
+          <span class="method-name">rotate</span><span class="method-args">( angle, center=V2D::O )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Bezier.html#M000135">rotate</a> the <a
+href="Bezier.html">Bezier</a> curve, by rotating its points
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
+
+        <div class="method-heading">
+          <span class="method-name">sampler</span><span class="method-args">(type=:point, &amp;block)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Bezier.html#M000145">filter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000125.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000125.html');return false;">
+          <span class="method-name">sides</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+shortcut method to build <a href="Bezier.html">Bezier</a> objects from each
+not regular part
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000138.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000138.html');return false;">
+          <span class="method-name">similar</span><span class="method-args">( pointrange )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&quot;Similitude&quot; geometric transformation
+</p>
+<p>
+See <a
+href="http://en.wikipedia.org/wiki/Similitude_%28geometry%29">en.wikipedia.org/wiki/Similitude_%28geometry%29</a>
+</p>
+<p>
+Similtude geometric transformation is (firspoint..lastpoint) -&gt;
+pointrange
+</p>
+<p>
+TODO : method must be put in <a href="Curve.html">Curve</a> interface
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000132.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000132.html');return false;">
+          <span class="method-name">subbezier</span><span class="method-args">( t1, t2)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute the sub curve between abscissa t1 and t2
+</p>
+<p>
+may result in a <a href="Bezier.html#M000115">multi</a>-pieces <a
+href="Bezier.html">Bezier</a>
+</p>
+<p>
+Note: special modulo effect to deal with closed <a
+href="Bezier.html#M000126">bezier</a> curve
+</p>
+<p>
+TODO: improve code (bas design)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000140.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000140.html');return false;">
+          <span class="method-name">svg</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the <a href="Bezier.html#M000140">svg</a> description of the curve
+</p>
+<p>
+if <a href="Bezier.html#M000122">firstpoint</a> == <a
+href="Bezier.html#M000123">lastpoint</a>, curve is considered as closed
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000136" class="method-detail">
+        <a name="M000136"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000136.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000136.html');return false;">
+          <span class="method-name">sym</span><span class="method-args">( center )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+central symetry
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000129.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000129.html');return false;">
+          <span class="method-name">tangent</span><span class="method-args">( t, container=nil, parametertype=:length )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute <a href="Bezier.html#M000129">tangent</a> at curviligne abscissa or
+parameter t
+</p>
+<p>
+curve method redefinition
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000134.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000134.html');return false;">
+          <span class="method-name">translate</span><span class="method-args">( v )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Bezier.html#M000134">translate</a> the <a
+href="Bezier.html">Bezier</a> curve, by translating its points
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="Bezier.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('Bezier.src/M000120.html');return false;">
+          <span class="method-name">viewbox</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+overload Curve::viewbox
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

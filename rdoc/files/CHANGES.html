@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGES</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGES</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGES
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 05 20:29:00 +0100 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>CHANGES</h1>
+<h2>0.0.82 (2008.12.05)</h2>
+<h3>Content</h3>
+<ul>
+<li>Debug Ondulation with negative amplitudes
+
+</li>
+<li>Debug sampler.rand to avoid stack overflow
+
+</li>
+<li>add .sides method on Bezier class
+
+</li>
+<li>Debug gem install (attributable.rb missing)
+
+</li>
+<li>Remove Spiral&#8216;s dependancy upon Forwardable
+
+</li>
+</ul>
+<h2>0.0.81 (2008.08.26)</h2>
+<h3>Content</h3>
+<ul>
+<li>tutorials updated with the new SyncS
+
+</li>
+<li>spiral class considered as curve, to redefine point and tangent
+computation, and to provide access to parameters
+
+</li>
+<li>debug unitary tests
+
+</li>
+</ul>
+<h2>0.0.8 (2008.08.25)</h2>
+<h3>Content</h3>
+<ul>
+<li>unitary tests completion
+
+</li>
+<li>new spiral builder from tangent (spiral refactoring to be committed
+soon&#8230;)
+
+</li>
+<li>INCOMPATIBLE modifs:
+
+<pre>
+ - Array is no longer SAMPLABLE =&gt; you must remplace &quot;[].geo(5.0).samples&quot; by &quot;SyncS[].geo( 5.0 )&quot;
+   this has been done to avoid conflicts between Array and Samplation interface, namely .rand method,
+                         but also to clean semantic of the operation
+                         and to provide shortcuts (as automatic Roller for arrays to be samples in a synchronized way...)
+                         and to be able to upgrade SyncS operations (with .split operator,...)
+</pre>
+</li>
+</ul>
+<h3>TODO</h3>
+<ul>
+<li>tutorials need to be updated with the INCOMPATIBLE modif
+
+</li>
+<li>spiral class must be considered as curve, to redefine point and tangent
+computation, and to provide access to parameters
+
+</li>
+</ul>
+<h2>0.0.7 (2008.08.24)</h2>
+<h3>Content</h3>
+<ul>
+<li>Add color services (hsv, hsl, &#8230;)
+
+</li>
+<li>Add intersection services (Beta for the moment, must be consolidated)
+
+</li>
+<li>.random has again its &quot;notsorted&quot; behavior: if you want random to
+sort its results, you can use .random(:sort, true)
+
+</li>
+</ul>
+<h2>0.0.6 (2008.03.24)</h2>
+<h3>Content</h3>
+<ul>
+<li>Add Spiral classes
+
+</li>
+<li>refactor some <a href="../classes/Float.html">Float</a> utilitaries into <a
+href="../classes/Range.html">Range</a> class
+
+</li>
+<li>refactor Ondulation bezier builder
+
+</li>
+<li>WARNING: random() filter now always sort its result =&gt; Shuffle filter is
+created. Moreover, .rand method is now only on Random, and not in Samplable
+interface (due to overloading <a href="../classes/Array.html">Array</a>
+method when using sort_by {rand, which is no good)
+
+</li>
+</ul>
+<h2>0.0.5 (2008.03.22)</h2>
+<h3>Content</h3>
+<ul>
+<li>Add GeoVariety classes
+
+</li>
+</ul>
+<h3>Debug</h3>
+<ul>
+<li>color interpolation right again, but color trim is no longer done
+
+</li>
+</ul>
+<h2>0.0.4 (2008.03.16)</h2>
+<p>
+Really big functional release. Several additional releases are needed to
+add appropriate tests and docs.
+</p>
+<h3>Content</h3>
+<ul>
+<li><a href="../classes/XRVG.html">XRVG</a> namespace creation: you must now
+add &quot;include <a href="../classes/XRVG.html">XRVG</a>&quot; after
+&quot;require &#8216;xrvg&#8217;&quot; to make your previous work OK.
+
+</li>
+<li>bezier curve fitting algorithm implementation
+
+</li>
+<li>adaptative bezier curve fitting algorithm implementation
+
+</li>
+<li>bezier builder hierarchy introducing
+
+</li>
+<li>ArcBezier and PicBezier bezier motifs
+
+</li>
+<li>Offset, Ondulation, ClosureBezier bezier builders
+
+</li>
+<li>meta bezier builders: iterator builders, fitting builders
+
+</li>
+</ul>
+<h3>Other little additions</h3>
+<ul>
+<li>new FloatFunctor filter Alternate (must be consolidated though)
+
+</li>
+</ul>
+<h3>Removed Bugs</h3>
+<ul>
+<li>splits enumerator works again
+
+</li>
+<li>debug bezier filter method
+
+</li>
+</ul>
+<h3>Refactoring</h3>
+<ul>
+<li>make bezier frame with container
+
+</li>
+<li>ParametricLength module extraction from BezierSpline
+
+</li>
+</ul>
+<h3>TODO</h3>
+<ul>
+<li>complete Circle curve, with split interface (maybe add generic method in
+Curve, from bezier, as circle -&gt; bezier method is available)
+
+</li>
+</ul>
+<h2>0.0.3 (2008.02.17)</h2>
+<h3>Content</h3>
+<ul>
+<li>just bug correction, optims and refactoring
+
+</li>
+<li>quad tree implementation
+
+</li>
+</ul>
+<h3>Testing</h3>
+<ul>
+<li>test_interpolator
+
+</li>
+<li>some minors other additions
+
+</li>
+</ul>
+<h4>Refactoring</h4>
+<ul>
+<li>implementing bezier length interpolator as quad tree =&gt; +60% perf sur
+sample( 50000 ) !!!
+
+</li>
+<li>change order of list in interpolation ! now index before value (as nominal
+way of describing key,value pairs)
+
+</li>
+</ul>
+<h2>0.0.2 (2008.02.10)</h2>
+<h3>Content</h3>
+<h4>New features</h4>
+<ul>
+<li>bezier curve !!
+
+</li>
+</ul>
+<h4>Refactoring</h4>
+<ul>
+<li>replace Vector extension (which was incoherent as some methods were
+specific 2D) by new 2D class V2D
+
+</li>
+<li>Color no longer inherits from Vector
+
+</li>
+<li>optimize bezier point computation
+
+</li>
+<li>optimize sampling by using result &quot;containers&quot; (must be
+consolidated)
+
+</li>
+<li>simplify Bezier builders, by defining new builders and removing previous
+builder versatility
+
+</li>
+<li>refactor Style to be less SVG-mapped
+
+</li>
+</ul>
+<h4>Bug fixing</h4>
+<ul>
+<li>range examples correction, and added to unitary tests
+
+</li>
+<li><a href="../classes/Range.html">Range</a> .complement correction
+
+</li>
+<li><a href="../classes/Range.html">Range</a> split correction
+
+</li>
+</ul>
+<h3>TODO for 0.0.3</h3>
+<ul>
+<li>unitary tests to be completed (generate them from doc ?)
+
+</li>
+<li>Shape Line and Circle interfaces must be completed to fill Curve abstract
+interface.
+
+</li>
+<li>mabe bezier tutorial
+
+</li>
+</ul>
+<h2>0.0.1 (2008.02.02)</h2>
+<h3>Content</h3>
+<ul>
+<li>First delivery. Contains utilitary classes (utils, samplable,
+interpolation, attributable), render, color, style, shape.
+
+</li>
+<li>But no bezier yet.
+
+</li>
+<li>Rakefile nearly ready.
+
+</li>
+<li>Some unitary tests
+
+</li>
+</ul>
+<h3>TODO for 0.0.2</h3>
+<ul>
+<li>unitary tests to be completed (generate them from doc ?)
+
+</li>
+<li>Shape Line and Circle interfaces must be completed to fill Curve abstract
+interface.
+
+</li>
+<li>add bezier services, and make bezier documentation (both rdoc and
+tutorials)
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
