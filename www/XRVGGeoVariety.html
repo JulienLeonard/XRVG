@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Geometrical varieties</title>
+    <meta name="generator" content="muse.el">
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/styles.css" />
+  </head>
+  <body>
+  <h1>Geometrical varieties</h1>
+
+<h2>Implicit</h2>
+
+<p>
+While drawing vector shapes, one always assumes that the canvas that receives shapes is euclidean. 
+</p>
+
+<p>
+If you draw some horizontal lines in a random way, you then get the following result:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/euclideangeo.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  y  = (0.0..1.0).rand
+  render.add( <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, xs.map {|x| <span style="color: #4682b4;">V2D</span>[x, y]} ], style )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+But what if you change this assumption ? 
+</p>
+
+<h2>Interbezier</h2>
+
+<p>
+One first way to generalize the previous example is to consider that instead of drawing many somehow unrelated curves, with related coordinates,
+let us define a geometric canvas, that can then be sampled to produce the same result.
+</p>
+
+<p>
+You can see that the result is quite (sic!) comparable:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/interbeziergeo1.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+support1 = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+support2 = support1.translate( <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">Y</span> )
+interbezier  = <span style="color: #4682b4;">InterBezier</span>[ <span style="color: #9b30ff;">:bezierlist</span>, [0.0, support1, 1.0, support2 ] ]
+
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  render.add( interbezier.line( xs[0], xs[1], (0.0..1.0).rand ), style )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+However, the real interest is to change interbezier definition, to get more exotic canvas. Let's do it with ondulations:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/interbeziergeo2.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+support = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+support = support.translate(  <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">Y</span> * 0.2 )
+support1 = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 2, <span style="color: #9b30ff;">:ampl</span>, 0.5 ]
+support = support.translate(  -<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">Y</span> * 0.4 )
+support2 = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 2, <span style="color: #9b30ff;">:ampl</span>, 0.5 ]
+interbezier = <span style="color: #4682b4;">InterBezier</span>[ <span style="color: #9b30ff;">:bezierlist</span>, [0.0, support1, 1.0, support2 ] ]
+
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  render.add( interbezier.line( xs[0], xs[1], (0.0..1.0).rand ), style )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+Better! 
+However, we could go even farther by using offset operator, instead of simply translating interbezier range ondulations.
+So:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/interbeziergeo3.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+support  = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+support  = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 2, <span style="color: #9b30ff;">:ampl</span>, 0.3 ]
+support1 = <span style="color: #4682b4;">Offset</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:ampl</span>,  0.2 ]
+support2 = <span style="color: #4682b4;">Offset</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:ampl</span>, -0.2 ]
+
+interbezier  = <span style="color: #4682b4;">InterBezier</span>[ <span style="color: #9b30ff;">:bezierlist</span>, [0.0, support1, 1.0, support2 ] ]
+
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  render.add( interbezier.line( xs[0], xs[1], (0.0..1.0).rand ), style )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+Nice !
+To end this section, let's check a last design:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/gradientgeo.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+
+line        = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>]]
+support     = line.translate( -<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">Y</span> )
+ondulation  = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 5, <span style="color: #9b30ff;">:ampl</span>, 0.5 ]
+
+gbezier  = <span style="color: #4682b4;">GradientBezier</span>[ <span style="color: #9b30ff;">:bezierlist</span>, [0.0, line, 1.0, ondulation]]
+
+palette = <span style="color: #4682b4;">Palette</span>[ <span style="color: #9b30ff;">:colorlist</span>, [  0.0, <span style="color: #4682b4;">Color</span>.black,  
+                                  0.5, <span style="color: #4682b4;">Color</span>.blue,  
+                                  1.0, <span style="color: #4682b4;">Color</span>.white]]
+style = <span style="color: #4682b4;">Style</span>.new( <span style="color: #9b30ff;">:strokewidth</span>, 0.01 )
+<span style="color: #4682b4;">SyncS</span>[gbezier, palette].samples( 10 ) <span style="color: #ee0000;">do</span> |bezier, color|
+  style.fill = color
+  style.stroke = color
+  render.add( bezier, style )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<h2>Offset</h2>
+
+<p>
+As you may have noticed in previous example with offset operator, interpolation with two offset curves gives a nice result,
+but not really what we could expect, that is a set of offset curves with different offset values.
+</p>
+
+<p>
+Well, let's just create an offset geometric variety, then !
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/offsetgeo.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style  = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+support = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+support = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 2, <span style="color: #9b30ff;">:ampl</span>, 0.5 ]
+offsetvariety = <span style="color: #4682b4;">OffsetVariety</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:ampl</span>, 0.2 ]
+
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  y  = (0.0..1.0).rand
+  render.add( offsetvariety.line( xs[0], xs[1], y), style )
+<span style="color: #ee0000;">end</span>
+render.end
+
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+OK! Nice! -> Ahead
+</p>
+
+<h2>Fuseau</h2>
+
+<p>
+Let's now varying offset value along the curve:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/fuseaugeo.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[<span style="color: #9b30ff;">:imagesize</span>,<span style="color: #008b00;">"3cm"</span>]
+style  = <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #4682b4;">Color</span>.blue( 0.3 ), <span style="color: #9b30ff;">:strokewidth</span>, 0.01 ]
+support = <span style="color: #4682b4;">LinearBezier</span>[ <span style="color: #9b30ff;">:support</span>, [<span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">O</span>, <span style="color: #4682b4;">V2D</span>::<span style="color: #4682b4;">X</span>] ]
+support = <span style="color: #4682b4;">Ondulation</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:freq</span>, 2, <span style="color: #9b30ff;">:ampl</span>, 0.5 ]
+fuseauvariety = <span style="color: #4682b4;">FuseauVariety</span>[ <span style="color: #9b30ff;">:support</span>, support, <span style="color: #9b30ff;">:ampl</span>, 0.2 ]
+
+100.times <span style="color: #ee0000;">do</span>
+  xs = (0.0..1.0).ssort().rand( 2 )
+  y  = (0.0..1.0).rand
+  render.add( fuseauvariety.line( xs[0], xs[1], y), style )
+<span style="color: #ee0000;">end</span>
+render.end
+
+</pre></td>
+        </tr>
+      </table>
+
+
+
+  </body>
+</html>

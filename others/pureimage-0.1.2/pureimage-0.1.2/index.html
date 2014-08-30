@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 9.0.0.0 for Windows">
+<TITLE>Ruby/PureImage</TITLE>
+<LINK rel="stylesheet" href="report.css" type="text/css">
+</HEAD>
+<BODY>
+<H1>Ruby/PureImage</H1>
+<DIV class="version">Version 0.1.2</DIV>
+<DIV class="date">2006.10.19</DIV>
+<DIV class="author">NISHIMOTO Keisuke</DIV>
+<H2>1 概要</H2>
+<P>ここ最近，日記サイトでコメントspamが流行し，何らかの対策を講じる必要性に迫られました．</P>
+<P>私は普段tDiaryで日記を書いており，その日記で友人から「フレーズ画像をキーとして認証するフィルタを作ったらどうか」とのヒントを頂き，Rubyで手軽に使える画像処理ライブラリがないか探していました．</P>
+<P>結局多方面から様々な対策方法が発明され，「フレーズ画像を使う」という人間に優しくないユーザーインターフェースを導入する必要はなくなったわけですが，その過程でRubyでの画像処理がちょっとしたハードルが2つあることに気づきました．</P>
+<P>1つは，Rubyの画像処理ライブラリの大半がNativeライブラリを使っており，導入が簡単ではない事でした．もう1つは，ライブラリ特有の使用方法がいまいち理解できず，すぐ使えなかったことにあります．</P>
+<P>どうせ，導入も使い方もわかりにくのであればと，以下の条件で自分で作ってみました．</P>
+<UL>
+  <LI>富豪的プログラミングでお手軽実装
+  <LI>導入を簡単にする為，なるべくファイル数は少なくし，Pure Rubyで作る
+  <LI>自分の理解できる原理でわかりやすいAPIを作る
+</UL>
+<P>あくまでもずぼらなでいい加減な私のための画像処理ライブラリですが，いい感じになってきましたので公開することにします．</P>
+<H2>2 仕様</H2>
+<H3>2.1 機能</H3>
+<P>以下の機能を持っています．</P>
+<UL>
+  <LI>図形の描画
+  <UL>
+    <LI>長方形・円弧・ポリゴンによる図形描画
+    <LI>ビットマップフォントによる文字列描画
+    <LI>任意図形の描画(Shape)
+    <LI>Affine変換
+  </UL>
+  <LI>画像エフェクト
+  <UL>
+    <LI>ImageFilterによる画像エフェクト
+  </UL>
+</UL>
+<H3>2.2 動作環境</H3>
+<P>以下の環境を前提にしています。</P>
+<DL>
+  <DT>Ruby
+  <DD>Ruby 1.8.x 以上(iconv, zlib拡張ライブラリ必須)
+  <DT>OS
+  <DD>Windows, Linux, Macなど 上記 Ruby が動作する OS
+</DL>
+<P>全環境を試していないので、動作しない環境があるかもしれません．</P>
+<H3>2.3 インストール</H3>
+<P>pureimage-src-${PUREIMAGE_VERSION}.tar.gz または，pureimage-full-${PUREIMAGE_VERSION}.tar.gz
+を任意のディレクトリに展開してください．</P>
+<P>${PUREIMAGE_HOME}/lib/pureimage.rb を，${USER_LAND}/lib/ruby/site_ruby/${RUBY_VERSION}/
+にコピーしてください．</P>
+<P>カレントディレクトリなど，パスが通ったディレクトリに配置しても動作すると思います．</P>
+<P>フォントは，使用するスクリプトや，所定のディレクトリにコピーしてください．フォントのパスは，プログラムから明示的に指定します．</P>
+<H3>2.4 プログラミング</H3>
+<P>ごめんなさい．まだ書いていません．</P>
+<P>sampleディレクトリのサンプルソースをご覧下さい．</P>
+<H3>2.5 フォント</H3>
+<P>フォントは，ビットマップフォントを，TrueTypeフォントから生成しています．ビットマップフォントは，独自フォーマットです．</P>
+<P>TrueTypeフォントからビットマップフォントを生成するのにJavaを利用しています．</P>
+<P>独自ビットマップフォントは，フォントメトリクス情報をもち，プロポーショナルな文字描画なども対応します．また内部をUnicodeで保持する事により，漢字等の多バイト文字列などにも対応します．</P>
+<P>ただし，描画文字列自体は，デフォルトエンコードを利用しますので，Rubyを起動するときに，ruby -Ks ... などのように明示的に指定する必要があります．もし指定しない場合は，UTF-8扱いになります．</P>
+<H4>フォントファイルの作成について</H4>
+<P>以下のコマンドを実行してフォントファイルを作成します．</P>
+<PRE>cd ${PUREIMAGE_HOME}
+java lib/pureimage.jar \
+jp.ne.cappuccino.keisuken.tools.pureimage.FontCreator \
+JIS.tbl フォント名 フォントサイズ 出力フォントファイル名</PRE>
+<P>例:</P>
+<PRE>cd pureimage-0.1.1
+java lib/pureimage.jar \
+jp.ne.cappuccino.keisuken.tools.pureimage.FontCreator \
+JIS.tbl &quot;みかちゃん&quot; 20 mikachan.fnt</PRE>
+<H2>2 ダウンロード</H2>
+<P>以下のページからダウンロードできます．</P>
+<P>独自ビットマップフォントは，各自で「2.5 フォント」を参考にして作成してください．</P>
+<DL>
+  <DT>フルパッケージ:
+  <DD>現在削除しています
+  <DT>ソース, ライブラリ:
+  <DD><A href="http://cappuccino.jp/keisuken/ruby/pureimage/pureimage-0.1.2.tar.gz">http://cappuccino.jp/keisuken/ruby/pureimage/pureimage-0.1.2.tar.gz</A> (2MB)
+  <DT>フォントのみ:
+  <DD>現在削除しています
+</DL>
+<H2>3 ライセンス</H2>
+<P><A href="LICENSE.txt">ライセンスファイル</A>を参照してください．</P>
+<UL>
+  <LI>ライセンスは，<A href="http://www.opensource.org/licenses/mit-license.html">MIT license</A> に準じています
+  
+  <LI>商用・非商用に限らずご使用していただけます
+  <LI>西本圭佑は本ソフトウェアの品質についていかなる保証も行っておらず，本ソフトウェアの欠陥及びそれによって発生した損失や損害については一切責任を負いません
+  
+</UL>
+<H3>フォント</H3>
+<P>フォントは，TrueTypeフォントから独自のビットマップフォントを生成しています．</P>
+<P>使用しているTrueTypeフォントは以下のとおりです．</P>
+<DL>
+  <DT>みかちゃんフォント:
+  <DD><A href="http://www001.upp.so-net.ne.jp/mikachan/">http://www001.upp.so-net.ne.jp/mikachan/</A>
+  <DT>さざなみフォント:
+  <DD><A href="http://wiki.fdiary.net/font/?sazanami">http://wiki.fdiary.net/font/?sazanami</A>
+</DL>
+<H2>4 連絡先</H2>
+<p>質問や要望などがありましたら keisuken atmark cappuccino.ne.jp まで内容を書いてお送りください．</p>
+<H2>5 最後に</H2>
+<P>まだ未完成です．APIなどの仕様が大幅に変更される可能性がありますので，使用には十分注意してください．</P>
+<P>Pure Rubyで作られた画像処理ライブラリは，いまのところないようです．一部では反響がありました．</P>
+<P>一般的にこの手の重たい処理をPure Rubyで作ると，パフォーマンス面で問題があります．</P>
+<P>しかし，以下の点で利点があるように思います．</P>
+<UL>
+  <LI>インストールが簡単になる(Nativeライブラリをビルドする必要がない)
+  <LI>ライブラリの拡張や各種画像処理をRubyで書くことができ，すぐ実装・実行できる
+</UL>
+<P>特に汎用的ではないがすぐ実装したい画像処理は，テキスト処理と同じようによくあることと思われます．例えば以下のようなものです．</P>
+<UL>
+  <LI>写真などの画像のサブネールと索引作成
+  <LI>統計グラフの生成
+  <LI>バーコード・QRコードの生成・読取
+</UL>
+<P>最後の項目を除き，このような処理は使い捨てであることが多いと思います．Rubyなどの使い勝手の良いスクリプト言語を利用する事によって，実行時は多少遅くても，実装に伴うコストを最小限に押さえる事により，別のやりたいことに時間が割けます．</P>
+<P>こういう用途に利用される事を目指しています．是非ご利用ください．また，使い勝手や要望などをお寄せください．</P>
+<H2>Appendix</H2>
+<H3>A1 APIリファレンス</H3>
+<P>ごめんなさい．まだ書いていません．</P>
+<H3>A2 履歴</H3>
+<UL>
+  <LI>0.1.2, 2006.10.19
+  <UL>
+    <LI>moduleによる名前空間を設けた(ex.PureImage::Image)
+    <LI>PNGIO#save, #loadにIOを入れられるようにした
+    <UL>
+      <LI>png = PNGIO.new; png.save(image, File.new(&quot;foo.png&quot;, &quot;w&quot;))
+    </UL>
+  </UL>
+  <LI>0.1.1, 2006.02.01
+  <UL>
+    <LI>フォント
+    <UL>
+      <LI>フォントの2次使用問題を回避するためフォントファイルは削除
+      <LI>フォント作成手順追記
+    </UL>
+  </UL>
+  <LI>0.1.0, 2005.07.22
+  <UL>
+    <LI>図形の描画
+    <UL>
+      <LI>文字列描画
+      <LI>長方形，楕円の描画
+      <LI>画像の描画
+    </UL>
+    <LI>エフェクト処理
+    <UL>
+      <LI>Affine変換
+    </UL>
+    <LI>画像入出力
+    <UL>
+      <LI>PNG読込
+      <LI>PNG出力
+    </UL>
+  </UL>
+  <LI>0.0.0, 2005.06.26
+  <UL>
+    <LI>作成し始める
+  </UL>
+</UL>
+<H3>A3 ToDo</H3>
+<UL>
+  <LI>ドキュメント不足の解消
+  <LI>パフォーマンスチューニング
+  <LI>APIをもっとセンス良く
+  <LI>図形描画
+  <UL>
+    <LI>曲線
+    <LI>線パターン
+    <LI>折れ線処理
+    <LI>論理合成
+  </UL>
+  <LI>各種画像ファイルへの対応
+  <UL>
+    <LI>JPEG
+    <LI>GIF
+    <LI>BMP
+  </UL>
+  <LI>画像フィルタの強化
+  <UL>
+    <LI>明るさ・コントラスト調整
+    <LI>彩度・明度調整
+    <LI>Affine変換
+  </UL>
+</UL>
+<DIV class="copyright">Copyright (C) 2005-2006 NISHIMOTO Keisuke. All Right Reserved.</DIV>
+</BODY>
+</HTML>

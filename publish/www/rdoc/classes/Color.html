@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Color</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Color</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/color_rb.html">
+                lib/color.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Vector.html">
+                Vector
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Color.html">Color</a> class
+</p>
+<h1>Basics</h1>
+<p>
+Class <a href="Color.html">Color</a> derives from <a
+href="Vector.html">Vector</a>, and consists in <a
+href="Color.html#M000057">a</a> 4D vector of (0.0..1.0) values, for <a
+href="Color.html#M000066">red</a>, <a href="Color.html#M000065">blue</a>,
+<a href="Color.html#M000069">green</a>, and opacity
+</p>
+<h1>Utilities</h1>
+<p>
+Conversion from <a href="Color.html#M000071">hsv</a> and <a
+href="Color.html#M000072">hsl</a> color spaces available (see this <a
+href="http://en.wikipedia.org/wiki/HSV_color_space">link</a>)
+</p>
+<h1>Future</h1>
+<ul>
+<li>Must use this <a href="https://rubyforge.org/projects/color/">library</a>,
+to avoid effort duplication
+
+</li>
+<li>Must add relative color operations as Nodebox wants to
+
+</li>
+<li>Must optimize 4D vector operations (as C extension ?)
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000057">a</a>&nbsp;&nbsp;
+      <a href="#M000061">a=</a>&nbsp;&nbsp;
+      <a href="#M000056">b</a>&nbsp;&nbsp;
+      <a href="#M000060">b=</a>&nbsp;&nbsp;
+      <a href="#M000064">black</a>&nbsp;&nbsp;
+      <a href="#M000065">blue</a>&nbsp;&nbsp;
+      <a href="#M000062">format255</a>&nbsp;&nbsp;
+      <a href="#M000055">g</a>&nbsp;&nbsp;
+      <a href="#M000059">g=</a>&nbsp;&nbsp;
+      <a href="#M000069">green</a>&nbsp;&nbsp;
+      <a href="#M000072">hsl</a>&nbsp;&nbsp;
+      <a href="#M000071">hsv</a>&nbsp;&nbsp;
+      <a href="#M000053">new</a>&nbsp;&nbsp;
+      <a href="#M000068">orange</a>&nbsp;&nbsp;
+      <a href="#M000054">r</a>&nbsp;&nbsp;
+      <a href="#M000058">r=</a>&nbsp;&nbsp;
+      <a href="#M000063">rand</a>&nbsp;&nbsp;
+      <a href="#M000066">red</a>&nbsp;&nbsp;
+      <a href="#M000073">svg</a>&nbsp;&nbsp;
+      <a href="#M000070">white</a>&nbsp;&nbsp;
+      <a href="#M000067">yellow</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000064.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000064.html');return false;">
+          <span class="method-name">black</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000064">black</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000065.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000065.html');return false;">
+          <span class="method-name">blue</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000065">blue</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000069.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000069.html');return false;">
+          <span class="method-name">green</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000069">green</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000072" class="method-detail">
+        <a name="M000072"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000072.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000072.html');return false;">
+          <span class="method-name">hsl</span><span class="method-args">( h, s, l, a)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+build <a href="Color.html#M000057">a</a> color vector from <a
+href="Color.html#M000072">hsl</a> parametrization (convert from <a
+href="Color.html#M000072">hsl</a> to rgb) h, s, l being between 0.0 and 1.0
+taken from [[<a
+href="http://en.wikipedia.org/wiki/HSV_color_space">en.wikipedia.org/wiki/HSV_color_space</a>]]
+h, s, l must be between 0.0 and 1.0
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000071" class="method-detail">
+        <a name="M000071"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000071.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000071.html');return false;">
+          <span class="method-name">hsv</span><span class="method-args">( h, s, v, a)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+build <a href="Color.html#M000057">a</a> color vector from <a
+href="Color.html#M000071">hsv</a> parametrization (convert from <a
+href="Color.html#M000071">hsv</a> to rgb) h, s, v being between 0.0 and 1.0
+taken from <a
+href="http://en.wikipedia.org/wiki/HSV_color_space">wikipedia</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000053.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000053.html');return false;">
+          <span class="method-name">new</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Color.html">Color</a> builder
+</p>
+<p>
+only allows to build 4D vector, with composants between 0.0 and 1.0
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000068" class="method-detail">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000068.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000068.html');return false;">
+          <span class="method-name">orange</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000068">orange</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000063.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000063.html');return false;">
+          <span class="method-name">rand</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> random color vector, with 1.0
+opacity !!
+</p>
+<pre>
+ Color.rand =&gt; Color[0.2345, 0.987623, 0.4123, 1.0]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000066.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000066.html');return false;">
+          <span class="method-name">red</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000066">red</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000070.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000070.html');return false;">
+          <span class="method-name">white</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000070">white</a> color vector
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000067.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000067.html');return false;">
+          <span class="method-name">yellow</span><span class="method-args">(opacity=1.0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return <a href="Color.html#M000057">a</a> <a
+href="Color.html#M000067">yellow</a> color vector
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000057.html');return false;">
+          <span class="method-name">a</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the opacity composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].r =&gt; 0.4
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000061.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000061.html');return false;">
+          <span class="method-name">a=</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+set the opacity composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].a = 0.5 =&gt; Color[0.1,0.2,0.3,0.5]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000056.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000056.html');return false;">
+          <span class="method-name">b</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the <a href="Color.html#M000065">blue</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].r =&gt; 0.3
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000060.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000060.html');return false;">
+          <span class="method-name">b=</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+set the <a href="Color.html#M000065">blue</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].b = 0.5 =&gt; Color[0.1,0.2,0.5,0.4]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000062.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000062.html');return false;">
+          <span class="method-name">format255</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return an array containing colors on 255 integer format
+</p>
+<pre>
+ Color[0.0,1.0,0.0,1.0].format255 =&gt; [0,255,0,255]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000055.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000055.html');return false;">
+          <span class="method-name">g</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the <a href="Color.html#M000069">green</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].r =&gt; 0.2
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000059.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000059.html');return false;">
+          <span class="method-name">g=</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+set the <a href="Color.html#M000069">green</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].g = 0.5 =&gt; Color[0.1,0.5,0.3,0.4]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000054.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000054.html');return false;">
+          <span class="method-name">r</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the <a href="Color.html#M000066">red</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].r =&gt; 0.1
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000058.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000058.html');return false;">
+          <span class="method-name">r=</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+set the <a href="Color.html#M000066">red</a> composant
+</p>
+<pre>
+ Color[0.1,0.2,0.3,0.4].r = 0.5 =&gt; Color[0.5,0.2,0.3,0.4]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
+
+        <div class="method-heading">
+          <a href="Color.src/M000073.html" target="Code" class="method-signature"
+            onclick="popupCode('Color.src/M000073.html');return false;">
+          <span class="method-name">svg</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+get <a href="Color.html#M000073">svg</a> description of <a
+href="Color.html#M000057">a</a> color
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

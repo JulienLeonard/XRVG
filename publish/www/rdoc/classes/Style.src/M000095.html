@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>svgline (Style)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/style.rb, line 63</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">svgline</span>
+    <span class="ruby-identifier">template</span> = <span class="ruby-value str">'style=&quot;opacity:%opacity%;fill:%fill%;fill-opacity:%fillopacity%;stroke:%stroke%;stroke-width:%strokewidth%;stroke-opacity:%strokeopacity%&quot;'</span>
+    
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">template</span>.<span class="ruby-identifier">subreplace</span>( {<span class="ruby-value str">&quot;%opacity%&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">opacity</span>,
+                                 <span class="ruby-value str">&quot;%fill%&quot;</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">svgfill</span>,
+                                 <span class="ruby-value str">&quot;%fillopacity%&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fillopacity</span>,
+                                 <span class="ruby-value str">&quot;%stroke%&quot;</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">svgstroke</span>,
+                                 <span class="ruby-value str">&quot;%strokewidth%&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strokewidth</span>,
+                                 <span class="ruby-value str">&quot;%strokeopacity%&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">strokeopacity</span>} )
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

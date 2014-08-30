@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Build define file  for Jakarta Ant version 1.4.1.               -->
+<!-- Copyright (c) 2005 NISHIMOTO Keisuke. All Rights Reserved.      -->
+
+<project name="Ruby/PureImage" default="build" basedir=".">
+
+  <property file="build.properties" />
+
+  <property name="src" value="src" />
+  <property name="classes" value="classes" />
+  <property name="api" value="docs/api" />
+  <property name="lib" value="lib" />
+  <property name="samples" value="samples" />
+
+  <property name="classpath" value="${classes}" />
+  <property name="pureimage-jar" value="${lib}/pureimage.jar" />
+
+  <target name="build" depends="compile,api">
+    <jar jarfile="${pureimage-jar}" basedir="${classes}" />
+  </target>
+
+  <target name="release" depends="clean,build">
+    <delete dir="${classes}" />
+  </target>
+
+  <target name="compile">
+    <mkdir dir="${classes}" />
+    <javac
+      debug="${debug}"
+      srcdir="${src}" destdir="${classes}" classpath="${classpath}" />
+  </target>
+
+  <target name="api">
+    <mkdir dir="${api}" />
+    <javadoc
+      sourcepath="${src}" destdir="${api}"
+      packagenames="jp.ne.cappuccino.keisuken.*" />
+  </target>
+
+  <target name="clean">
+    <delete dir="${classes}" />
+    <delete dir="${api}" />
+  </target>
+
+</project>

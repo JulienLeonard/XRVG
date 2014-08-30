@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: xrvg.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>xrvg.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/xrvg.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jan 31 20:33:31 +0100 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>XRVG</h1>
+<p>
+XRVG, as &quot;X Ruby <a href="../../classes/Vector.html">Vector</a>
+Graphics&quot;, is a pure Ruby library whose purpose is to define advanced
+declarative and algorithmic means to generate vector graphics.
+</p>
+<p>
+You may be interested in consulting the following <a
+href="http://xrvg.rubyforge.org/">link</a>, which describes XRVG philosophy
+and capabilities in a more tutoring way.
+</p>
+<p>
+From here, you can browse the following interesting hubs :
+</p>
+<ul>
+<li><a href="http://files/utils_rb.html">utils</a>
+
+</li>
+<li><a href="http://files/shape_rb.html">shape</a>
+
+</li>
+<li><a href="http://files/render_rb.html">render</a>
+
+</li>
+<li><a href="http://files/attributable_rb.html">attributable</a>
+
+</li>
+<li><a href="http://files/samplation_rb.html">samplable</a>
+
+</li>
+</ul>
+<table>
+<tr><td valign="top">Author:</td><td>Julien LEONARD
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright (c) 2008 Julien LEONARD
+
+</td></tr>
+<tr><td valign="top">License:</td><td>MIT licence
+
+</td></tr>
+<tr><td valign="top">Version:</td><td>0.0.1
+
+</td></tr>
+</table>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      enumerator&nbsp;&nbsp;
+      trace&nbsp;&nbsp;
+      assertion&nbsp;&nbsp;
+      samplation&nbsp;&nbsp;
+      attributable&nbsp;&nbsp;
+      interpolation&nbsp;&nbsp;
+      utils&nbsp;&nbsp;
+      geometry2D&nbsp;&nbsp;
+      color&nbsp;&nbsp;
+      frame&nbsp;&nbsp;
+      shape&nbsp;&nbsp;
+      render&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">XRVG_VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0.0.1&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc"><h1>XRVG</h1>
+
+XRVG, as &quot;X Ruby <a href="../../classes/Vector.html">Vector</a>
+Graphics&quot;, is a pure Ruby library whose purpose is to define advanced
+declarative and algorithmic means to generate vector graphics.
+
+<p>
+You may be interested in consulting the following <a
+href="http://xrvg.rubyforge.org/">link</a>, which describes XRVG philosophy
+and capabilities in a more tutoring way.
+</p>
+<p>
+From here, you can browse the following interesting hubs :
+</p>
+<ul>
+<li><a href="http://files/utils_rb.html">utils</a>
+
+</li>
+<li><a href="http://files/shape_rb.html">shape</a>
+
+</li>
+<li><a href="http://files/render_rb.html">render</a>
+
+</li>
+<li><a href="http://files/attributable_rb.html">attributable</a>
+
+</li>
+<li><a href="http://files/samplation_rb.html">samplable</a>
+
+</li>
+</ul>
+<table>
+<tr><td valign="top">Author:</td><td>Julien LEONARD
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright (c) 2008 Julien LEONARD
+
+</td></tr>
+<tr><td valign="top">License:</td><td>MIT licence
+
+</td></tr>
+<tr><td valign="top">Version:</td><td>0.0.1
+
+</td></tr>
+</table>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,877 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+      <head>
+        <title>beziertools.rb - C0 code coverage information</title>
+        <style type='text/css'>body { background-color: rgb(240, 240, 245); }</style>
+        <style type='text/css'>span.cross-ref-title {
+ font-size: 140%;
+}
+span.cross-ref a {
+ text-decoration: none;
+}
+span.cross-ref {
+ background-color:#f3f7fa;
+ border: 1px dashed #333;
+ margin: 1em;
+ padding: 0.5em;
+ overflow: hidden;
+}
+a.crossref-toggle {
+ text-decoration: none;
+}
+span.marked0 {
+ background-color: rgb(185, 210, 200);
+ display: block;
+}
+span.marked1 {
+ background-color: rgb(190, 215, 205);
+ display: block;
+}
+span.inferred0 {
+ background-color: rgb(175, 200, 200);
+ display: block;
+}
+span.inferred1 {
+ background-color: rgb(180, 205, 205);
+ display: block;
+}
+span.uncovered0 {
+ background-color: rgb(225, 110, 110);
+ display: block;
+}
+span.uncovered1 {
+ background-color: rgb(235, 120, 120);
+ display: block;
+}
+span.overview {
+ border-bottom: 8px solid black;
+}
+div.overview {
+ border-bottom: 8px solid black;
+}
+body {
+ font-family: verdana, arial, helvetica;
+}
+div.footer {
+ font-size: 68%;
+ margin-top: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+ margin-bottom: 0.5em;
+}
+h5 {
+ margin-top: 0.5em;
+}
+.hidden {
+ display: none;
+}
+div.separator {
+ height: 10px;
+}
+/* Commented out for better readability, esp. on IE */
+/*
+table tr td, table tr th {
+ font-size: 68%;
+}
+td.value table tr td {
+ font-size: 11px;
+}
+*/
+table.percent_graph {
+ height: 12px;
+ border: #808080 1px solid;
+ empty-cells: show;
+}
+table.percent_graph td.covered {
+ height: 10px;
+ background: #00f000;
+}
+table.percent_graph td.uncovered {
+ height: 10px;
+ background: #e00000;
+}
+table.percent_graph td.NA {
+ height: 10px;
+ background: #eaeaea;
+}
+table.report {
+ border-collapse: collapse;
+ width: 100%;
+}
+table.report td.heading {
+ background: #dcecff;
+ border: #d0d0d0 1px solid;
+ font-weight: bold;
+ text-align: center;
+}
+table.report td.heading:hover {
+ background: #c0ffc0;
+}
+table.report td.text {
+ border: #d0d0d0 1px solid;
+}
+table.report td.value,
+table.report td.lines_total,
+table.report td.lines_code {
+ text-align: right;
+ border: #d0d0d0 1px solid;
+}
+table.report tr.light {
+ background-color: rgb(240, 240, 245);
+}
+table.report tr.dark {
+ background-color: rgb(230, 230, 235);
+}
+</style>
+        <script type='text/javascript'>
+// <![CDATA[
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make cross-references hidden by default
+  document.writeln( "<style type=\"text/css\">span.cross-ref { display: none }</style>" )
+  // ]]>
+</script>
+        <style type='text/css'>span.run0 {
+  background-color: rgb(178, 204, 255);
+  display: block;
+}
+span.run1 {
+  background-color: rgb(178, 206, 255);
+  display: block;
+}
+span.run2 {
+  background-color: rgb(178, 209, 255);
+  display: block;
+}
+span.run3 {
+  background-color: rgb(178, 211, 255);
+  display: block;
+}
+span.run4 {
+  background-color: rgb(178, 214, 255);
+  display: block;
+}
+span.run5 {
+  background-color: rgb(178, 218, 255);
+  display: block;
+}
+span.run6 {
+  background-color: rgb(178, 220, 255);
+  display: block;
+}
+span.run7 {
+  background-color: rgb(178, 223, 255);
+  display: block;
+}
+span.run8 {
+  background-color: rgb(178, 225, 255);
+  display: block;
+}
+span.run9 {
+  background-color: rgb(178, 228, 255);
+  display: block;
+}
+span.run10 {
+  background-color: rgb(178, 232, 255);
+  display: block;
+}
+span.run11 {
+  background-color: rgb(178, 234, 255);
+  display: block;
+}
+span.run12 {
+  background-color: rgb(178, 237, 255);
+  display: block;
+}
+span.run13 {
+  background-color: rgb(178, 239, 255);
+  display: block;
+}
+span.run14 {
+  background-color: rgb(178, 242, 255);
+  display: block;
+}
+span.run15 {
+  background-color: rgb(178, 246, 255);
+  display: block;
+}
+span.run16 {
+  background-color: rgb(178, 248, 255);
+  display: block;
+}
+span.run17 {
+  background-color: rgb(178, 251, 255);
+  display: block;
+}
+span.run18 {
+  background-color: rgb(178, 253, 255);
+  display: block;
+}
+span.run19 {
+  background-color: rgb(178, 255, 253);
+  display: block;
+}
+span.run20 {
+  background-color: rgb(178, 255, 249);
+  display: block;
+}
+span.run21 {
+  background-color: rgb(178, 255, 247);
+  display: block;
+}
+span.run22 {
+  background-color: rgb(178, 255, 244);
+  display: block;
+}
+span.run23 {
+  background-color: rgb(178, 255, 242);
+  display: block;
+}
+span.run24 {
+  background-color: rgb(178, 255, 239);
+  display: block;
+}
+span.run25 {
+  background-color: rgb(178, 255, 235);
+  display: block;
+}
+span.run26 {
+  background-color: rgb(178, 255, 233);
+  display: block;
+}
+span.run27 {
+  background-color: rgb(178, 255, 230);
+  display: block;
+}
+span.run28 {
+  background-color: rgb(178, 255, 228);
+  display: block;
+}
+span.run29 {
+  background-color: rgb(178, 255, 225);
+  display: block;
+}
+span.run30 {
+  background-color: rgb(178, 255, 221);
+  display: block;
+}
+span.run31 {
+  background-color: rgb(178, 255, 219);
+  display: block;
+}
+span.run32 {
+  background-color: rgb(178, 255, 216);
+  display: block;
+}
+span.run33 {
+  background-color: rgb(178, 255, 214);
+  display: block;
+}
+span.run34 {
+  background-color: rgb(178, 255, 211);
+  display: block;
+}
+span.run35 {
+  background-color: rgb(178, 255, 207);
+  display: block;
+}
+span.run36 {
+  background-color: rgb(178, 255, 205);
+  display: block;
+}
+span.run37 {
+  background-color: rgb(178, 255, 202);
+  display: block;
+}
+span.run38 {
+  background-color: rgb(178, 255, 200);
+  display: block;
+}
+span.run39 {
+  background-color: rgb(178, 255, 197);
+  display: block;
+}
+span.run40 {
+  background-color: rgb(178, 255, 193);
+  display: block;
+}
+span.run41 {
+  background-color: rgb(178, 255, 191);
+  display: block;
+}
+span.run42 {
+  background-color: rgb(178, 255, 188);
+  display: block;
+}
+span.run43 {
+  background-color: rgb(178, 255, 186);
+  display: block;
+}
+span.run44 {
+  background-color: rgb(178, 255, 183);
+  display: block;
+}
+span.run45 {
+  background-color: rgb(178, 255, 179);
+  display: block;
+}
+span.run46 {
+  background-color: rgb(179, 255, 178);
+  display: block;
+}
+span.run47 {
+  background-color: rgb(182, 255, 178);
+  display: block;
+}
+span.run48 {
+  background-color: rgb(184, 255, 178);
+  display: block;
+}
+span.run49 {
+  background-color: rgb(187, 255, 178);
+  display: block;
+}
+span.run50 {
+  background-color: rgb(191, 255, 178);
+  display: block;
+}
+span.run51 {
+  background-color: rgb(193, 255, 178);
+  display: block;
+}
+span.run52 {
+  background-color: rgb(196, 255, 178);
+  display: block;
+}
+span.run53 {
+  background-color: rgb(198, 255, 178);
+  display: block;
+}
+span.run54 {
+  background-color: rgb(201, 255, 178);
+  display: block;
+}
+span.run55 {
+  background-color: rgb(205, 255, 178);
+  display: block;
+}
+span.run56 {
+  background-color: rgb(207, 255, 178);
+  display: block;
+}
+span.run57 {
+  background-color: rgb(210, 255, 178);
+  display: block;
+}
+span.run58 {
+  background-color: rgb(212, 255, 178);
+  display: block;
+}
+span.run59 {
+  background-color: rgb(215, 255, 178);
+  display: block;
+}
+span.run60 {
+  background-color: rgb(219, 255, 178);
+  display: block;
+}
+span.run61 {
+  background-color: rgb(221, 255, 178);
+  display: block;
+}
+span.run62 {
+  background-color: rgb(224, 255, 178);
+  display: block;
+}
+span.run63 {
+  background-color: rgb(226, 255, 178);
+  display: block;
+}
+span.run64 {
+  background-color: rgb(229, 255, 178);
+  display: block;
+}
+span.run65 {
+  background-color: rgb(233, 255, 178);
+  display: block;
+}
+span.run66 {
+  background-color: rgb(235, 255, 178);
+  display: block;
+}
+span.run67 {
+  background-color: rgb(238, 255, 178);
+  display: block;
+}
+span.run68 {
+  background-color: rgb(240, 255, 178);
+  display: block;
+}
+span.run69 {
+  background-color: rgb(243, 255, 178);
+  display: block;
+}
+span.run70 {
+  background-color: rgb(247, 255, 178);
+  display: block;
+}
+span.run71 {
+  background-color: rgb(249, 255, 178);
+  display: block;
+}
+span.run72 {
+  background-color: rgb(252, 255, 178);
+  display: block;
+}
+span.run73 {
+  background-color: rgb(255, 255, 178);
+  display: block;
+}
+span.run74 {
+  background-color: rgb(255, 252, 178);
+  display: block;
+}
+span.run75 {
+  background-color: rgb(255, 248, 178);
+  display: block;
+}
+span.run76 {
+  background-color: rgb(255, 246, 178);
+  display: block;
+}
+span.run77 {
+  background-color: rgb(255, 243, 178);
+  display: block;
+}
+span.run78 {
+  background-color: rgb(255, 240, 178);
+  display: block;
+}
+span.run79 {
+  background-color: rgb(255, 238, 178);
+  display: block;
+}
+span.run80 {
+  background-color: rgb(255, 234, 178);
+  display: block;
+}
+span.run81 {
+  background-color: rgb(255, 232, 178);
+  display: block;
+}
+span.run82 {
+  background-color: rgb(255, 229, 178);
+  display: block;
+}
+span.run83 {
+  background-color: rgb(255, 226, 178);
+  display: block;
+}
+span.run84 {
+  background-color: rgb(255, 224, 178);
+  display: block;
+}
+span.run85 {
+  background-color: rgb(255, 220, 178);
+  display: block;
+}
+span.run86 {
+  background-color: rgb(255, 218, 178);
+  display: block;
+}
+span.run87 {
+  background-color: rgb(255, 215, 178);
+  display: block;
+}
+span.run88 {
+  background-color: rgb(255, 212, 178);
+  display: block;
+}
+span.run89 {
+  background-color: rgb(255, 210, 178);
+  display: block;
+}
+span.run90 {
+  background-color: rgb(255, 206, 178);
+  display: block;
+}
+span.run91 {
+  background-color: rgb(255, 204, 178);
+  display: block;
+}
+span.run92 {
+  background-color: rgb(255, 201, 178);
+  display: block;
+}
+span.run93 {
+  background-color: rgb(255, 198, 178);
+  display: block;
+}
+span.run94 {
+  background-color: rgb(255, 196, 178);
+  display: block;
+}
+span.run95 {
+  background-color: rgb(255, 192, 178);
+  display: block;
+}
+span.run96 {
+  background-color: rgb(255, 189, 178);
+  display: block;
+}
+span.run97 {
+  background-color: rgb(255, 187, 178);
+  display: block;
+}
+span.run98 {
+  background-color: rgb(255, 184, 178);
+  display: block;
+}
+span.run99 {
+  background-color: rgb(255, 182, 178);
+  display: block;
+}
+span.run100 {
+  background-color: rgb(255, 178, 178);
+  display: block;
+}
+</style>
+      </head>
+      <body>
+        <h3>C0 code coverage information</h3>
+        <p>Generated on Mon Sep 01 21:25:49 +0200 2008 with <a href='http://eigenclass.org/hiki/rcov'>rcov 0.8.1.2</a>
+        </p>
+        <hr /><pre><span class='marked0'>Code reported as executed by Ruby looks like this...
+</span><span class='marked1'>and this: this line is also marked as covered.
+</span><span class='inferred0'>Lines considered as run by rcov, but not reported by Ruby, look like this,
+</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).
+</span><span class='uncovered0'>Finally, here&apos;s a line marked as not executed.
+</span></pre>                       
+    <table class='report'>
+      <thead>
+        <tr>
+          <td class='heading'>Name</td>
+          <td class='heading'>Total lines</td>
+          <td class='heading'>Lines of code</td>
+          <td class='heading'>Total coverage</td>
+          <td class='heading'>Code coverage</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='light'>
+          <td>
+            <a href='beziertools_rb.html'>beziertools.rb</a>
+          </td>
+          <td class='lines_total'>
+            <tt>246</tt>
+          </td>
+          <td class='lines_code'>
+            <tt>142</tt>
+          </td>
+          <td>
+            <table cellspacing='0' cellpadding='0' align='right'>
+              <tr>
+                <td>
+                  <tt class='coverage_total'>100.0%</tt>&nbsp;</td>
+                <td>
+                  <table cellspacing='0' class='percent_graph' cellpadding='0' width='100'>
+                    <tr>
+                      <td class='covered' width='100' />
+                      <td class='uncovered' width='0' />
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table cellspacing='0' cellpadding='0' align='right'>
+              <tr>
+                <td>
+                  <tt class='coverage_code'>100.0%</tt>&nbsp;</td>
+                <td>
+                  <table cellspacing='0' class='percent_graph' cellpadding='0' width='100'>
+                    <tr>
+                      <td class='covered' width='100' />
+                      <td class='uncovered' width='0' />
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table><pre><span class="inferred0"><a name="line1"></a>  1 # Some BezierBuilder implementations
+</span><span class="inferred1"><a name="line2"></a>  2 # - old-fashioned SimpleBezier
+</span><span class="inferred0"><a name="line3"></a>  3 # - useful BezierLevel
+</span><span class="inferred1"><a name="line4"></a>  4 # - powerful Offset
+</span><span class="inferred0"><a name="line5"></a>  5 # - interesting Ondulation
+</span><span class="inferred1"><a name="line6"></a>  6 # - simple ClosureBezier
+</span><span class="inferred0"><a name="line7"></a>  7 
+</span><span class="marked1"><a name="line8"></a>  8 require 'bezierbuilders'
+</span><span class="inferred0"><a name="line9"></a>  9 
+</span><span class="marked1"><a name="line10"></a> 10 module XRVG
+</span><span class="inferred0"><a name="line11"></a> 11 # = SimpleBezier
+</span><span class="inferred1"><a name="line12"></a> 12 # == Content
+</span><span class="inferred0"><a name="line13"></a> 13 # Simple Bezier interpolator, that builds a multipiece &quot;regular&quot; bezier curve from a list of points
+</span><span class="inferred1"><a name="line14"></a> 14 # == Algo
+</span><span class="inferred0"><a name="line15"></a> 15 # For each point triplet :
+</span><span class="inferred1"><a name="line16"></a> 16 # - tangent vector of the middle point is the vector mean of vector from first to middle and vector frommiddle to last.
+</span><span class="inferred0"><a name="line17"></a> 17 # First and last tangents are computed by symetry
+</span><span class="inferred1"><a name="line18"></a> 18 # == Note
+</span><span class="inferred0"><a name="line19"></a> 19 # FittingBezier is a better class for point bezier interpolation. However, this class is kept mainly for historical reasons.
+</span><span class="marked1"><a name="line20"></a> 20 class SimpleBezier &lt; BezierBuilder
+</span><span class="marked0"><a name="line21"></a> 21   attribute :support, nil, Array
+</span><span class="inferred1"><a name="line22"></a> 22 
+</span><span class="inferred0"><a name="line23"></a> 23   # BezierBuilder overloading: see SimpleBezier description for algorithm
+</span><span class="marked1"><a name="line24"></a> 24   def compute( )
+</span><span class="marked0"><a name="line25"></a> 25     points = @support
+</span><span class="marked1"><a name="line26"></a> 26     if points.length &lt; 2
+</span><span class="marked0"><a name="line27"></a> 27       Kernel::raise(&quot;SimpleBezier support must have at least two points&quot;)
+</span><span class="marked1"><a name="line28"></a> 28     elsif points.length == 2
+</span><span class="marked0"><a name="line29"></a> 29       return LinearBezier.build( :support, points).data
+</span><span class="inferred1"><a name="line30"></a> 30     end
+</span><span class="inferred0"><a name="line31"></a> 31     
+</span><span class="marked1"><a name="line32"></a> 32     result = Array.new
+</span><span class="marked0"><a name="line33"></a> 33     p1      = points[0]
+</span><span class="marked1"><a name="line34"></a> 34     v1      = V2D::O
+</span><span class="marked0"><a name="line35"></a> 35     cpiece = [:vector, p1, v1]
+</span><span class="inferred1"><a name="line36"></a> 36     
+</span><span class="marked0"><a name="line37"></a> 37     points.triplets do |p1, p2, p3|
+</span><span class="marked1"><a name="line38"></a> 38       v = ((p2 - p1)..( p3 - p2 )).middle * 1.0 / 3.0
+</span><span class="marked0"><a name="line39"></a> 39       result.push( cpiece + [p2, v.reverse] )
+</span><span class="marked1"><a name="line40"></a> 40       cpiece = [:vector, p2, v]
+</span><span class="inferred0"><a name="line41"></a> 41     end
+</span><span class="inferred1"><a name="line42"></a> 42 
+</span><span class="marked0"><a name="line43"></a> 43     pr2 = points[-1]
+</span><span class="marked1"><a name="line44"></a> 44     vr2 = V2D::O
+</span><span class="marked0"><a name="line45"></a> 45     result.push( cpiece + [pr2, vr2] )
+</span><span class="inferred1"><a name="line46"></a> 46 
+</span><span class="inferred0"><a name="line47"></a> 47     # compute first and last piece again, by symetry
+</span><span class="marked1"><a name="line48"></a> 48     piece0 = Bezier.single( *result[0] )
+</span><span class="marked0"><a name="line49"></a> 49     p1, v1, p2, v2 = piece0.pointlist(:vector)
+</span><span class="marked1"><a name="line50"></a> 50     pv     = (p2 - p1)
+</span><span class="marked0"><a name="line51"></a> 51     angle  = v2.angle - pv.angle 
+</span><span class="marked1"><a name="line52"></a> 52     v1     = (-v2).rotate( -2.0 * angle )
+</span><span class="marked0"><a name="line53"></a> 53     result[0] = [:vector, p1, v1, p2, v2]
+</span><span class="inferred1"><a name="line54"></a> 54 
+</span><span class="marked0"><a name="line55"></a> 55     piecel = Bezier.single( *result[-1] )
+</span><span class="marked1"><a name="line56"></a> 56     p1, v1, p2, v2 = piecel.pointlist(:vector)
+</span><span class="marked0"><a name="line57"></a> 57     pv     = (p2 - p1)
+</span><span class="marked1"><a name="line58"></a> 58     angle  = v1.angle - pv.angle 
+</span><span class="marked0"><a name="line59"></a> 59     v2     = (-v1).rotate(  -2.0 * angle )
+</span><span class="marked1"><a name="line60"></a> 60     result[-1] = [:vector, p1, v1, p2, v2]
+</span><span class="inferred0"><a name="line61"></a> 61 
+</span><span class="marked1"><a name="line62"></a> 62     return result
+</span><span class="inferred0"><a name="line63"></a> 63   end
+</span><span class="inferred1"><a name="line64"></a> 64 end
+</span><span class="inferred0"><a name="line65"></a> 65 
+</span><span class="inferred1"><a name="line66"></a> 66 #
+</span><span class="inferred0"><a name="line67"></a> 67 # Interpolation extension with SimpleBezier
+</span><span class="inferred1"><a name="line68"></a> 68 #
+</span><span class="marked0"><a name="line69"></a> 69 module Interpolation
+</span><span class="inferred1"><a name="line70"></a> 70 
+</span><span class="marked0"><a name="line71"></a> 71   def compute_simplebezier
+</span><span class="marked1"><a name="line72"></a> 72     points = self.samplelist.foreach(2).map { |index, value| V2D[index,value] }
+</span><span class="marked0"><a name="line73"></a> 73     @simplebezier = SimpleBezier[ :support, points ]
+</span><span class="inferred1"><a name="line74"></a> 74   end
+</span><span class="inferred0"><a name="line75"></a> 75   
+</span><span class="marked1"><a name="line76"></a> 76   def getcurve
+</span><span class="marked0"><a name="line77"></a> 77     if not @simplebezier
+</span><span class="marked1"><a name="line78"></a> 78       self.compute_simplebezier
+</span><span class="inferred0"><a name="line79"></a> 79     end
+</span><span class="marked1"><a name="line80"></a> 80     return @simplebezier
+</span><span class="inferred0"><a name="line81"></a> 81   end
+</span><span class="inferred1"><a name="line82"></a> 82 
+</span><span class="marked0"><a name="line83"></a> 83   def simplebezier( dindex )
+</span><span class="marked1"><a name="line84"></a> 84     return self.getcurve.sample( dindex ).y
+</span><span class="marked0"><a name="line85"></a> 85   end
+</span><span class="inferred1"><a name="line86"></a> 86 
+</span><span class="inferred0"><a name="line87"></a> 87 end
+</span><span class="inferred1"><a name="line88"></a> 88 
+</span><span class="inferred0"><a name="line89"></a> 89 
+</span><span class="inferred1"><a name="line90"></a> 90 # = Offset bezier builder
+</span><span class="inferred0"><a name="line91"></a> 91 # == Content
+</span><span class="inferred1"><a name="line92"></a> 92 # Generic offset bezier builder.
+</span><span class="inferred0"><a name="line93"></a> 93 # == Attributes
+</span><span class="inferred1"><a name="line94"></a> 94 #  attribute :support, nil, Curve
+</span><span class="inferred0"><a name="line95"></a> 95 #  attribute :abscissasampler, (0.0..1.0), Samplable
+</span><span class="inferred1"><a name="line96"></a> 96 #  attribute :ampl, 0.5, :samplable
+</span><span class="inferred0"><a name="line97"></a> 97 #  attribute :nsamples, 100
+</span><span class="marked1"><a name="line98"></a> 98 class Offset &lt; FitBezierBuilder
+</span><span class="marked0"><a name="line99"></a> 99   attribute :support, nil, Curve
+</span><span class="marked1"><a name="line100"></a>100   attribute :abscissasampler, (0.0..1.0), Samplable
+</span><span class="marked0"><a name="line101"></a>101   attribute :ampl, 0.5, :samplable
+</span><span class="marked1"><a name="line102"></a>102   attribute :nsamples, 100
+</span><span class="inferred0"><a name="line103"></a>103 
+</span><span class="inferred1"><a name="line104"></a>104   # overload FitBezierBuilder.points to compute Offset points
+</span><span class="inferred0"><a name="line105"></a>105   #
+</span><span class="inferred1"><a name="line106"></a>106   # Algo: for each sample, compute point, normal and amp, and newpoint = point + normal.norm * ampl
+</span><span class="marked0"><a name="line107"></a>107   def points
+</span><span class="marked1"><a name="line108"></a>108     result = []
+</span><span class="marked0"><a name="line109"></a>109     SyncS[self.abscissasampler, self.ampl].samples( self.nsamples) do |abscissa, amplsample|
+</span><span class="marked1"><a name="line110"></a>110       frame = self.support.frame( abscissa )
+</span><span class="marked0"><a name="line111"></a>111       result &lt;&lt; frame.center + frame.vector.ortho.norm * amplsample
+</span><span class="inferred1"><a name="line112"></a>112     end
+</span><span class="marked0"><a name="line113"></a>113     return result
+</span><span class="inferred1"><a name="line114"></a>114   end
+</span><span class="inferred0"><a name="line115"></a>115 end
+</span><span class="inferred1"><a name="line116"></a>116 
+</span><span class="inferred0"><a name="line117"></a>117 # = Fuseau bezier builder
+</span><span class="inferred1"><a name="line118"></a>118 # == Content
+</span><span class="inferred0"><a name="line119"></a>119 # Just shortcut class for Offset with :ampl = (1.0..0.0)
+</span><span class="inferred1"><a name="line120"></a>120 # == Attributes
+</span><span class="inferred0"><a name="line121"></a>121 #    attribute :maxwidth, 0.1
+</span><span class="marked1"><a name="line122"></a>122 class Fuseau &lt; Offset
+</span><span class="marked0"><a name="line123"></a>123   attribute :maxwidth, 0.1
+</span><span class="inferred1"><a name="line124"></a>124 
+</span><span class="inferred0"><a name="line125"></a>125   # overload Offset.ampl method by returning (self.maxwidth..0.0)
+</span><span class="marked1"><a name="line126"></a>126   def ampl
+</span><span class="marked0"><a name="line127"></a>127     return (self.maxwidth..0.0)
+</span><span class="marked1"><a name="line128"></a>128   end
+</span><span class="inferred0"><a name="line129"></a>129 end
+</span><span class="inferred1"><a name="line130"></a>130 
+</span><span class="inferred0"><a name="line131"></a>131 
+</span><span class="inferred1"><a name="line132"></a>132 
+</span><span class="inferred0"><a name="line133"></a>133 # = BezierLevel bezier builder
+</span><span class="inferred1"><a name="line134"></a>134 # == Content
+</span><span class="inferred0"><a name="line135"></a>135 # Compute &quot;roller coaster&quot; bezier curves
+</span><span class="inferred1"><a name="line136"></a>136 #
+</span><span class="inferred0"><a name="line137"></a>137 # Can be used as a x-progressing curve, that is as an interpolation curve
+</span><span class="inferred1"><a name="line138"></a>138 # == Attributes
+</span><span class="inferred0"><a name="line139"></a>139 #  attribute :samplelist, [], Array
+</span><span class="inferred1"><a name="line140"></a>140 # :samplelist must contain pairs of cartesien coords [x1,y1,x2,y2,...], x between 0.0 and 1.0 (as for interpolator)
+</span><span class="marked0"><a name="line141"></a>141 class BezierLevel &lt; BezierBuilder
+</span><span class="marked1"><a name="line142"></a>142   attribute :samplelist, [], Array
+</span><span class="inferred0"><a name="line143"></a>143 
+</span><span class="inferred1"><a name="line144"></a>144   # Overload BezierBuilder build method
+</span><span class="inferred0"><a name="line145"></a>145   #
+</span><span class="inferred1"><a name="line146"></a>146   # Algo: simply interpolate [x,y] couples as V2D, with SimpleBezier bezier builder
+</span><span class="marked0"><a name="line147"></a>147   def BezierLevel.build( *args )
+</span><span class="marked1"><a name="line148"></a>148     builder = BezierLevel.new( *args )
+</span><span class="marked0"><a name="line149"></a>149     points = []
+</span><span class="marked1"><a name="line150"></a>150     builder.samplelist.foreach do |x,y|
+</span><span class="marked0"><a name="line151"></a>151       points &lt;&lt; V2D[x,y]
+</span><span class="inferred1"><a name="line152"></a>152     end
+</span><span class="marked0"><a name="line153"></a>153     return SimpleBezier[ :support, points ]
+</span><span class="inferred1"><a name="line154"></a>154   end
+</span><span class="inferred0"><a name="line155"></a>155 end
+</span><span class="inferred1"><a name="line156"></a>156 
+</span><span class="inferred0"><a name="line157"></a>157 # = ClosureBezier bezier builder
+</span><span class="inferred1"><a name="line158"></a>158 # == Content
+</span><span class="inferred0"><a name="line159"></a>159 # Simple bezier operator that take a list of beziers and produce a concatenate multipieces closed bezier curve.
+</span><span class="inferred1"><a name="line160"></a>160 # Missing segments are completed with lines
+</span><span class="marked0"><a name="line161"></a>161 class ClosureBezier &lt; BezierBuilder
+</span><span class="marked1"><a name="line162"></a>162   attribute :bezierlist
+</span><span class="inferred0"><a name="line163"></a>163 
+</span><span class="inferred1"><a name="line164"></a>164   # BezierBuilder compute overloading
+</span><span class="marked0"><a name="line165"></a>165   def compute
+</span><span class="marked1"><a name="line166"></a>166     result = []
+</span><span class="marked0"><a name="line167"></a>167     result += self.bezierlist[0].pieces
+</span><span class="marked1"><a name="line168"></a>168     self.bezierlist[1..-1].each do |bezier|
+</span><span class="marked0"><a name="line169"></a>169       lastpoint = result[-1].lastpoint
+</span><span class="marked1"><a name="line170"></a>170       newpoint  = bezier.firstpoint
+</span><span class="marked0"><a name="line171"></a>171       if not V2D.vequal?( lastpoint, newpoint )
+</span><span class="marked1"><a name="line172"></a>172 	result += LinearBezier[ :support, [lastpoint, newpoint]].pieces
+</span><span class="inferred0"><a name="line173"></a>173       end
+</span><span class="marked1"><a name="line174"></a>174       result += bezier.pieces
+</span><span class="inferred0"><a name="line175"></a>175     end
+</span><span class="marked1"><a name="line176"></a>176     lastpoint = result[-1].lastpoint
+</span><span class="marked0"><a name="line177"></a>177     newpoint  = result[0].firstpoint
+</span><span class="marked1"><a name="line178"></a>178     if not V2D.vequal?( lastpoint, newpoint )
+</span><span class="marked0"><a name="line179"></a>179       result += LinearBezier[ :support, [lastpoint, newpoint]].pieces
+</span><span class="inferred1"><a name="line180"></a>180     end
+</span><span class="marked0"><a name="line181"></a>181     result = result.map {|piece| piece.data}
+</span><span class="inferred1"><a name="line182"></a>182     # Trace(&quot;result #{result.inspect}&quot;)
+</span><span class="marked0"><a name="line183"></a>183     return result
+</span><span class="inferred1"><a name="line184"></a>184   end
+</span><span class="inferred0"><a name="line185"></a>185 end
+</span><span class="inferred1"><a name="line186"></a>186 
+</span><span class="inferred0"><a name="line187"></a>187 # = Ondulation bezier builder
+</span><span class="inferred1"><a name="line188"></a>188 # == Content
+</span><span class="inferred0"><a name="line189"></a>189 # Generic ondulation bezier builder.
+</span><span class="inferred1"><a name="line190"></a>190 # == Attributes
+</span><span class="inferred0"><a name="line191"></a>191 #  attribute :support, nil, Curve
+</span><span class="inferred1"><a name="line192"></a>192 #  attribute :ampl, 0.5, :samplable
+</span><span class="inferred0"><a name="line193"></a>193 #  attribute :abscissasampler, (0.0..1.0), Samplable
+</span><span class="inferred1"><a name="line194"></a>194 #  attribute :freq, 10
+</span><span class="inferred0"><a name="line195"></a>195 # :support is a Curve
+</span><span class="inferred1"><a name="line196"></a>196 # :abscissas must be a Float Samplable, as (0.0..1.0).geo(3.0)
+</span><span class="inferred0"><a name="line197"></a>197 # :ampl can be a constant or a sampler
+</span><span class="inferred1"><a name="line198"></a>198 # :freq is the number of oscillations to be computed
+</span><span class="marked0"><a name="line199"></a>199 class Ondulation &lt; BezierBuilder
+</span><span class="marked1"><a name="line200"></a>200   attribute :support, nil, Curve
+</span><span class="marked0"><a name="line201"></a>201   attribute :ampl, 0.5, :samplable
+</span><span class="marked1"><a name="line202"></a>202   attribute :abscissasampler, (0.0..1.0), Samplable
+</span><span class="marked0"><a name="line203"></a>203   attribute :freq, 10
+</span><span class="inferred1"><a name="line204"></a>204 
+</span><span class="inferred0"><a name="line205"></a>205   # atomic pattern computation
+</span><span class="inferred1"><a name="line206"></a>206   # 
+</span><span class="marked0"><a name="line207"></a>207   def compute_arc( abs1, abs2, amplitude, sens )
+</span><span class="marked1"><a name="line208"></a>208     mabs = (abs1 + abs2)/2.0
+</span><span class="marked0"><a name="line209"></a>209     p1, halfpoint, p2 = self.support.points( [abs1, mabs, abs2] )
+</span><span class="inferred1"><a name="line210"></a>210     # Trace(&quot;mabs #{mabs} abs1 #{abs1} abs2 #{abs2} halfpoint #{halfpoint.inspect} p1 #{p1.inspect} p2 #{p2.inspect}&quot;)
+</span><span class="marked0"><a name="line211"></a>211     halfnormal = self.support.normal( mabs ).norm * ( sens * amplitude * (p2 - p1).length)
+</span><span class="inferred1"><a name="line212"></a>212     # Trace(&quot;halfnormal #{halfnormal.inspect}&quot;)
+</span><span class="marked0"><a name="line213"></a>213     newpoint = halfpoint + halfnormal
+</span><span class="marked1"><a name="line214"></a>214     tpoint = halfpoint + halfnormal * 3.0
+</span><span class="marked0"><a name="line215"></a>215     t1 = (tpoint - p1 ) / 6.0
+</span><span class="marked1"><a name="line216"></a>216     t2 = (tpoint - p2 ) / 6.0
+</span><span class="inferred0"><a name="line217"></a>217     # Trace(&quot;newpoint #{newpoint.inspect} p1 #{p1.inspect} (newpoint - p1) #{(newpoint - p1).inspect}&quot;)
+</span><span class="marked1"><a name="line218"></a>218     halftangent = self.support.tangent( mabs ).norm * (newpoint - p1).length / 3.0
+</span><span class="marked0"><a name="line219"></a>219     halftangent = self.support.tangent( mabs ).norm * (p2 - p1).length / 3.0
+</span><span class="inferred1"><a name="line220"></a>220     # Trace(&quot;halftangent #{halftangent.inspect} t1 #{t1.inspect} t2 #{t2.inspect}&quot;)
+</span><span class="marked0"><a name="line221"></a>221     return [[:vector, p1, t1, newpoint, -halftangent], [:vector, newpoint, halftangent, p2, t2]]
+</span><span class="inferred1"><a name="line222"></a>222   end
+</span><span class="inferred0"><a name="line223"></a>223   
+</span><span class="marked1"><a name="line224"></a>224   def compute_interpol( abs1, abs2, amplitude, sens )
+</span><span class="marked0"><a name="line225"></a>225     orientation = amplitude &gt; 0.0 ? 1.0 : -1.0
+</span><span class="marked1"><a name="line226"></a>226     arc = Bezier.multi( self.compute_arc( abs1, abs2, orientation, sens ) )
+</span><span class="marked0"><a name="line227"></a>227     subsupport = self.support.subbezier( abs1, abs2 )
+</span><span class="marked1"><a name="line228"></a>228     return InterBezier[ :bezierlist, [0.0, subsupport, 1.0, arc] ].sample( amplitude.abs ).data
+</span><span class="inferred0"><a name="line229"></a>229   end
+</span><span class="inferred1"><a name="line230"></a>230 
+</span><span class="inferred0"><a name="line231"></a>231   # algo : for each abscissa, 0.0 of the curve (given the normal)
+</span><span class="inferred1"><a name="line232"></a>232   #    and for each mean abscissa, :amp normal
+</span><span class="marked0"><a name="line233"></a>233   def compute
+</span><span class="marked1"><a name="line234"></a>234     abscissas = self.abscissasampler.samples( self.freq + 1 )
+</span><span class="marked0"><a name="line235"></a>235     sens = 1.0
+</span><span class="marked1"><a name="line236"></a>236     pieces = []
+</span><span class="marked0"><a name="line237"></a>237     [abscissas.pairs, self.ampl.samples( self.freq )].forzip do |abspair, amplitude|
+</span><span class="marked1"><a name="line238"></a>238       abs1, abs2 = abspair
+</span><span class="marked0"><a name="line239"></a>239       pieces += self.compute_interpol( abs1, abs2, amplitude, sens )
+</span><span class="marked1"><a name="line240"></a>240       sens *= -1.0
+</span><span class="inferred0"><a name="line241"></a>241     end
+</span><span class="marked1"><a name="line242"></a>242     return pieces
+</span><span class="inferred0"><a name="line243"></a>243   end
+</span><span class="inferred1"><a name="line244"></a>244 end
+</span><span class="inferred0"><a name="line245"></a>245 
+</span><span class="inferred1"><a name="line246"></a>246 end # XRVG
+</span></pre><hr />    <p>Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'>rcov code coverage analysis tool for Ruby</a> version 0.8.1.2.</p><p>
+          <a href='http://validator.w3.org/check/referer'>
+            <img src='http://www.w3.org/Icons/valid-xhtml10' height='31' alt='Valid XHTML 1.0!' width='88' />
+          </a>
+          <a href='http://jigsaw.w3.org/css-validator/check/referer'>
+            <img src='http://jigsaw.w3.org/css-validator/images/vcss' alt='Valid CSS!' style='border:0;width:88px;height:31px' />
+          </a>
+        </p>
+      </body>
+    </html>

@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>XRVG base types extension</title>
+    <meta name="generator" content="muse.el">
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=iso-8859-1">
+    <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/styles.css" />
+  </head>
+  <body>
+  <h1>XRVG base types extension</h1>
+
+<p>
+XRVG reuses and extends some Ruby base classes. In particular, it largely extends the Range class, to make it a central part  of the toolkit.
+</p>
+
+<h2>General syntaxic sugar</h2>
+
+<p>
+XRVG adds several syntaxic sugar rules to Ruby:
+<ul>
+<li>class are made callable with the [] syntax (shorter and more eye-catching) </li>
+<li>an Attributable module has been defined to extend the ::attr_accessor functionality, and provides parametric names to class builder arguments </li>
+</ul>
+
+</p>
+
+<p>
+A typical XRVG script then looks as follows:
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/palette_circle.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[ <span style="color: #9b30ff;">:filename</span>, <span style="color: #008b00;">"palette_circle.svg"</span>, <span style="color: #9b30ff;">:background</span>, <span style="color: #008b00;">"white"</span> ]
+
+palette  = <span style="color: #4682b4;">Palette</span>[ <span style="color: #9b30ff;">:colorlist</span>, [  0.0, <span style="color: #4682b4;">Color</span>.black,  1.0 ,  <span style="color: #4682b4;">Color</span>.blue] ]
+<span style="color: #4682b4;">SyncS</span>[<span style="color: #4682b4;">Circle</span>[], palette, (0.1..0.02).random()].samples(25) <span style="color: #ee0000;">do</span> |point, color, radius|
+  render.add( <span style="color: #4682b4;">Circle</span>[ <span style="color: #9b30ff;">:center</span>, point, <span style="color: #9b30ff;">:radius</span>, radius ], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, color ])
+<span style="color: #ee0000;">end</span>
+
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<h2>Range class extensions</h2>
+
+<h3>Design considerations</h3>
+
+<p>
+In Ruby, a Range object represents a FINITE set of ordered values, "ranging" from one boundary to another, without hole. You can define for example integer ranges, character ranges, or more generally ranges of everything that can be ordered and from which a "next" element can be computed (to make sense of the "no hole" property). You can by extension define floats range, providing the definition of the "successor" operation.
+</p>
+
+<p>
+By contrast, XRVG considers a float range as a CONTINUOUS range of float values between two included boundaries, corresponding to the mathematical definition of a (closed) continuous interval of real values. Ideally, XRVG should have defined another class for this purpose, but to make available the quite useful (a..b) notation, it has been preferred to extend Range class applicability (against coherency :-(.
+</p>
+
+<p>
+Range's extension is realized through two modules :
+<ul>
+<li>the Samplable module, that defines methods to compute values from a Range object (that is sampling it). </li>
+<li>the Splittable module, that defines methods to compute sub ranges from a Range object (and so for example compute "splits" of it). </li>
+</ul>
+
+</p>
+
+<h3>Consequences</h3>
+
+<p>
+We are not going to extensively describe Samplable and Splittable modules (report to <a href="XRVGCoreDesign.html">design</a> page for further insights). 
+The purpose here is just to highlight some practical features added by these modules on the Range class.
+</p>
+
+
+<center>
+<p><img src="images/range_examples.png" alt=""></p>
+</center>
+
+<pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+<span style="color: #0000cd;"># </span><span style="color: #0000cd;">Samplable module
+</span>(1.0..2.0).sample(0.5);      <span style="color: #0000cd;">#=&gt; 1.5
+</span>(1.0..2.0).samples( 3 );     <span style="color: #0000cd;">#=&gt; [1.0, 1.5, 2.0]
+</span>(1.0..2.0).mean;             <span style="color: #0000cd;">#=&gt; 1.5; equiv to sample(0.5)
+</span>(1.0..2.0).middle;           <span style="color: #0000cd;">#=&gt; alias for previous
+</span>(1.0..2.0).rand;             <span style="color: #0000cd;">#=&gt; random value in range
+</span>(1.0..2.0).rand( 2 );        <span style="color: #0000cd;">#=&gt; [rand1, rand2] in range
+</span>(1.0..2.0).complement(1.2);  <span style="color: #0000cd;">#=&gt; 1.8
+</span>(1.0..2.0).abscissa(1.2);    <span style="color: #0000cd;">#=&gt; 0.2; inverse of sample
+</span>
+<span style="color: #0000cd;"># </span><span style="color: #0000cd;">Splittable module
+</span>(1.0..2.0).split(0.2,0.3);    <span style="color: #0000cd;">#=&gt; (1.2..1.3)
+</span>(1.0..2.0).splits( 2 );       <span style="color: #0000cd;">#=&gt; [(1.0..1.5),(1.5..2.0)]
+</span>
+</pre>
+<h3>Additional methods</h3>
+
+<p>
+Just to highlight some other features you may find useful
+</p>
+
+
+<center>
+<p><img src="images/range_examples2.png" alt=""></p>
+</center>
+
+<pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+<span style="color: #4682b4;">Range</span>.<span style="color: #4682b4;">O</span>;                   <span style="color: #0000cd;">#=&gt; (0.0..1.0)
+</span><span style="color: #4682b4;">Range</span>.<span style="color: #4682b4;">Angle</span>;               <span style="color: #0000cd;">#=&gt; (0.0..2*Math::PI)
+</span>(1.0..2.0).reverse;        <span style="color: #0000cd;">#=&gt; (2.0..1.0)
+</span>(1.0..2.0).sym;            <span style="color: #0000cd;">#=&gt; (0.0..2.0)
+</span>(1.0..2.0).symend;         <span style="color: #0000cd;">#=&gt; (1.0..3.0)
+</span>(1.0..2.0).size;           <span style="color: #0000cd;">#=&gt; 1.0
+</span>(1.0..2.0).translate(0.3); <span style="color: #0000cd;">#=&gt; (1.3..2.3)
+</span>
+</pre>
+<h2>Array class extensions</h2>
+
+<p>
+Ruby Array class has also been extended for XRVG to provide "advanced" iterator methods
+</p>
+
+<p>
+Standard Ruby Array can be augmented by the Enumerable module. When activated, this feature enables the use of the .enum_slice and .enum_cons methods, to enumerate sublists from an enumerable object.
+</p>
+
+<p>
+To provide a more intuitive syntax, XRVG defines a new interface on these two methods, with the .foreach and .uplets operators. In particular, these operators allow the implicit declaration of the size of the iterated sublist, by the arity of a block.
+</p>
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/foreach.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[ <span style="color: #9b30ff;">:filename</span>, <span style="color: #008b00;">"foreach.svg"</span>, <span style="color: #9b30ff;">:background</span>, <span style="color: #008b00;">"white"</span> ]
+<span style="color: #4682b4;">Circle</span>[].samples(10).foreach <span style="color: #ee0000;">do</span> |p1,p2|
+  render.add( <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, [p1,p2] ], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #008b00;">"black"</span>, <span style="color: #9b30ff;">:strokewidth</span>, 0.1 ] )
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, p1, <span style="color: #9b30ff;">:radius</span>, 0.1], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.red ] )
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, p2, <span style="color: #9b30ff;">:radius</span>, 0.2], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.blue ] )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<table class="xrvgexample" cellpadding="0" cellspacing="0" border="0" width="100%" summary="">
+	<tr>
+          <td class="xrvgimage"  align="center" nowrap="nowrap"  border="0">
+<center>
+<p><img src="images/uplets.png" alt=""></p>
+</center>
+
+</td>
+	  <td class="xrvgscript" align="left"   nowrap="nowrap"  border="0"><pre class="src">
+require <span style="color: #008b00;">'xrvg'</span>
+include <span style="color: #4682b4;">XRVG</span>
+
+render = <span style="color: #4682b4;">SVGRender</span>[ <span style="color: #9b30ff;">:filename</span>, <span style="color: #008b00;">"uplets.svg"</span>, <span style="color: #9b30ff;">:background</span>, <span style="color: #008b00;">"white"</span> ]
+<span style="color: #4682b4;">Circle</span>[].samples(10).uplets <span style="color: #ee0000;">do</span> |p1,p2|
+  render.add( <span style="color: #4682b4;">Line</span>[ <span style="color: #9b30ff;">:points</span>, [p1,p2]], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:stroke</span>, <span style="color: #008b00;">"black"</span>, <span style="color: #9b30ff;">:strokewidth</span>, 0.1 ] )
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, p1, <span style="color: #9b30ff;">:radius</span>, 0.1], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.red ] )
+  render.add( <span style="color: #4682b4;">Circle</span>[<span style="color: #9b30ff;">:center</span>, p2, <span style="color: #9b30ff;">:radius</span>, 0.2], <span style="color: #4682b4;">Style</span>[ <span style="color: #9b30ff;">:fill</span>, <span style="color: #4682b4;">Color</span>.blue ] )
+<span style="color: #ee0000;">end</span>
+render.end
+</pre></td>
+        </tr>
+      </table>
+
+
+
+<p>
+Please report to the reference page for further insights.
+
+  </body>
+</html>

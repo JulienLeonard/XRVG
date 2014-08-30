@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Line</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Line</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/shape_rb.html">
+                lib/shape.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Curve.html">
+                Curve
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Line.html">Line</a> class
+</p>
+<h1>Intro</h1>
+<p>
+Used to draw polylines and polygons
+</p>
+<h1>Attributes</h1>
+<pre>
+ attribute :exts, [Point[0.0, 0.0], Point[1.0, 1.0]]
+</pre>
+<h1>Example</h1>
+<pre>
+ line = Line[ :exts, [Point::O, Point::X] ]
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000119">apply_sample</a>&nbsp;&nbsp;
+      <a href="#M000113">frame</a>&nbsp;&nbsp;
+      <a href="#M000111">length</a>&nbsp;&nbsp;
+      <a href="#M000112">point</a>&nbsp;&nbsp;
+      <a href="#M000117">reverse</a>&nbsp;&nbsp;
+      <a href="#M000118">svg</a>&nbsp;&nbsp;
+      <a href="#M000114">tangent</a>&nbsp;&nbsp;
+      <a href="#M000116">translate</a>&nbsp;&nbsp;
+      <a href="#M000115">viewbox</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Samplable.html">Samplable</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <span class="method-name">apply_sample</span><span class="method-args">(abscissa)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Line.html#M000112">point</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000113.html');return false;">
+          <span class="method-name">frame</span><span class="method-args">(abscissa)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute line <a href="Line.html#M000113">frame</a> at abscissa
+</p>
+<p>
+for the moment, <a href="Line.html#M000113">frame</a> rotation is always
+0.0, and scale always 1.0
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000111.html');return false;">
+          <span class="method-name">length</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the total <a href="Line.html#M000111">length</a> of the polyline
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000112.html');return false;">
+          <span class="method-name">point</span><span class="method-args">(abscissa)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute line <a href="Line.html#M000112">point</a> at abscissa
+</p>
+<pre>
+  Line[ :exts, [Point::O, Point::X] ].point( 0.3 ) =&gt; Vector[0.0,0.3]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000117.html');return false;">
+          <span class="method-name">reverse</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Line.html#M000117">reverse</a> a line
+</p>
+<p>
+return a new line with :exts reversed
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000118.html');return false;">
+          <span class="method-name">svg</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return line <a href="Line.html#M000118">svg</a> description
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000114.html');return false;">
+          <span class="method-name">tangent</span><span class="method-args">(abscissa)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute line <a href="Line.html#M000114">tangent</a> at abscissa
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000116.html');return false;">
+          <span class="method-name">translate</span><span class="method-args">( v )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Line.html#M000116">translate</a> a line of v offset, v being a
+vector
+</p>
+<p>
+return a new line with every <a href="Line.html#M000112">point</a> of :exts
+translated
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Line.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Line.src/M000115.html');return false;">
+          <span class="method-name">viewbox</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+compute <a href="Line.html#M000115">viewbox</a> of the line
+</p>
+<p>
+simply call <a href="Point.html#M000120">Point.viewbox</a> on :exts
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
