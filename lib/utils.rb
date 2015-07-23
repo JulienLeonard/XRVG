@@ -389,7 +389,7 @@ class Array
 	return self.each_slice(arity, &block)
       end
     else
-      return self.enum_slice(arity).to_a
+      return self.each_slice(arity).to_a
     end
   end
 
@@ -403,7 +403,7 @@ class Array
     if block
       return self.each_cons(arity, &block)
     else
-      return self.enum_cons(arity).to_a
+      return self.each_cons(arity).to_a
     end
   end
 

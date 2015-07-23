@@ -11,7 +11,7 @@ PROJECT = "XRVG"
 MY_NAME = "Julien Léonard"
 
 # Your email address, used in packaging.
-MY_EMAIL = "jblondinet@nospam@yahoo.com"
+MY_EMAIL = "jl.julien.leonard@nospam@gmail.com"
 
 # Short summary of your project, used in packaging.
 PROJECT_SUMMARY = "Ruby vector graphics library"
