@@ -1,0 +1,1958 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::Color</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/color_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/color.rb">lib/color.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-5B-5D">::[]</a></li>
+          
+          <li><a href="#method-c-black">::black</a></li>
+          
+          <li><a href="#method-c-blue">::blue</a></li>
+          
+          <li><a href="#method-c-green">::green</a></li>
+          
+          <li><a href="#method-c-grey">::grey</a></li>
+          
+          <li><a href="#method-c-hsl">::hsl</a></li>
+          
+          <li><a href="#method-c-hsla">::hsla</a></li>
+          
+          <li><a href="#method-c-hsv">::hsv</a></li>
+          
+          <li><a href="#method-c-hsva">::hsva</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-orange">::orange</a></li>
+          
+          <li><a href="#method-c-rand">::rand</a></li>
+          
+          <li><a href="#method-c-red">::red</a></li>
+          
+          <li><a href="#method-c-rgb2h">::rgb2h</a></li>
+          
+          <li><a href="#method-c-rgb2hsl">::rgb2hsl</a></li>
+          
+          <li><a href="#method-c-rgb2hsv">::rgb2hsv</a></li>
+          
+          <li><a href="#method-c-rgb2sl">::rgb2sl</a></li>
+          
+          <li><a href="#method-c-rgb2sv">::rgb2sv</a></li>
+          
+          <li><a href="#method-c-white">::white</a></li>
+          
+          <li><a href="#method-c-yellow">::yellow</a></li>
+          
+          <li><a href="#method-i-2A">#*</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-a">#a</a></li>
+          
+          <li><a href="#method-i-a-3D">#a=</a></li>
+          
+          <li><a href="#method-i-b">#b</a></li>
+          
+          <li><a href="#method-i-b-3D">#b=</a></li>
+          
+          <li><a href="#method-i-complement">#complement</a></li>
+          
+          <li><a href="#method-i-format255">#format255</a></li>
+          
+          <li><a href="#method-i-g">#g</a></li>
+          
+          <li><a href="#method-i-g-3D">#g=</a></li>
+          
+          <li><a href="#method-i-hsla">#hsla</a></li>
+          
+          <li><a href="#method-i-hsva">#hsva</a></li>
+          
+          <li><a href="#method-i-hue">#hue</a></li>
+          
+          <li><a href="#method-i-lightness">#lightness</a></li>
+          
+          <li><a href="#method-i-r">#r</a></li>
+          
+          <li><a href="#method-i-r-3D">#r=</a></li>
+          
+          <li><a href="#method-i-rgba">#rgba</a></li>
+          
+          <li><a href="#method-i-saturation">#saturation</a></li>
+          
+          <li><a href="#method-i-svg">#svg</a></li>
+          
+          <li><a href="#method-i-value">#value</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::Color</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Color.html">Color</a> class</p>
+
+<h1>Basics</h1>
+
+<p>Class <a href="Color.html">Color</a> consists in a 4D vector of (0.0..1.0)
+values, for red, blue, green, and opacity</p>
+
+<h1>Utilities</h1>
+
+<p>Conversion from hsv and hsl color spaces available (see this <a
+href="http://en.wikipedia.org/wiki/HSV_color_space">link</a>)</p>
+
+<h1>Future</h1>
+<ul><li>
+<p>Must use this <a href="https://rubyforge.org/projects/color/">library</a>,
+to avoid effort duplication</p>
+</li><li>
+<p>Must add relative color operations as Nodebox wants to</p>
+</li><li>
+<p>Must optimize 4D vector operations (as C extension ?)</p>
+</li></ul>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-c-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">( *args )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="Color.html">Color</a> builder</p>
+
+<p>only allows to build 4D vector, with composants between 0.0 and 1.0</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-operator">[]</span>( *<span class="ruby-identifier">args</span> )
+  <span class="ruby-comment"># TODO : check args number</span>
+  <span class="ruby-constant">Color</span>.<span class="ruby-identifier">new</span>( *<span class="ruby-identifier">args</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="black-method" class="method-detail ">
+          <a name="method-c-black"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">black</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a black color vector</p>
+            
+
+            
+            <div class="method-source-code" id="black-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">black</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- black-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- black-method -->
+
+      
+        <div id="blue-method" class="method-detail ">
+          <a name="method-c-blue"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">blue</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a blue color vector</p>
+            
+
+            
+            <div class="method-source-code" id="blue-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">blue</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- blue-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- blue-method -->
+
+      
+        <div id="green-method" class="method-detail ">
+          <a name="method-c-green"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">green</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a green color vector</p>
+            
+
+            
+            <div class="method-source-code" id="green-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">green</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- green-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- green-method -->
+
+      
+        <div id="grey-method" class="method-detail ">
+          <a name="method-c-grey"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">grey</span><span
+              class="method-args">(light,opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a grey color vector</p>
+            
+
+            
+            <div class="method-source-code" id="grey-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">grey</span>(<span class="ruby-identifier">light</span>,<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-identifier">light</span>, <span class="ruby-identifier">light</span>, <span class="ruby-identifier">light</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- grey-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- grey-method -->
+
+      
+        <div id="hsl-method" class="method-detail ">
+          <a name="method-c-hsl"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsl</span><span
+              class="method-args">( h, s, l)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="hsl-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsl</span>( <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">l</span>)
+  <span class="ruby-identifier">h</span> <span class="ruby-operator">*=</span> <span class="ruby-value">360.0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.5</span>
+    <span class="ruby-identifier">q</span> = <span class="ruby-identifier">l</span> * (<span class="ruby-value">1.0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">q</span> = <span class="ruby-identifier">l</span><span class="ruby-operator">+</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">l</span> * <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">p</span> = <span class="ruby-value">2</span> * <span class="ruby-identifier">l</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">q</span>
+  <span class="ruby-identifier">hk</span> = <span class="ruby-identifier">h</span> <span class="ruby-operator">/</span> <span class="ruby-value">360.0</span>
+  <span class="ruby-identifier">tR</span> = <span class="ruby-identifier">hk</span> <span class="ruby-operator">+</span> <span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+  <span class="ruby-identifier">tG</span> = <span class="ruby-identifier">hk</span>
+  <span class="ruby-identifier">tB</span> = <span class="ruby-identifier">hk</span> <span class="ruby-operator">-</span> <span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+
+  <span class="ruby-identifier">tR</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getHSLcomponent</span>( <span class="ruby-identifier">tR</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">q</span> )
+  <span class="ruby-identifier">tG</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getHSLcomponent</span>( <span class="ruby-identifier">tG</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">q</span> )
+  <span class="ruby-identifier">tB</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getHSLcomponent</span>( <span class="ruby-identifier">tB</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">q</span> )
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">tR</span>, <span class="ruby-identifier">tG</span>, <span class="ruby-identifier">tB</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsl-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsl-method -->
+
+      
+        <div id="hsla-method" class="method-detail ">
+          <a name="method-c-hsla"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsla</span><span
+              class="method-args">( h, s, l, a)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>build a color vector from hsl parametrization (convert from hsl to rgb) h,
+s, l being between 0.0 and 1.0 taken from [[<a
+href="http://en.wikipedia.org/wiki/HSV_color_space">en.wikipedia.org/wiki/HSV_color_space</a>]]
+h, s, l must be between 0.0 and 1.0</p>
+            
+
+            
+            <div class="method-source-code" id="hsla-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsla</span>( <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">l</span>, <span class="ruby-identifier">a</span>)
+  <span class="ruby-identifier">h</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">h</span> )
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">s</span> )
+  <span class="ruby-identifier">l</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">l</span> )
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">a</span> )
+  <span class="ruby-identifier">values</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsl</span>( <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">l</span> ) <span class="ruby-operator">+</span> [<span class="ruby-identifier">a</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[*<span class="ruby-identifier">values</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsla-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsla-method -->
+
+      
+        <div id="hsv-method" class="method-detail ">
+          <a name="method-c-hsv"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsv</span><span
+              class="method-args">( h, s, v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="hsv-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsv</span>( <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> [<span class="ruby-identifier">v</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">v</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">h</span> <span class="ruby-operator">*=</span> <span class="ruby-value">360.0</span>
+  <span class="ruby-identifier">hi</span> = (<span class="ruby-identifier">h</span><span class="ruby-operator">/</span><span class="ruby-value">60.0</span>).<span class="ruby-identifier">floor</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">6</span>
+    <span class="ruby-identifier">hi</span> = <span class="ruby-value">5</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">f</span>  = (<span class="ruby-identifier">h</span><span class="ruby-operator">/</span><span class="ruby-value">60.0</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">hi</span>
+  <span class="ruby-identifier">p</span>  = <span class="ruby-identifier">v</span> * ( <span class="ruby-value">1</span> <span class="ruby-operator">-</span>             <span class="ruby-identifier">s</span> )
+  <span class="ruby-identifier">q</span>  = <span class="ruby-identifier">v</span> * ( <span class="ruby-value">1</span> <span class="ruby-operator">-</span>       <span class="ruby-identifier">f</span>   * <span class="ruby-identifier">s</span> )
+  <span class="ruby-identifier">t</span>  = <span class="ruby-identifier">v</span> * ( <span class="ruby-value">1</span> <span class="ruby-operator">-</span> ( <span class="ruby-value">1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f</span> ) * <span class="ruby-identifier">s</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">v</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">p</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">q</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">p</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">p</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">t</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">p</span>, <span class="ruby-identifier">q</span>, <span class="ruby-identifier">v</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">t</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">v</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hi</span> <span class="ruby-operator">==</span> <span class="ruby-value">5</span> 
+    <span class="ruby-keyword">return</span> [ <span class="ruby-identifier">v</span>, <span class="ruby-identifier">p</span>, <span class="ruby-identifier">q</span>] 
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsv-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsv-method -->
+
+      
+        <div id="hsva-method" class="method-detail ">
+          <a name="method-c-hsva"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsva</span><span
+              class="method-args">( h, s, v, a)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>build a color vector from hsv parametrization (convert from hsv to rgb) h,
+s, v being between 0.0 and 1.0</p>
+
+<p>taken from <a
+href="http://en.wikipedia.org/wiki/HSV_color_space">wikipedia</a></p>
+
+<p>error on algo with h = 1.0 =&gt; hi == 6 must be taken into account</p>
+            
+
+            
+            <div class="method-source-code" id="hsva-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsva</span>( <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">a</span>)
+  <span class="ruby-identifier">h</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">h</span> )
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">s</span> )
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">v</span> )
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">a</span> )
+  <span class="ruby-identifier">values</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsv</span>(<span class="ruby-identifier">h</span>,<span class="ruby-identifier">s</span>,<span class="ruby-identifier">v</span>) <span class="ruby-operator">+</span> [<span class="ruby-identifier">a</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[*<span class="ruby-identifier">values</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsva-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsva-method -->
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">( r, g, b, a)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>builder</p>
+
+<p>r, g, b, a must be between 0.0 and 1.0</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)
+  <span class="ruby-comment"># cannot trim because otherwise color interpolation cannot be right !!</span>
+  <span class="ruby-comment"># r = Range.O.trim( r )</span>
+  <span class="ruby-comment"># g = Range.O.trim( g )</span>
+  <span class="ruby-comment"># b = Range.O.trim( b )</span>
+  <span class="ruby-comment"># a = Range.O.trim( a )</span>
+  <span class="ruby-ivar">@items</span> = [<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">a</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+        <div id="orange-method" class="method-detail ">
+          <a name="method-c-orange"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">orange</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a orange color vector</p>
+            
+
+            
+            <div class="method-source-code" id="orange-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">orange</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">0.5</span>, <span class="ruby-value">0.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- orange-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- orange-method -->
+
+      
+        <div id="rand-method" class="method-detail ">
+          <a name="method-c-rand"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rand</span><span
+              class="method-args">( opacity=1.0 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a random color vector, with 1.0 opacity !!</p>
+
+<pre>Color.rand =&gt; Color[0.2345, 0.987623, 0.4123, 1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="rand-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rand</span>( <span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-constant">Kernel</span><span class="ruby-operator">::</span><span class="ruby-identifier">rand</span>,<span class="ruby-constant">Kernel</span><span class="ruby-operator">::</span><span class="ruby-identifier">rand</span>,<span class="ruby-constant">Kernel</span><span class="ruby-operator">::</span><span class="ruby-identifier">rand</span>,<span class="ruby-identifier">opacity</span>] 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rand-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rand-method -->
+
+      
+        <div id="red-method" class="method-detail ">
+          <a name="method-c-red"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">red</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a red color vector</p>
+            
+
+            
+            <div class="method-source-code" id="red-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">red</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- red-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- red-method -->
+
+      
+        <div id="rgb2h-method" class="method-detail ">
+          <a name="method-c-rgb2h"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgb2h</span><span
+              class="method-args">(r,g,b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>from <a
+href="http://en.wikipedia.org/wiki/HSL_and_HSV#Conversion_from_RGB_to_HSL_or_HSV">en.wikipedia.org/wiki/HSL_and_HSV#Conversion_from_RGB_to_HSL_or_HSV</a></p>
+            
+
+            
+            <div class="method-source-code" id="rgb2h-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2h</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">range</span> = [<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>].<span class="ruby-identifier">range</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">r</span>
+    <span class="ruby-identifier">result</span> = (<span class="ruby-value">60.0</span> * (<span class="ruby-identifier">g</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span>   <span class="ruby-value">0.0</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">g</span>
+    <span class="ruby-identifier">result</span> = (<span class="ruby-value">60.0</span> * (<span class="ruby-identifier">b</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">r</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-value">120.0</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = (<span class="ruby-value">60.0</span> * (<span class="ruby-identifier">r</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">g</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">+</span> <span class="ruby-value">240.0</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">result</span> <span class="ruby-operator">%</span> <span class="ruby-value">360.0</span>) <span class="ruby-operator">/</span> <span class="ruby-value">360.0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgb2h-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgb2h-method -->
+
+      
+        <div id="rgb2hsl-method" class="method-detail ">
+          <a name="method-c-rgb2hsl"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgb2hsl</span><span
+              class="method-args">(r,g,b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="rgb2hsl-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2hsl</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">h</span>    = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2h</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">s</span>, <span class="ruby-identifier">l</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2sl</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">h</span>,<span class="ruby-identifier">s</span>,<span class="ruby-identifier">l</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgb2hsl-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgb2hsl-method -->
+
+      
+        <div id="rgb2hsv-method" class="method-detail ">
+          <a name="method-c-rgb2hsv"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgb2hsv</span><span
+              class="method-args">(r,g,b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="rgb2hsv-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2hsv</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">h</span>    = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2h</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span> = <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2sv</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">h</span>,<span class="ruby-identifier">s</span>,<span class="ruby-identifier">v</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgb2hsv-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgb2hsv-method -->
+
+      
+        <div id="rgb2sl-method" class="method-detail ">
+          <a name="method-c-rgb2sl"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgb2sl</span><span
+              class="method-args">(r,g,b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="rgb2sl-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 378</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2sl</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">range</span> = [<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>].<span class="ruby-identifier">range</span>
+  <span class="ruby-identifier">l</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">middle</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0.5</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">/</span> (<span class="ruby-value">2.0</span> * <span class="ruby-identifier">l</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">/</span> (<span class="ruby-value">2.0</span> <span class="ruby-operator">-</span> <span class="ruby-value">2.0</span> * <span class="ruby-identifier">l</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">s</span>,<span class="ruby-identifier">l</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgb2sl-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgb2sl-method -->
+
+      
+        <div id="rgb2sv-method" class="method-detail ">
+          <a name="method-c-rgb2sv"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgb2sv</span><span
+              class="method-args">(r,g,b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="rgb2sv-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2sv</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">range</span> = [<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>].<span class="ruby-identifier">range</span>
+  <span class="ruby-identifier">v</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">s</span> = (<span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span><span class="ruby-operator">/</span><span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">s</span>,<span class="ruby-identifier">v</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgb2sv-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgb2sv-method -->
+
+      
+        <div id="white-method" class="method-detail ">
+          <a name="method-c-white"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">white</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a white color vector</p>
+            
+
+            
+            <div class="method-source-code" id="white-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">white</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- white-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- white-method -->
+
+      
+        <div id="yellow-method" class="method-detail ">
+          <a name="method-c-yellow"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">yellow</span><span
+              class="method-args">(opacity=1.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a yellow color vector</p>
+            
+
+            
+            <div class="method-source-code" id="yellow-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">yellow</span>(<span class="ruby-identifier">opacity</span>=<span class="ruby-value">1.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-identifier">opacity</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- yellow-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- yellow-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2A-method" class="method-detail ">
+          <a name="method-i-2A"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">*</span><span
+              class="method-args">( scalar )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>define scalar multiplication, for interpolation</p>
+            
+
+            
+            <div class="method-source-code" id="2A-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 58</span>
+<span class="ruby-keyword">def</span> *( <span class="ruby-identifier">scalar</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span> * <span class="ruby-identifier">scalar</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span> * <span class="ruby-identifier">scalar</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span> * <span class="ruby-identifier">scalar</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span> * <span class="ruby-identifier">scalar</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2A-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2A-method -->
+
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>define addition operation, for interpolation</p>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">r</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">g</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">b</span>,
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">a</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-method -->
+
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>equality operator</p>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-keyword">return</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">rgba</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">rgba</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(index)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>delegation componant indexation method</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@items</span>[<span class="ruby-identifier">index</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="a-method" class="method-detail ">
+          <a name="method-i-a"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">a</span><span
+              class="method-args">(val=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the opacity composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].r =&gt; 0.4</pre>
+            
+
+            
+            <div class="method-source-code" id="a-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">a</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span>, <span class="ruby-identifier">val</span> ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- a-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- a-method -->
+
+      
+        <div id="a-3D-method" class="method-detail ">
+          <a name="method-i-a-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">a=</span><span
+              class="method-args">(n)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set the opacity composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].a = 0.5 =&gt; Color[0.1,0.2,0.3,0.5]</pre>
+            
+
+            
+            <div class="method-source-code" id="a-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">a=</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@items</span>[<span class="ruby-value">3</span>] = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- a-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- a-3D-method -->
+
+      
+        <div id="b-method" class="method-detail ">
+          <a name="method-i-b"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">b</span><span
+              class="method-args">(val=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the blue composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].r =&gt; 0.3</pre>
+            
+
+            
+            <div class="method-source-code" id="b-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">b</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span>, <span class="ruby-identifier">val</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span> ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- b-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- b-method -->
+
+      
+        <div id="b-3D-method" class="method-detail ">
+          <a name="method-i-b-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">b=</span><span
+              class="method-args">(n)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set the blue composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].b = 0.5 =&gt; Color[0.1,0.2,0.5,0.4]</pre>
+            
+
+            
+            <div class="method-source-code" id="b-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">b=</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@items</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- b-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- b-3D-method -->
+
+      
+        <div id="complement-method" class="method-detail ">
+          <a name="method-i-complement"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">complement</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute complementary color</p>
+
+<pre>Color.red.complement =&gt; Color.green</pre>
+            
+
+            
+            <div class="method-source-code" id="complement-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">complement</span>
+  <span class="ruby-identifier">newvalues</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rgba</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">complement</span>( <span class="ruby-identifier">v</span> )}
+  <span class="ruby-identifier">newvalues</span> <span class="ruby-operator">+=</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ *<span class="ruby-identifier">newvalues</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- complement-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- complement-method -->
+
+      
+        <div id="format255-method" class="method-detail ">
+          <a name="method-i-format255"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">format255</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return an array containing colors on 255 integer format</p>
+
+<pre>Color[0.0,1.0,0.0,1.0].format255 =&gt; [0,255,0,255]</pre>
+            
+
+            
+            <div class="method-source-code" id="format255-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format255</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@items</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">v</span> * <span class="ruby-value">255.0</span>).<span class="ruby-identifier">to_i</span>}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- format255-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- format255-method -->
+
+      
+        <div id="g-method" class="method-detail ">
+          <a name="method-i-g"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">g</span><span
+              class="method-args">(val=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the green composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].r =&gt; 0.2</pre>
+            
+
+            
+            <div class="method-source-code" id="g-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">g</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-identifier">val</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span> ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- g-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- g-method -->
+
+      
+        <div id="g-3D-method" class="method-detail ">
+          <a name="method-i-g-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">g=</span><span
+              class="method-args">(n)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set the green composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].g = 0.5 =&gt; Color[0.1,0.5,0.3,0.4]</pre>
+            
+
+            
+            <div class="method-source-code" id="g-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">g=</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@items</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- g-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- g-3D-method -->
+
+      
+        <div id="hsla-method" class="method-detail ">
+          <a name="method-i-hsla"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsla</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return hsla components</p>
+            
+
+            
+            <div class="method-source-code" id="hsla-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsla</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2hsl</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span>) <span class="ruby-operator">+</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span>])
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsla-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsla-method -->
+
+      
+        <div id="hsva-method" class="method-detail ">
+          <a name="method-i-hsva"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hsva</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return hsva components</p>
+            
+
+            
+            <div class="method-source-code" id="hsva-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsva</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-constant">Color</span>.<span class="ruby-identifier">rgb2hsv</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span>) <span class="ruby-operator">+</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span>])
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hsva-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hsva-method -->
+
+      
+        <div id="hue-method" class="method-detail ">
+          <a name="method-i-hue"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hue</span><span
+              class="method-args">(newhue=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>get or set hue of color</p>
+
+<pre>Color.red.hue        =&gt; 0.0
+Color.red.hue( 0.1 ) =&gt; Color.hsva( 0.1, 1.0, 1.0, 1.0 )</pre>
+            
+
+            
+            <div class="method-source-code" id="hue-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hue</span>(<span class="ruby-identifier">newhue</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">newhue</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hsva</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>
+    <span class="ruby-identifier">hsva</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">newhue</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsva</span>( *<span class="ruby-identifier">hsva</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hue-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hue-method -->
+
+      
+        <div id="lightness-method" class="method-detail ">
+          <a name="method-i-lightness"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lightness</span><span
+              class="method-args">(newlight=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set lightness (from hsl) of color</p>
+
+<pre>Color.white.lightness        =&gt; 1.0
+Color.white.lightness( 0.1 ) =&gt; Color.hsla( 1.0, 1.0, 0.1, 1.0 )</pre>
+            
+
+            
+            <div class="method-source-code" id="lightness-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lightness</span>(<span class="ruby-identifier">newlight</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">newlight</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsla</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hsla</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsla</span>
+    <span class="ruby-identifier">hsla</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">newlight</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsla</span>( *<span class="ruby-identifier">hsla</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- lightness-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lightness-method -->
+
+      
+        <div id="r-method" class="method-detail ">
+          <a name="method-i-r"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">r</span><span
+              class="method-args">(val=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the red composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].r        =&gt; 0.1
+Color[0.1,0.2,0.3,0.4].r( 0.3 ) =&gt; Color[0.3,0.2,0.3,0.4]</pre>
+            
+
+            
+            <div class="method-source-code" id="r-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">r</span>(<span class="ruby-identifier">val</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>[ <span class="ruby-identifier">val</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">g</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">b</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">a</span> ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- r-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- r-method -->
+
+      
+        <div id="r-3D-method" class="method-detail ">
+          <a name="method-i-r-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">r=</span><span
+              class="method-args">(n)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set the red composant</p>
+
+<pre>Color[0.1,0.2,0.3,0.4].r = 0.5 =&gt; Color[0.5,0.2,0.3,0.4]</pre>
+            
+
+            
+            <div class="method-source-code" id="r-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">r=</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@items</span>[<span class="ruby-value">0</span>]= <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- r-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- r-3D-method -->
+
+      
+        <div id="rgba-method" class="method-detail ">
+          <a name="method-i-rgba"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rgba</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return [r,g,b,a]</p>
+            
+
+            
+            <div class="method-source-code" id="rgba-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgba</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@items</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rgba-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rgba-method -->
+
+      
+        <div id="saturation-method" class="method-detail ">
+          <a name="method-i-saturation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">saturation</span><span
+              class="method-args">(newsat=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set saturation of color</p>
+
+<pre>Color.red.saturation        =&gt; 1.0
+Color.red.saturation( 0.1 ) =&gt; Color.hsva( 0.0, 0.1, 1.0, 1.0 )</pre>
+            
+
+            
+            <div class="method-source-code" id="saturation-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">saturation</span>(<span class="ruby-identifier">newsat</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">newsat</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hsva</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>
+    <span class="ruby-identifier">hsva</span>[<span class="ruby-value">1</span>] = <span class="ruby-identifier">newsat</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsva</span>( *<span class="ruby-identifier">hsva</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- saturation-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- saturation-method -->
+
+      
+        <div id="svg-method" class="method-detail ">
+          <a name="method-i-svg"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">svg</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>get svg description of a color</p>
+            
+
+            
+            <div class="method-source-code" id="svg-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">svg</span>
+  <span class="ruby-identifier">values</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>].<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">trim</span>( <span class="ruby-identifier">v</span> )
+    (<span class="ruby-value">255.0</span> * <span class="ruby-identifier">v</span>).<span class="ruby-identifier">to_i</span> 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;rgb(#{values.join(&quot;,&quot;)})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- svg-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- svg-method -->
+
+      
+        <div id="value-method" class="method-detail ">
+          <a name="method-i-value"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">value</span><span
+              class="method-args">(newval=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set value (from hsv) of color</p>
+
+<pre>Color.red.value        =&gt; 1.0
+Color.red.value( 0.1 ) =&gt; Color.hsva( 0.0, 1.0, 0.1, 1.0 )</pre>
+            
+
+            
+            <div class="method-source-code" id="value-source">
+<pre>
+<span class="ruby-comment"># File lib/color.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value</span>(<span class="ruby-identifier">newval</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">newval</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hsva</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hsva</span>
+    <span class="ruby-identifier">hsva</span>[<span class="ruby-value">2</span>] = <span class="ruby-identifier">newval</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Color</span>.<span class="ruby-identifier">hsva</span>( *<span class="ruby-identifier">hsva</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- value-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- value-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

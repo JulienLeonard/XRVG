@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::SpiralLog</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/spiral_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/spiral.rb">lib/spiral.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="GSpiral.html">XRVG::GSpiral</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-fromtangent">::fromtangent</a></li>
+          
+          <li><a href="#method-c-tangent">::tangent</a></li>
+          
+          <li><a href="#method-i-compute_maxangle">#compute_maxangle</a></li>
+          
+          <li><a href="#method-i-compute_radius">#compute_radius</a></li>
+          
+          <li><a href="#method-i-nsamples">#nsamples</a></li>
+          
+          <li><a href="#method-i-tangent">#tangent</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::SpiralLog</h1>
+
+    <div id="description" class="description">
+      
+<p>curvature is in number of tour before center % extremity</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="fromtangent-method" class="method-detail ">
+          <a name="method-c-fromtangent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fromtangent</span><span
+              class="method-args">( tangent, ext, curvature, sens=1.0 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="fromtangent-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">SpiralLog</span>.<span class="ruby-identifier">fromtangent</span>( <span class="ruby-identifier">tangent</span>, <span class="ruby-identifier">ext</span>, <span class="ruby-identifier">curvature</span>, <span class="ruby-identifier">sens</span>=<span class="ruby-value">1.0</span> )
+  <span class="ruby-identifier">radial</span>    = <span class="ruby-identifier">tangent</span>.<span class="ruby-identifier">rotate</span>( <span class="ruby-identifier">sens</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">atan</span>( <span class="ruby-identifier">curvature</span> ) )
+  <span class="ruby-identifier">newcenter</span> = <span class="ruby-identifier">ext</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">radial</span>
+  <span class="ruby-comment"># modelcenter  = V2D::O</span>
+  <span class="ruby-comment"># radial       = (modelcenter - ext)</span>
+  <span class="ruby-comment"># modeltangent = radial.rotate( -Math.atan( curvature ) ) </span>
+  <span class="ruby-comment"># scalefactor = tangent.r / modeltangent.r</span>
+  <span class="ruby-comment"># angle = V2D.angle( modeltangent, tangent )</span>
+  <span class="ruby-comment"># newcenter = (modelcenter - ext).rotate( angle ) * scalefactor + ext</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">SpiralLog</span>[ <span class="ruby-value">:center</span>, <span class="ruby-identifier">newcenter</span>, <span class="ruby-value">:ext</span>, <span class="ruby-identifier">ext</span>, <span class="ruby-value">:curvature</span>, <span class="ruby-identifier">curvature</span>, <span class="ruby-value">:sens</span>, <span class="ruby-identifier">sens</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- fromtangent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fromtangent-method -->
+
+      
+        <div id="tangent-method" class="method-detail ">
+          <a name="method-c-tangent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent</span><span
+              class="method-args">( center, ext, curvature )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="tangent-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">SpiralLog</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">center</span>, <span class="ruby-identifier">ext</span>, <span class="ruby-identifier">curvature</span> )
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">center</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">ext</span>).<span class="ruby-identifier">rotate</span>( <span class="ruby-operator">-</span><span class="ruby-constant">Math</span>.<span class="ruby-identifier">atan</span>( <span class="ruby-identifier">curvature</span> ) ) 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="compute_maxangle-method" class="method-detail ">
+          <a name="method-i-compute_maxangle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compute_maxangle</span><span
+              class="method-args">( r0, angle0, curvature )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="compute_maxangle-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compute_maxangle</span>( <span class="ruby-identifier">r0</span>, <span class="ruby-identifier">angle0</span>, <span class="ruby-identifier">curvature</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">angle0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">curvature</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>( <span class="ruby-value">0.001</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compute_maxangle-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compute_maxangle-method -->
+
+      
+        <div id="compute_radius-method" class="method-detail ">
+          <a name="method-i-compute_radius"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compute_radius</span><span
+              class="method-args">( r0, angle0, curvature, angle )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="compute_radius-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compute_radius</span>( <span class="ruby-identifier">r0</span>, <span class="ruby-identifier">angle0</span>, <span class="ruby-identifier">curvature</span>, <span class="ruby-identifier">angle</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">r0</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>( <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sens</span> * (<span class="ruby-identifier">angle</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">angle0</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">curvature</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compute_radius-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compute_radius-method -->
+
+      
+        <div id="nsamples-method" class="method-detail ">
+          <a name="method-i-nsamples"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">nsamples</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="nsamples-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nsamples</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">curvature</span> * <span class="ruby-value">15.0</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- nsamples-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- nsamples-method -->
+
+      
+        <div id="tangent-method" class="method-detail ">
+          <a name="method-i-tangent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent</span><span
+              class="method-args">( length, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>method redefinition from <a href="GSpiral.html">GSpiral</a> from <a
+href="Curve.html">Curve</a></p>
+            
+
+            
+            <div class="method-source-code" id="tangent-source">
+<pre>
+<span class="ruby-comment"># File lib/spiral.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">length</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">container</span> = <span class="ruby-constant">SpiralLog</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">center</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">length</span> ), <span class="ruby-keyword">self</span>.<span class="ruby-identifier">curvature</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

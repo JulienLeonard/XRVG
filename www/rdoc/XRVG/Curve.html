@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::Curve</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/shape_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/shape.rb">lib/shape.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Shape.html">XRVG::Shape</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-acc">#acc</a></li>
+          
+          <li><a href="#method-i-acc_normal">#acc_normal</a></li>
+          
+          <li><a href="#method-i-curvature">#curvature</a></li>
+          
+          <li><a href="#method-i-default_style">#default_style</a></li>
+          
+          <li><a href="#method-i-frame">#frame</a></li>
+          
+          <li><a href="#method-i-frames">#frames</a></li>
+          
+          <li><a href="#method-i-framev">#framev</a></li>
+          
+          <li><a href="#method-i-length">#length</a></li>
+          
+          <li><a href="#method-i-normal">#normal</a></li>
+          
+          <li><a href="#method-i-normals">#normals</a></li>
+          
+          <li><a href="#method-i-point">#point</a></li>
+          
+          <li><a href="#method-i-points">#points</a></li>
+          
+          <li><a href="#method-i-rotation">#rotation</a></li>
+          
+          <li><a href="#method-i-scale">#scale</a></li>
+          
+          <li><a href="#method-i-tangent">#tangent</a></li>
+          
+          <li><a href="#method-i-tangent0">#tangent0</a></li>
+          
+          <li><a href="#method-i-tangent0_angle">#tangent0_angle</a></li>
+          
+          <li><a href="#method-i-tangent0_length">#tangent0_length</a></li>
+          
+          <li><a href="#method-i-tangents">#tangents</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::Curve</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Curve.html">Curve</a> abstract interface</p>
+
+<h1>Intro</h1>
+
+<p>To define a set of services a curve class must provide</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="acc-method" class="method-detail ">
+          <a name="method-i-acc"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">acc</span><span
+              class="method-args">( abscissa, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must compute the acceleration at curve abscissa</p>
+
+<p>abstract</p>
+
+<p>must be defined</p>
+            
+
+            
+            <div class="method-source-code" id="acc-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">acc</span>( <span class="ruby-identifier">abscissa</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{self.class.name}#acc is an abstract method.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- acc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- acc-method -->
+
+      
+        <div id="acc_normal-method" class="method-detail ">
+          <a name="method-i-acc_normal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">acc_normal</span><span
+              class="method-args">( t )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute normal acceleration at abscissa t</p>
+            
+
+            
+            <div class="method-source-code" id="acc_normal-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">acc_normal</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-identifier">normal</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">normal</span>( <span class="ruby-identifier">t</span> ).<span class="ruby-identifier">norm</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">acc</span>( <span class="ruby-identifier">t</span> ).<span class="ruby-identifier">inner_product</span>( <span class="ruby-identifier">normal</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- acc_normal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- acc_normal-method -->
+
+      
+        <div id="curvature-method" class="method-detail ">
+          <a name="method-i-curvature"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">curvature</span><span
+              class="method-args">( t )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute curvature at abscissa t</p>
+            
+
+            
+            <div class="method-source-code" id="curvature-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">curvature</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-identifier">acc_normal</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">acc_normal</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">acc_normal</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">1.0</span> <span class="ruby-operator">/</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span> ).<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">acc_normal</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- curvature-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- curvature-method -->
+
+      
+        <div id="default_style-method" class="method-detail ">
+          <a name="method-i-default_style"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_style</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>default style of a curve, as stroked with stroke width 1% of length</p>
+            
+
+            
+            <div class="method-source-code" id="default_style-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_style</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Style</span>[ <span class="ruby-value">:stroke</span>, <span class="ruby-constant">Color</span>.<span class="ruby-identifier">black</span>, <span class="ruby-value">:strokewidth</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">100.0</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- default_style-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_style-method -->
+
+      
+        <div id="frame-method" class="method-detail ">
+          <a name="method-i-frame"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">frame</span><span
+              class="method-args">( t )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute frame at abscissa t</p>
+            
+
+            
+            <div class="method-source-code" id="frame-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-identifier">point</span>, <span class="ruby-identifier">tangent</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">framev</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Frame</span>[ <span class="ruby-value">:center</span>, <span class="ruby-identifier">point</span>, <span class="ruby-value">:vector</span>, <span class="ruby-identifier">tangent</span>, <span class="ruby-value">:rotation</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rotation</span>( <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">tangent</span> ), <span class="ruby-value">:scale</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scale</span>( <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">tangent</span> ) ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- frame-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- frame-method -->
+
+      
+        <div id="frames-method" class="method-detail ">
+          <a name="method-i-frames"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">frames</span><span
+              class="method-args">(abscissas)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to map frames from abscissas</p>
+            
+
+            
+            <div class="method-source-code" id="frames-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frames</span> (<span class="ruby-identifier">abscissas</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">abscissas</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">abscissa</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>( <span class="ruby-identifier">abscissa</span> ) }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- frames-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- frames-method -->
+
+      
+        <div id="framev-method" class="method-detail ">
+          <a name="method-i-framev"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">framev</span><span
+              class="method-args">( t )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute frame vector at abscissa t, that is [curve.point( t ),
+curve.tangent( t ) ]</p>
+            
+
+            
+            <div class="method-source-code" id="framev-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">framev</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-keyword">return</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span> ), <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span> ) ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- framev-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- framev-method -->
+
+      
+        <div id="length-method" class="method-detail ">
+          <a name="method-i-length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">length</span><span
+              class="method-args">(abscissa=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must return the length at abscissa, or total length if abscissa nil</p>
+
+<p>abstract</p>
+
+<p>must be defined</p>
+            
+
+            
+            <div class="method-source-code" id="length-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">length</span>(<span class="ruby-identifier">abscissa</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{self.class.name}#length is an abstract method.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- length-method -->
+
+      
+        <div id="normal-method" class="method-detail ">
+          <a name="method-i-normal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normal</span><span
+              class="method-args">( t )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute normal at abscissa t</p>
+
+<p>do tangent.ortho</p>
+            
+
+            
+            <div class="method-source-code" id="normal-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normal</span>( <span class="ruby-identifier">t</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span> ).<span class="ruby-identifier">ortho</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- normal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normal-method -->
+
+      
+        <div id="normals-method" class="method-detail ">
+          <a name="method-i-normals"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normals</span><span
+              class="method-args">( indexes )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method, map of normal</p>
+            
+
+            
+            <div class="method-source-code" id="normals-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normals</span>( <span class="ruby-identifier">indexes</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">normal</span>( <span class="ruby-identifier">i</span> )}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- normals-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normals-method -->
+
+      
+        <div id="point-method" class="method-detail ">
+          <a name="method-i-point"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">point</span><span
+              class="method-args">( abscissa, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must compute the point at curve abscissa</p>
+
+<p>abstract</p>
+
+<p>must be defined</p>
+            
+
+            
+            <div class="method-source-code" id="point-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">point</span>( <span class="ruby-identifier">abscissa</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{self.class.name}#curve is an abstract method.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- point-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- point-method -->
+
+      
+        <div id="points-method" class="method-detail ">
+          <a name="method-i-points"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">points</span><span
+              class="method-args">(abscissas)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to map points from abscissas</p>
+            
+
+            
+            <div class="method-source-code" id="points-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">points</span> (<span class="ruby-identifier">abscissas</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">abscissas</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">abscissa</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">abscissa</span> ) }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- points-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- points-method -->
+
+      
+        <div id="rotation-method" class="method-detail ">
+          <a name="method-i-rotation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rotation</span><span
+              class="method-args">( abscissa, tangent=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the rotation at curve abscissa, or directly from tangent (for frame
+computation speed up), as angle between tangent0 angle and tangent(
+abscissa ) (or tangent) angle</p>
+            
+
+            
+            <div class="method-source-code" id="rotation-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotation</span>( <span class="ruby-identifier">abscissa</span>, <span class="ruby-identifier">tangent</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">tangent</span>
+    <span class="ruby-identifier">tangent</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">abscissa</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">tangent</span>.<span class="ruby-identifier">angle</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent0_angle</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rotation-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rotation-method -->
+
+      
+        <div id="scale-method" class="method-detail ">
+          <a name="method-i-scale"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scale</span><span
+              class="method-args">( abscissa, tangent=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must compute the scale at curve abscissa, or directly from tangent (for
+frame computation speed up) as ratio between tangent0 size and tangent(
+abscissa ) (or tangent) size</p>
+            
+
+            
+            <div class="method-source-code" id="scale-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scale</span>( <span class="ruby-identifier">abscissa</span>, <span class="ruby-identifier">tangent</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">tangent</span>
+    <span class="ruby-identifier">tangent</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">abscissa</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent0_length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-identifier">result</span> = (<span class="ruby-identifier">tangent</span>.<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent0_length</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- scale-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scale-method -->
+
+      
+        <div id="tangent-method" class="method-detail ">
+          <a name="method-i-tangent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent</span><span
+              class="method-args">( abscissa, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must compute the tangent at curve abscissa</p>
+
+<p>abstract</p>
+
+<p>must be defined</p>
+            
+
+            
+            <div class="method-source-code" id="tangent-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">abscissa</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{self.class.name}#tangent is an abstract method.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent-method -->
+
+      
+        <div id="tangent0-method" class="method-detail ">
+          <a name="method-i-tangent0"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent0</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="tangent0-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@tangent0</span>
+    <span class="ruby-ivar">@tangent0</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-value">0.0</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@tangent0</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent0-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent0-method -->
+
+      
+        <div id="tangent0_angle-method" class="method-detail ">
+          <a name="method-i-tangent0_angle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent0_angle</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>TODO : must be cached in vector</p>
+            
+
+            
+            <div class="method-source-code" id="tangent0_angle-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent0_angle</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@tangent0_angle</span>
+    <span class="ruby-ivar">@tangent0_angle</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent0</span>.<span class="ruby-identifier">angle</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@tangent0_angle</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent0_angle-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent0_angle-method -->
+
+      
+        <div id="tangent0_length-method" class="method-detail ">
+          <a name="method-i-tangent0_length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent0_length</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>TODO : must be cached in vector</p>
+            
+
+            
+            <div class="method-source-code" id="tangent0_length-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent0_length</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@tangent0_length</span>
+    <span class="ruby-ivar">@tangent0_length</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent0</span>.<span class="ruby-identifier">r</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@tangent0_length</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent0_length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent0_length-method -->
+
+      
+        <div id="tangents-method" class="method-detail ">
+          <a name="method-i-tangents"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangents</span><span
+              class="method-args">(abscissas)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to map tangents from abscissas</p>
+            
+
+            
+            <div class="method-source-code" id="tangents-source">
+<pre>
+<span class="ruby-comment"># File lib/shape.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangents</span> (<span class="ruby-identifier">abscissas</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">abscissas</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">abscissa</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">abscissa</span> ) }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangents-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangents-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

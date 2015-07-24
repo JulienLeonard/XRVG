@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::Fitting</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/fitting_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/fitting.rb">lib/fitting.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-adaptative_compute">::adaptative_compute</a></li>
+          
+          <li><a href="#method-c-bezierpiece">::bezierpiece</a></li>
+          
+          <li><a href="#method-c-compute">::compute</a></li>
+          
+          <li><a href="#method-c-error">::error</a></li>
+          
+          <li><a href="#method-c-iterate">::iterate</a></li>
+          
+          <li><a href="#method-c-renormalize">::renormalize</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::Fitting</h1>
+
+    <div id="description" class="description">
+      
+<h1><a href="Fitting.html">Fitting</a> computation class</h1>
+
+<h2>Intro</h2>
+
+<p>Used to compute cubic curve fitting on a list of points (that is sampling
+inverse operation). Only 2D.</p>
+
+<h2>Example</h2>
+
+<p>Compute the most fitting single piece bezier curve given list of points</p>
+
+<pre>bezier    = Fitting.compute( points )</pre>
+
+<p>Compute multipieces bezier curve given list of points</p>
+
+<pre>bezier    = Fitting.adaptative_compute( points )</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="adaptative_compute-method" class="method-detail ">
+          <a name="method-c-adaptative_compute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">adaptative_compute</span><span
+              class="method-args">( pointlist, maxerror=0.0001, maxiter=10, tlength=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>adaptative computation with automatic splitting if error not low enough, or
+if convergence is not fast enough</p>
+            
+
+            
+            <div class="method-source-code" id="adaptative_compute-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">adaptative_compute</span>( <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">maxerror</span>=<span class="ruby-value">0.0001</span>, <span class="ruby-identifier">maxiter</span>=<span class="ruby-value">10</span>, <span class="ruby-identifier">tlength</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">parameters</span>, <span class="ruby-identifier">tlengthtmp</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">initparameters</span>( <span class="ruby-identifier">pointlist</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parameters</span> <span class="ruby-operator">==</span> [<span class="ruby-value">0</span>] * <span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword">return</span> [<span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>(<span class="ruby-value">:vector</span>, <span class="ruby-identifier">pointlist</span>[<span class="ruby-value">0</span>], <span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>, <span class="ruby-identifier">pointlist</span>[<span class="ruby-value">0</span>], <span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>),<span class="ruby-value">0.0</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tlength</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">tlengthtmp</span>
+  <span class="ruby-identifier">niter</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">bezier</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">iterate</span>( <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+    <span class="ruby-identifier">error</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">error</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">tlength</span>
+    <span class="ruby-identifier">parameters</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">renormalize</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+
+    <span class="ruby-comment"># pointlist.length &gt; 8 because matching with a bezier needs at least 4 points</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">niter</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxiter</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">error</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxerror</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">8</span>)
+      <span class="ruby-identifier">pointlists</span> = [<span class="ruby-identifier">pointlist</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>], <span class="ruby-identifier">pointlist</span>[<span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">..</span><span class="ruby-value">-1</span>]]
+      <span class="ruby-identifier">beziers</span> = []
+      <span class="ruby-identifier">errors</span>  = []
+      <span class="ruby-identifier">pointlists</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subpointlist</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">subbezier</span>, <span class="ruby-identifier">suberror</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">adaptative_compute</span>( <span class="ruby-identifier">subpointlist</span>, <span class="ruby-identifier">maxerror</span>, <span class="ruby-identifier">maxiter</span>, <span class="ruby-identifier">tlength</span> )
+        <span class="ruby-identifier">beziers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subbezier</span>
+        <span class="ruby-identifier">errors</span>  <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">suberror</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">bezier</span> = <span class="ruby-identifier">beziers</span>.<span class="ruby-identifier">sum</span>
+      <span class="ruby-identifier">error</span>  = <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">max</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">error</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">maxerror</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">niter</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxiter</span>)
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">perror</span> = <span class="ruby-identifier">error</span>
+    <span class="ruby-identifier">niter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">error</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- adaptative_compute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- adaptative_compute-method -->
+
+      
+        <div id="bezierpiece-method" class="method-detail ">
+          <a name="method-c-bezierpiece"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bezierpiece</span><span
+              class="method-args">( a, b, c, d )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute control points from polynomial bezier representation</p>
+
+<p>a, b, c, d are such as</p>
+
+<pre>piece( t ) = at3 + bt2 + ct + d</pre>
+            
+
+            
+            <div class="method-source-code" id="bezierpiece-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">bezierpiece</span>( <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">d</span> )
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">d</span>
+  <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">p0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+  <span class="ruby-identifier">p2</span> = <span class="ruby-identifier">p1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">/</span> <span class="ruby-value">3.0</span>
+  <span class="ruby-identifier">p3</span> = <span class="ruby-identifier">p0</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">a</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">p0</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">p3</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bezierpiece-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bezierpiece-method -->
+
+      
+        <div id="compute-method" class="method-detail ">
+          <a name="method-c-compute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compute</span><span
+              class="method-args">( pointlist, maxerror=0.01, maxiter=100 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Base method</p>
+
+<p>Given a pointlist, compute the closest matching cubic bezier curve</p>
+
+<p>Result is in the form [p1, pc1, pc2, p2], with [p1, pc1, pc2, p2] <a
+href="V2D.html">V2D</a></p>
+
+<p>maxerror is normalized with curve length. In case of good match (that is
+pointlist can be modelized by cubic bezier curve),  result error will be
+under maxerror. If not, result may be above maxerror. In that case,
+computation is stopped because error no longer decrease, or because
+iteration is too long.</p>
+            
+
+            
+            <div class="method-source-code" id="compute-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">compute</span>( <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">maxerror</span>=<span class="ruby-value">0.01</span>, <span class="ruby-identifier">maxiter</span>=<span class="ruby-value">100</span> )
+  <span class="ruby-identifier">parameters</span>, <span class="ruby-identifier">tlength</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">initparameters</span>( <span class="ruby-identifier">pointlist</span> )
+  <span class="ruby-identifier">perror</span> = <span class="ruby-value">1.0</span>
+  <span class="ruby-identifier">niter</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">iterate</span>( <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+    <span class="ruby-identifier">error</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">error</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">tlength</span>
+    <span class="ruby-identifier">parameters</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">renormalize</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">error</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">maxerror</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">error</span><span class="ruby-operator">-</span><span class="ruby-identifier">perror</span>).<span class="ruby-identifier">abs</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.00001</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">niter</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxiter</span> )
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">niter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">bezier</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compute-method -->
+
+      
+        <div id="error-method" class="method-detail ">
+          <a name="method-c-error"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">error</span><span
+              class="method-args">( bezier, pointlist, parameters )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>error is max error  between points in pointlist and points sampled from
+bezier with parameters</p>
+            
+
+            
+            <div class="method-source-code" id="error-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">error</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+  <span class="ruby-identifier">maxerror</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">container</span> = <span class="ruby-constant">V2D</span>[]
+  [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">parameter</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Trace(&quot;point #{point.inspect} parameter #{parameter}&quot;)</span>
+    <span class="ruby-identifier">error</span> = (<span class="ruby-identifier">point</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">parameter</span>, <span class="ruby-identifier">container</span>, <span class="ruby-value">:parameter</span> )).<span class="ruby-identifier">r</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">maxerror</span>
+      <span class="ruby-identifier">maxerror</span> = <span class="ruby-identifier">error</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Trace(&quot;Fitting.error #{maxerror}&quot;)</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">maxerror</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- error-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- error-method -->
+
+      
+        <div id="iterate-method" class="method-detail ">
+          <a name="method-c-iterate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">iterate</span><span
+              class="method-args">( pointlist, parameters )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>iterate method compute new bezier parameters from pointlist and previous
+bezier parameters</p>
+
+<p>Algo comes from <a
+href="http://www.tinaja.com/glib/bezdist.pdf">www.tinaja.com/glib/bezdist.pdf</a></p>
+
+<p>TODO : optimized</p>
+            
+
+            
+            <div class="method-source-code" id="iterate-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">iterate</span>( <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+  <span class="ruby-identifier">p0</span> = <span class="ruby-identifier">pointlist</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">p1</span> = <span class="ruby-identifier">pointlist</span>[<span class="ruby-value">-1</span>]
+
+  <span class="ruby-identifier">sumt0</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">0.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt1</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">1.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt2</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">2.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt3</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">3.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt4</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">4.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt5</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">5.0</span> }.<span class="ruby-identifier">sum</span>
+  <span class="ruby-identifier">sumt6</span> = <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">6.0</span> }.<span class="ruby-identifier">sum</span>
+
+  <span class="ruby-identifier">psumt1</span> = [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">point</span> * (<span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">1.0</span>) }.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">item</span>}
+  <span class="ruby-identifier">psumt2</span> = [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">point</span> * (<span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">2.0</span>) }.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">item</span>}
+  <span class="ruby-identifier">psumt3</span> = [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">point</span> * (<span class="ruby-identifier">t</span><span class="ruby-operator">**</span><span class="ruby-value">3.0</span>) }.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">item</span>}
+
+  <span class="ruby-identifier">coeff11</span> = <span class="ruby-identifier">sumt6</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span> * <span class="ruby-identifier">sumt4</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sumt2</span>
+  <span class="ruby-identifier">coeff12</span> = <span class="ruby-identifier">sumt5</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt4</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt3</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sumt2</span>
+
+  <span class="ruby-identifier">coeff21</span> = <span class="ruby-identifier">coeff12</span>
+  <span class="ruby-identifier">coeff22</span> = <span class="ruby-identifier">sumt4</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span> * <span class="ruby-identifier">sumt3</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sumt2</span>
+
+  <span class="ruby-identifier">result1</span> = (<span class="ruby-identifier">p0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) * (<span class="ruby-identifier">sumt4</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt2</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span> * (<span class="ruby-identifier">sumt3</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt1</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">psumt3</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">psumt1</span>
+  <span class="ruby-identifier">result2</span> = (<span class="ruby-identifier">p0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>) * (<span class="ruby-identifier">sumt3</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt2</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span> * (<span class="ruby-identifier">sumt2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sumt1</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">psumt2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">psumt1</span>
+  
+  <span class="ruby-identifier">matrix</span> = <span class="ruby-constant">Matrix</span>[ [<span class="ruby-identifier">coeff11</span>, <span class="ruby-identifier">coeff12</span>], [<span class="ruby-identifier">coeff21</span>, <span class="ruby-identifier">coeff22</span>] ]
+  <span class="ruby-identifier">matrixinv</span> = <span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">inverse</span>
+  <span class="ruby-identifier">ax</span>, <span class="ruby-identifier">bx</span> = (<span class="ruby-identifier">matrixinv</span> * <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">result1</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">result2</span>.<span class="ruby-identifier">x</span>])[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+  <span class="ruby-identifier">ay</span>, <span class="ruby-identifier">by</span> = (<span class="ruby-identifier">matrixinv</span> * <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">result1</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">result2</span>.<span class="ruby-identifier">y</span>])[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+
+  <span class="ruby-identifier">a</span> = <span class="ruby-constant">V2D</span>[<span class="ruby-identifier">ax</span>, <span class="ruby-identifier">ay</span>]
+  <span class="ruby-identifier">b</span> = <span class="ruby-constant">V2D</span>[<span class="ruby-identifier">bx</span>, <span class="ruby-identifier">by</span>]
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">p0</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">p1</span><span class="ruby-operator">-</span> (<span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p0</span>)
+
+  <span class="ruby-identifier">piece</span> = <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">bezierpiece</span>( <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">d</span> )
+  <span class="ruby-keyword">return</span> [<span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">raw</span>( *<span class="ruby-identifier">piece</span> ), [<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">d</span>] ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- iterate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- iterate-method -->
+
+      
+        <div id="renormalize-method" class="method-detail ">
+          <a name="method-c-renormalize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">renormalize</span><span
+              class="method-args">( bezier, coeffs, pointlist, parameters )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>algo comes from <a
+href="http://www.tinaja.com/glib/bezdist.pdf">www.tinaja.com/glib/bezdist.pdf</a></p>
+            
+
+            
+            <div class="method-source-code" id="renormalize-source">
+<pre>
+<span class="ruby-comment"># File lib/fitting.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Fitting</span>.<span class="ruby-identifier">renormalize</span>( <span class="ruby-identifier">bezier</span>, <span class="ruby-identifier">coeffs</span>, <span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span> )
+  <span class="ruby-identifier">a3</span>, <span class="ruby-identifier">a2</span>, <span class="ruby-identifier">a1</span>, <span class="ruby-identifier">a0</span> = <span class="ruby-identifier">coeffs</span>
+  <span class="ruby-identifier">dxdu</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-value">3.0</span>*<span class="ruby-identifier">a3</span>.<span class="ruby-identifier">x</span>*<span class="ruby-identifier">u</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.0</span>*<span class="ruby-identifier">a2</span>.<span class="ruby-identifier">x</span>*<span class="ruby-identifier">u</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">x</span>}
+  <span class="ruby-identifier">dydu</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-value">3.0</span>*<span class="ruby-identifier">a3</span>.<span class="ruby-identifier">y</span>*<span class="ruby-identifier">u</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.0</span>*<span class="ruby-identifier">a2</span>.<span class="ruby-identifier">y</span>*<span class="ruby-identifier">u</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">y</span>}
+  <span class="ruby-identifier">container</span> = <span class="ruby-constant">V2D</span>[]
+  <span class="ruby-identifier">z</span>    = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">u</span>,<span class="ruby-identifier">p4</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> = <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">u</span>, <span class="ruby-identifier">container</span>, <span class="ruby-value">:parameter</span> ); (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p4</span>.<span class="ruby-identifier">x</span>) * <span class="ruby-identifier">dxdu</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">u</span> ) <span class="ruby-operator">+</span> (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p4</span>.<span class="ruby-identifier">y</span>) * <span class="ruby-identifier">dydu</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">u</span> )}
+  <span class="ruby-identifier">newparameters</span> = []
+  [<span class="ruby-identifier">pointlist</span>, <span class="ruby-identifier">parameters</span>].<span class="ruby-identifier">forzip</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">point</span>, <span class="ruby-identifier">parameter</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">u1</span> = <span class="ruby-identifier">parameter</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">parameter</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.99</span>
+      <span class="ruby-identifier">u2</span> = <span class="ruby-identifier">parameter</span> <span class="ruby-operator">+</span> <span class="ruby-value">0.01</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">u2</span> = <span class="ruby-identifier">parameter</span> <span class="ruby-operator">-</span> <span class="ruby-value">0.01</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">z1</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u1</span>,<span class="ruby-identifier">point</span>)
+    <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">z1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">z2</span>
+      <span class="ruby-identifier">u2</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0.01</span>
+      <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">z1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">z2</span>
+      <span class="ruby-identifier">u2</span> <span class="ruby-operator">-=</span> <span class="ruby-value">0.01</span>
+      <span class="ruby-identifier">z2</span> = <span class="ruby-identifier">z</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">u2</span>,<span class="ruby-identifier">point</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">newparameters</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">z2</span> * <span class="ruby-identifier">u1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">z1</span> * <span class="ruby-identifier">u2</span>)<span class="ruby-operator">/</span>(<span class="ruby-identifier">z2</span><span class="ruby-operator">-</span><span class="ruby-identifier">z1</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">newparameters</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- renormalize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- renormalize-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::V2D</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/geometry2D_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/geometry2D.rb">lib/geometry2D.rb</a></li>
+          
+            <li><a href="../lib/intersection_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/intersection.rb">lib/intersection.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-5B-5D">::[]</a></li>
+          
+          <li><a href="#method-c-angle">::angle</a></li>
+          
+          <li><a href="#method-c-crossproduct">::crossproduct</a></li>
+          
+          <li><a href="#method-c-polar">::polar</a></li>
+          
+          <li><a href="#method-c-rand">::rand</a></li>
+          
+          <li><a href="#method-c-size">::size</a></li>
+          
+          <li><a href="#method-c-vequal-3F">::vequal?</a></li>
+          
+          <li><a href="#method-c-viewbox">::viewbox</a></li>
+          
+          <li><a href="#method-i-2A">#*</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-2D">#-</a></li>
+          
+          <li><a href="#method-i-2D-40">#-@</a></li>
+          
+          <li><a href="#method-i-2F">#/</a></li>
+          
+          <li><a href="#method-i-3C-3D-3E">#<=></a></li>
+          
+          <li><a href="#method-i-angle">#angle</a></li>
+          
+          <li><a href="#method-i-axesym">#axesym</a></li>
+          
+          <li><a href="#method-i-coords">#coords</a></li>
+          
+          <li><a href="#method-i-inner_product">#inner_product</a></li>
+          
+          <li><a href="#method-i-isLeft">#isLeft</a></li>
+          
+          <li><a href="#method-i-length">#length</a></li>
+          
+          <li><a href="#method-i-norm">#norm</a></li>
+          
+          <li><a href="#method-i-ortho">#ortho</a></li>
+          
+          <li><a href="#method-i-r">#r</a></li>
+          
+          <li><a href="#method-i-reverse">#reverse</a></li>
+          
+          <li><a href="#method-i-rotate">#rotate</a></li>
+          
+          <li><a href="#method-i-scale">#scale</a></li>
+          
+          <li><a href="#method-i-succ">#succ</a></li>
+          
+          <li><a href="#method-i-sym">#sym</a></li>
+          
+          <li><a href="#method-i-translate">#translate</a></li>
+          
+          <li><a href="#method-i-xy-3D">#xy=</a></li>
+          
+          <li><a href="#method-i-xyorder">#xyorder</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Comparable</span></li>
+        
+        
+        
+          <li><a class="include" href="Attributable.html">XRVG::Attributable</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::V2D</h1>
+
+    <div id="description" class="description">
+      
+<p>2D vector</p>
+
+<p><a href="V2D.html">V2D</a> class definition, to provide several useful
+"geometrical" services</p>
+
+<p>Extends and somehow redefines <a href="V2D.html">V2D</a> class, to speed up
+computation, as less generic</p>
+
+<p>For example :</p>
+
+<pre>V2D[0.0,2.0].norm               =&gt; V2D[0.0,1.0]
+V2D[0.0,2.0].angle              =&gt; 0.0
+V2D[0.0,2.0].ortho              =&gt; V2D[-2.0,0.0]
+V2D[0.0,2.0].rotate( Math::PI ) =&gt; V2D[0.0,-2.0]</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="O">O</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="X">X</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="Y">Y</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-c-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(x=0.0,y=0.0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>create a new 2D vector</p>
+
+<pre>v = V2D[0.0,0.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-operator">[]</span>(<span class="ruby-identifier">x</span>=<span class="ruby-value">0.0</span>,<span class="ruby-identifier">y</span>=<span class="ruby-value">0.0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="angle-method" class="method-detail ">
+          <a name="method-c-angle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">angle</span><span
+              class="method-args">( v1, v2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the angle between two vectors</p>
+
+<pre>V2D.angle( V2D[1.0,0.0], V2D[0.0,1.0] ) =&gt; Math::PI/2.0</pre>
+            
+
+            
+            <div class="method-source-code" id="angle-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">angle</span>( <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">angle</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">angle</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- angle-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- angle-method -->
+
+      
+        <div id="crossproduct-method" class="method-detail ">
+          <a name="method-c-crossproduct"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">crossproduct</span><span
+              class="method-args">( v1, v2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="crossproduct-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">crossproduct</span>( <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span> )
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">v1</span>.<span class="ruby-identifier">x</span> * <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">x</span> * <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">y</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- crossproduct-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- crossproduct-method -->
+
+      
+        <div id="polar-method" class="method-detail ">
+          <a name="method-c-polar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">polar</span><span
+              class="method-args">( r, angle )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>build a vector from polar coords</p>
+            
+
+            
+            <div class="method-source-code" id="polar-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">polar</span>( <span class="ruby-identifier">r</span>, <span class="ruby-identifier">angle</span> )
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">r</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>( <span class="ruby-identifier">angle</span> )
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">r</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>( <span class="ruby-identifier">angle</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- polar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- polar-method -->
+
+      
+        <div id="rand-method" class="method-detail ">
+          <a name="method-c-rand"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rand</span><span
+              class="method-args">( rangex=Range.O, rangey=Range.O)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>utilitary method to compute a random point must be refactored in the future
+to depend on <a href="Shape.html">Shape</a></p>
+            
+
+            
+            <div class="method-source-code" id="rand-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">rand</span>( <span class="ruby-identifier">rangex</span>=<span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>, <span class="ruby-identifier">rangey</span>=<span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[<span class="ruby-identifier">rangex</span>.<span class="ruby-identifier">rand</span>, <span class="ruby-identifier">rangey</span>.<span class="ruby-identifier">rand</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rand-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rand-method -->
+
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-c-size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">size</span><span
+              class="method-args">(pointlist)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute dimension of the box enclosing 2D elemnts considered as points</p>
+
+<pre>V2D.viewbox( [V2D[1.0,2.0], V2D[10.0,1.0]] ) =&gt; [9.0, 1.0]</pre>
+
+<p>use <tt>viewvox</tt></p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">size</span> (<span class="ruby-identifier">pointlist</span>)
+  <span class="ruby-identifier">xmin</span>, <span class="ruby-identifier">ymin</span>, <span class="ruby-identifier">xmax</span>, <span class="ruby-identifier">ymax</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">viewbox</span>( <span class="ruby-identifier">pointlist</span> )
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">xmax</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">xmin</span>, <span class="ruby-identifier">ymax</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">ymin</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+
+      
+        <div id="vequal-3F-method" class="method-detail ">
+          <a name="method-c-vequal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">vequal?</span><span
+              class="method-args">( v1, v2, epsilon=0.000000001 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>specific method to test vector equality with specified precision</p>
+            
+
+            
+            <div class="method-source-code" id="vequal-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span>, <span class="ruby-identifier">epsilon</span>=<span class="ruby-value">0.000000001</span> )
+  <span class="ruby-keyword">return</span> ((<span class="ruby-identifier">v2</span><span class="ruby-operator">-</span><span class="ruby-identifier">v1</span>).<span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">epsilon</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- vequal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- vequal-3F-method -->
+
+      
+        <div id="viewbox-method" class="method-detail ">
+          <a name="method-c-viewbox"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">viewbox</span><span
+              class="method-args">(pointlist)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the coord box enclosing every 2D elements considered as points</p>
+
+<pre>V2D.viewbox( [V2D[1.0,2.0], V2D[2.0,1.0]] ) =&gt; [1.0, 1.0, 2.0, 2.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="viewbox-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">viewbox</span> (<span class="ruby-identifier">pointlist</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">return</span> [<span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">xs</span> = <span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">x</span>}
+  <span class="ruby-identifier">ys</span> = <span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">y</span>}
+
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">xs</span>.<span class="ruby-identifier">min</span>, <span class="ruby-identifier">ys</span>.<span class="ruby-identifier">min</span>, <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">max</span>, <span class="ruby-identifier">ys</span>.<span class="ruby-identifier">max</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- viewbox-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- viewbox-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2A-method" class="method-detail ">
+          <a name="method-i-2A"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">*</span><span
+              class="method-args">( scalar )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>scalar multiplication</p>
+
+<pre>V2D[1.0,2.0] * 2.0; #=&gt; V2D[2.0,4.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="2A-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 56</span>
+<span class="ruby-keyword">def</span> *( <span class="ruby-identifier">scalar</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> * <span class="ruby-identifier">scalar</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> * <span class="ruby-identifier">scalar</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2A-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2A-method -->
+
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>2D vector addition</p>
+
+<pre>V2D[1.0,2.0] + V2D[2.0,1.0]; #=&gt; V2D[3.0,3.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="V2D.html#method-i-translate">translate</a>
+          </div>
+          
+
+          
+        </div><!-- 2B-method -->
+
+      
+        <div id="2D-method" class="method-detail ">
+          <a name="method-i-2D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">-</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>2D vector substraction</p>
+
+<pre>V2D[1.0,2.0] - V2D[2.0,1.0]; #=&gt; V2D[-1.0,1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="2D-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-method -->
+
+      
+        <div id="2D-40-method" class="method-detail ">
+          <a name="method-i-2D-40"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">-@</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>2D vector negative</p>
+
+<pre>-V2D[1.0,2.0]  #=&gt; V2D[-1.0,2.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="2D-40-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-@</span> ()
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-operator">-</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span>, <span class="ruby-operator">-</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2D-40-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="V2D.html#method-i-reverse">reverse</a>
+          </div>
+          
+
+          
+        </div><!-- 2D-40-method -->
+
+      
+        <div id="2F-method" class="method-detail ">
+          <a name="method-i-2F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">/</span><span
+              class="method-args">( scalar )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>scalar division</p>
+
+<pre>V2D[1.0,2.0] / 2.0; #=&gt; V2D[0.5,1.0]</pre>
+
+<p>ruby checks for dividing by zero</p>
+            
+
+            
+            <div class="method-source-code" id="2F-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>( <span class="ruby-identifier">scalar</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">scalar</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2F-method -->
+
+      
+        <div id="3C-3D-3E-method" class="method-detail ">
+          <a name="method-i-3C-3D-3E"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">&lt;=&gt;</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>method necessary to make <a href="V2D.html">V2D</a> Ranges</p>
+
+<p>make &lt;=&gt; on x, then on y</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3D-3E-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-identifier">first</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">first</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 3C-3D-3E-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="V2D.html#method-i-xyorder">xyorder</a>
+          </div>
+          
+
+          
+        </div><!-- 3C-3D-3E-method -->
+
+      
+        <div id="angle-method" class="method-detail ">
+          <a name="method-i-angle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">angle</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the angle of a vector considering x axis.</p>
+
+<pre>V2D[0.0,2.0].angle =&gt; 0.0</pre>
+            
+
+            
+            <div class="method-source-code" id="angle-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">angle</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">unitary</span> = <span class="ruby-keyword">self</span><span class="ruby-operator">/</span><span class="ruby-identifier">r</span>
+    <span class="ruby-identifier">cos</span>, <span class="ruby-identifier">sin</span> = <span class="ruby-identifier">unitary</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">unitary</span>.<span class="ruby-identifier">y</span>
+    <span class="ruby-identifier">angle</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">acos</span>( <span class="ruby-identifier">cos</span> )
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">sin</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.0</span>
+      <span class="ruby-identifier">angle</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">angle</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">angle</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- angle-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- angle-method -->
+
+      
+        <div id="axesym-method" class="method-detail ">
+          <a name="method-i-axesym"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">axesym</span><span
+              class="method-args">( point, axev )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the symetric of point "self" considering (point,v) as symetry axis</p>
+            
+
+            
+            <div class="method-source-code" id="axesym-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">axesym</span>( <span class="ruby-identifier">point</span>, <span class="ruby-identifier">axev</span> )
+  <span class="ruby-identifier">v</span> = <span class="ruby-keyword">self</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">point</span>
+  <span class="ruby-identifier">angle</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">angle</span>( <span class="ruby-identifier">v</span>, <span class="ruby-identifier">axev</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">point</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">rotate</span>( <span class="ruby-value">-2.0</span> * <span class="ruby-identifier">angle</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- axesym-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- axesym-method -->
+
+      
+        <div id="coords-method" class="method-detail ">
+          <a name="method-i-coords"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">coords</span><span
+              class="method-args">(type=:cartesien)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>coords management between different coord systems (for the moment only
+euclidian and polar)</p>
+
+<pre>V2D[0.0,1.0].coords         =&gt; [0.0,1.0]
+V2D[0.0,1.0].coords(:polar) =&gt; [1.0,Math::PI/2.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="coords-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">coords</span>(<span class="ruby-identifier">type</span>=<span class="ruby-value">:cartesien</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:cartesien</span>
+    <span class="ruby-keyword">return</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:polar</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@polarcoords</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@polarcoords</span> = [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">r</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">angle</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@polarcoords</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">raise</span>( <span class="ruby-node">&quot;Unknown coord type #{type}&quot;</span> )      
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- coords-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- coords-method -->
+
+      
+        <div id="inner_product-method" class="method-detail ">
+          <a name="method-i-inner_product"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inner_product</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute 2D <a href="V2D.html#method-i-inner_product">inner_product</a> as
+v1.x * v2.x + v1.y * v2.y</p>
+
+<pre>V2D[ 1.0, 2.0 ].inner_product( V2D[3.0,4.0] ); #=&gt; 11.0</pre>
+            
+
+            
+            <div class="method-source-code" id="inner_product-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inner_product</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> * <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> * <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- inner_product-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inner_product-method -->
+
+      
+        <div id="isLeft-method" class="method-detail ">
+          <a name="method-i-isLeft"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">isLeft</span><span
+              class="method-args">( p0, p1 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute if self is Left|On|Right of the line p0 to p1 &gt;0 for Left, 0 for
+On, &lt;0 for right</p>
+            
+
+            
+            <div class="method-source-code" id="isLeft-source">
+<pre>
+<span class="ruby-comment"># File lib/intersection.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">isLeft</span>( <span class="ruby-identifier">p0</span>, <span class="ruby-identifier">p1</span> )
+  <span class="ruby-identifier">criteria</span> = (<span class="ruby-identifier">p1</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>.<span class="ruby-identifier">x</span>)*(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span><span class="ruby-operator">-</span><span class="ruby-identifier">p0</span>.<span class="ruby-identifier">y</span>) <span class="ruby-operator">-</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>.<span class="ruby-identifier">x</span>) * (<span class="ruby-identifier">p1</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p0</span>.<span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">criteria</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">:left</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">criteria</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">:right</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-value">:on</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- isLeft-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- isLeft-method -->
+
+      
+        <div id="length-method" class="method-detail method-alias">
+          <a name="method-i-length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">length</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alias for computing 2D vector length</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="V2D.html#method-i-r">r</a>
+          </div>
+          
+        </div><!-- length-method -->
+
+      
+        <div id="norm-method" class="method-detail ">
+          <a name="method-i-norm"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">norm</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the normalized vector given the current vector</p>
+
+<pre>V2D[0.0,2.0].norm =&gt; V2D[0.0,1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="norm-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">norm</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-identifier">r</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">r</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- norm-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- norm-method -->
+
+      
+        <div id="ortho-method" class="method-detail ">
+          <a name="method-i-ortho"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ortho</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the orthogonal vector. Equiv to .rotate( Math::PI/2.0 )</p>
+
+<pre>V2D[1.0,0.0].ortho =&gt; V2D[0.0,1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="ortho-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ortho</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-operator">-</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ortho-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ortho-method -->
+
+      
+        <div id="r-method" class="method-detail ">
+          <a name="method-i-r"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">r</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute length of 2D vector (r notation to be compatible with <a
+href="V2D.html">V2D</a>)</p>
+            
+
+            
+            <div class="method-source-code" id="r-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">r</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">hypot</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- r-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="V2D.html#method-i-length">length</a>
+          </div>
+          
+
+          
+        </div><!-- r-method -->
+
+      
+        <div id="reverse-method" class="method-detail method-alias">
+          <a name="method-i-reverse"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reverse</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alias for 2D vector negative</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="V2D.html#method-i-2D-40">-@</a>
+          </div>
+          
+        </div><!-- reverse-method -->
+
+      
+        <div id="rotate-method" class="method-detail ">
+          <a name="method-i-rotate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rotate</span><span
+              class="method-args">( angle )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>rotate a 2D vector</p>
+
+<pre>V2D[1.0,0.0].rotate( Math::PI/2.0 ) =&gt; V2D[0.0,1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="rotate-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate</span>( <span class="ruby-identifier">angle</span> )
+  <span class="ruby-identifier">newx</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>( <span class="ruby-identifier">angle</span> ) <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>( <span class="ruby-identifier">angle</span> )
+  <span class="ruby-identifier">newy</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>( <span class="ruby-identifier">angle</span> ) <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>( <span class="ruby-identifier">angle</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-identifier">newx</span>, <span class="ruby-identifier">newy</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rotate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rotate-method -->
+
+      
+        <div id="scale-method" class="method-detail ">
+          <a name="method-i-scale"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scale</span><span
+              class="method-args">( scaler )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>scale a vector with another one</p>
+
+<pre>V2D[1.0,2.0].scale( V2D[3.0,4.0] ) =&gt; V2D[3.0,8.0]
+v.scale( V2D[a,a] ) &lt;=&gt; v * a</pre>
+            
+
+            
+            <div class="method-source-code" id="scale-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scale</span>( <span class="ruby-identifier">scaler</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> * <span class="ruby-identifier">scaler</span>.<span class="ruby-identifier">x</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> * <span class="ruby-identifier">scaler</span>.<span class="ruby-identifier">y</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- scale-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scale-method -->
+
+      
+        <div id="succ-method" class="method-detail ">
+          <a name="method-i-succ"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">succ</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>method necessary to make <a href="V2D.html">V2D</a> Ranges</p>
+
+<p>simply add 1.0 to each coord</p>
+            
+
+            
+            <div class="method-source-code" id="succ-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">succ</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>[ <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-value">1.0</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">+</span> <span class="ruby-value">1.0</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- succ-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- succ-method -->
+
+      
+        <div id="sym-method" class="method-detail ">
+          <a name="method-i-sym"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sym</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the symetric of vector "other" considering self as symetry center</p>
+
+<pre>V2D[1.0,2.0].sym( V2D[0.0,0.0] ) =&gt; V2D[2.0,4.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="sym-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sym</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> * <span class="ruby-value">2.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sym-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sym-method -->
+
+      
+        <div id="translate-method" class="method-detail method-alias">
+          <a name="method-i-translate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">translate</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>2D translation, simply defines as addition</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="V2D.html#method-i-2B">+</a>
+          </div>
+          
+        </div><!-- translate-method -->
+
+      
+        <div id="xy-3D-method" class="method-detail ">
+          <a name="method-i-xy-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xy=</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set coords</p>
+            
+
+            
+            <div class="method-source-code" id="xy-3D-source">
+<pre>
+<span class="ruby-comment"># File lib/geometry2D.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">xy=</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> = <span class="ruby-identifier">other</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> = <span class="ruby-identifier">other</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">x</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">y</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">y</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- xy-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- xy-3D-method -->
+
+      
+        <div id="xyorder-method" class="method-detail method-alias">
+          <a name="method-i-xyorder"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xyorder</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="V2D.html#method-i-3C-3D-3E">&lt;=&gt;</a>
+          </div>
+          
+        </div><!-- xyorder-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

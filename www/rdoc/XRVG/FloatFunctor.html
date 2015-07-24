@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: XRVG::FloatFunctor</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/samplation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/samplation.rb">lib/samplation.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-addfilter">#addfilter</a></li>
+          
+          <li><a href="#method-i-alternate">#alternate</a></li>
+          
+          <li><a href="#method-i-apply">#apply</a></li>
+          
+          <li><a href="#method-i-applyhash">#applyhash</a></li>
+          
+          <li><a href="#method-i-compute">#compute</a></li>
+          
+          <li><a href="#method-i-filter">#filter</a></li>
+          
+          <li><a href="#method-i-generate">#generate</a></li>
+          
+          <li><a href="#method-i-geo">#geo</a></li>
+          
+          <li><a href="#method-i-geofull">#geofull</a></li>
+          
+          <li><a href="#method-i-modify">#modify</a></li>
+          
+          <li><a href="#method-i-process">#process</a></li>
+          
+          <li><a href="#method-i-random">#random</a></li>
+          
+          <li><a href="#method-i-shuffle">#shuffle</a></li>
+          
+          <li><a href="#method-i-sin">#sin</a></li>
+          
+          <li><a href="#method-i-ssort">#ssort</a></li>
+          
+          <li><a href="#method-i-transform">#transform</a></li>
+          
+          <li><a href="#method-i-transforms">#transforms</a></li>
+          
+          <li><a href="#method-i-trigger">#trigger</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">XRVG::FloatFunctor</h1>
+
+    <div id="description" class="description">
+      
+<p>Base module to define float lists processing and computation.</p>
+
+<h1>Design principle</h1>
+
+<p>Composite design pattern, to be able to chain functors</p>
+
+<h1>Concepts</h1>
+
+<p>on each functor object :</p>
+<ul><li>
+<p>"trigger" method triggers float processing, that is</p>
+<ul><li>
+<p>if arg is integer, call "generate" to get values</p>
+</li><li>
+<p>else (array float values), just keep them</p>
+</li></ul>
+</li><li>
+<p>pass inputs to "process" method, which wraps "compute" method to be able to
+call block and iterate</p>
+</li><li>
+<p>"compute" method first call "modify" which is the recursive processing
+function</p>
+</li><li>
+<p>then call "apply" which is specific processing method of the functor</p>
+</li><li>
+<p>"apply" then dispatchs processing according to the processing "type", ie
+"sample" or "split"</p>
+</li><li>
+<p>by default, <a href="FloatFunctor.html">FloatFunctor</a> provides
+"transforms" and "transform" to be used by "type" processing</p>
+</li></ul>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="addfilter-method" class="method-detail ">
+          <a name="method-i-addfilter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">addfilter</span><span
+              class="method-args">( newfilter )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>building recursivity method</p>
+
+<p>is private =&gt; no for <a href="../Array.html">Array</a></p>
+            
+
+            
+            <div class="method-source-code" id="addfilter-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">addfilter</span>( <span class="ruby-identifier">newfilter</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@subfilter</span>
+    <span class="ruby-ivar">@subfilter</span> = <span class="ruby-identifier">newfilter</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@subfilter</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-identifier">newfilter</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- addfilter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- addfilter-method -->
+
+      
+        <div id="alternate-method" class="method-detail ">
+          <a name="method-i-alternate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">alternate</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alternate filter</p>
+            
+
+            
+            <div class="method-source-code" id="alternate-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">alternate</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">AlternateFilter</span>.<span class="ruby-identifier">new</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- alternate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- alternate-method -->
+
+      
+        <div id="apply-method" class="method-detail ">
+          <a name="method-i-apply"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply</span><span
+              class="method-args">( data, type, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must not be overloaded (apart from <a href="Samplable.html">Samplable</a>
+containers)</p>
+            
+
+            
+            <div class="method-source-code" id="apply-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply</span>( <span class="ruby-identifier">data</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-ivar">@applyhash</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">applyhash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@applyhash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-constant">Kernel</span><span class="ruby-operator">::</span><span class="ruby-identifier">raise</span>(<span class="ruby-node">&quot;FloatFunctor::apply no regsitration for type #{type} and  object #{self.inspect}&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-ivar">@applyhash</span>[<span class="ruby-identifier">type</span>], <span class="ruby-identifier">data</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- apply-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply-method -->
+
+      
+        <div id="applyhash-method" class="method-detail ">
+          <a name="method-i-applyhash"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">applyhash</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must be refactored with some meta hooks</p>
+            
+
+            
+            <div class="method-source-code" id="applyhash-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">applyhash</span>
+  <span class="ruby-identifier">result</span> = {}
+  <span class="ruby-identifier">result</span>[<span class="ruby-value">:sample</span>] = <span class="ruby-value">:apply_samples</span>
+  <span class="ruby-identifier">result</span>[<span class="ruby-value">:split</span>]  = <span class="ruby-value">:apply_splits</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- applyhash-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- applyhash-method -->
+
+      
+        <div id="compute-method" class="method-detail ">
+          <a name="method-i-compute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compute</span><span
+              class="method-args">( indata, type, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>hook for <a href="../Array.html">Array</a></p>
+            
+
+            
+            <div class="method-source-code" id="compute-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compute</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apply</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modify</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span> ), <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compute-method -->
+
+      
+        <div id="filter-method" class="method-detail ">
+          <a name="method-i-filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filter</span><span
+              class="method-args">(samplemethod=:sample,&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to build a sampler from self and a block</p>
+            
+
+            
+            <div class="method-source-code" id="filter-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filter</span>(<span class="ruby-identifier">samplemethod</span>=<span class="ruby-value">:sample</span>,&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Filter</span>.<span class="ruby-identifier">new</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">samplemethod</span>, &amp;<span class="ruby-identifier">block</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filter-method -->
+
+      
+        <div id="generate-method" class="method-detail ">
+          <a name="method-i-generate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">generate</span><span
+              class="method-args">( nsamples )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>default generator method</p>
+            
+
+            
+            <div class="method-source-code" id="generate-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate</span>( <span class="ruby-identifier">nsamples</span> )
+  <span class="ruby-keyword">return</span> (<span class="ruby-value">0.0</span><span class="ruby-operator">..</span><span class="ruby-value">1.0</span>).<span class="ruby-identifier">generate</span>( <span class="ruby-identifier">nsamples</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- generate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- generate-method -->
+
+      
+        <div id="geo-method" class="method-detail ">
+          <a name="method-i-geo"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">geo</span><span
+              class="method-args">( speed )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>geometric filter</p>
+            
+
+            
+            <div class="method-source-code" id="geo-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">geo</span>( <span class="ruby-identifier">speed</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">Filter</span>.<span class="ruby-identifier">with</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-operator">-</span><span class="ruby-identifier">speed</span> * <span class="ruby-identifier">x</span>)} )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- geo-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- geo-method -->
+
+      
+        <div id="geofull-method" class="method-detail ">
+          <a name="method-i-geofull"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">geofull</span><span
+              class="method-args">( factor )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>geometric filter full</p>
+            
+
+            
+            <div class="method-source-code" id="geofull-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">geofull</span>( <span class="ruby-identifier">factor</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">GeoFullFilter</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">factor</span> ) )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- geofull-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- geofull-method -->
+
+      
+        <div id="modify-method" class="method-detail ">
+          <a name="method-i-modify"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">modify</span><span
+              class="method-args">( inputs, type )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>recursive method to compose modifications.</p>
+
+<p>must not be overloaded</p>
+            
+
+            
+            <div class="method-source-code" id="modify-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modify</span>( <span class="ruby-identifier">inputs</span>, <span class="ruby-identifier">type</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@subfilter</span>
+    <span class="ruby-identifier">inputs</span> = <span class="ruby-ivar">@subfilter</span>.<span class="ruby-identifier">modify</span>( <span class="ruby-identifier">inputs</span>, <span class="ruby-identifier">type</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">transforms</span>( <span class="ruby-identifier">inputs</span>, <span class="ruby-identifier">type</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>    
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- modify-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- modify-method -->
+
+      
+        <div id="process-method" class="method-detail ">
+          <a name="method-i-process"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">process</span><span
+              class="method-args">( indata, type, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>hook for rand()</p>
+            
+
+            
+            <div class="method-source-code" id="process-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compute</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">compute</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- process-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- process-method -->
+
+      
+        <div id="random-method" class="method-detail ">
+          <a name="method-i-random"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">random</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>random filter</p>
+            
+
+            
+            <div class="method-source-code" id="random-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">random</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">RandomFilter</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>) )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- random-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- random-method -->
+
+      
+        <div id="shuffle-method" class="method-detail ">
+          <a name="method-i-shuffle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">shuffle</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shuffle filter</p>
+            
+
+            
+            <div class="method-source-code" id="shuffle-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shuffle</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">ShuffleFilter</span>.<span class="ruby-identifier">new</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- shuffle-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- shuffle-method -->
+
+      
+        <div id="sin-method" class="method-detail ">
+          <a name="method-i-sin"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sin</span><span
+              class="method-args">( speed=1.0, phase=0.0 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>sin filter</p>
+            
+
+            
+            <div class="method-source-code" id="sin-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sin</span>( <span class="ruby-identifier">speed</span>=<span class="ruby-value">1.0</span>, <span class="ruby-identifier">phase</span>=<span class="ruby-value">0.0</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">Filter</span>.<span class="ruby-identifier">with</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>( <span class="ruby-identifier">speed</span> * <span class="ruby-identifier">x</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">phase</span>) } )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sin-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sin-method -->
+
+      
+        <div id="ssort-method" class="method-detail ">
+          <a name="method-i-ssort"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ssort</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>sorting filter</p>
+            
+
+            
+            <div class="method-source-code" id="ssort-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ssort</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">addfilter</span>( <span class="ruby-constant">SortFilter</span>.<span class="ruby-identifier">new</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ssort-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ssort-method -->
+
+      
+        <div id="transform-method" class="method-detail ">
+          <a name="method-i-transform"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">transform</span><span
+              class="method-args">( abs )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>to be overloaded</p>
+            
+
+            
+            <div class="method-source-code" id="transform-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">transform</span>( <span class="ruby-identifier">abs</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">abs</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- transform-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- transform-method -->
+
+      
+        <div id="transforms-method" class="method-detail ">
+          <a name="method-i-transforms"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">transforms</span><span
+              class="method-args">( inputs, type )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>to be overloaded if needed</p>
+            
+
+            
+            <div class="method-source-code" id="transforms-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">transforms</span>( <span class="ruby-identifier">inputs</span>, <span class="ruby-identifier">type</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">inputs</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">abs</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">transform</span>( <span class="ruby-identifier">abs</span> )}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- transforms-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- transforms-method -->
+
+      
+        <div id="trigger-method" class="method-detail ">
+          <a name="method-i-trigger"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">trigger</span><span
+              class="method-args">( nsamples, type, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>must not be overloaded</p>
+            
+
+            
+            <div class="method-source-code" id="trigger-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger</span>( <span class="ruby-identifier">nsamples</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">nsamples</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
+    <span class="ruby-identifier">indata</span>     = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">generate</span>( <span class="ruby-identifier">nsamples</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">indata</span>     = <span class="ruby-identifier">nsamples</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process</span>( <span class="ruby-identifier">indata</span>, <span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- trigger-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- trigger-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

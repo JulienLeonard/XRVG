@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Module: XRVG::Samplable</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/samplation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/samplation.rb">lib/samplation.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-build">::build</a></li>
+          
+          <li><a href="#method-i-apply_sample">#apply_sample</a></li>
+          
+          <li><a href="#method-i-apply_samples">#apply_samples</a></li>
+          
+          <li><a href="#method-i-mean">#mean</a></li>
+          
+          <li><a href="#method-i-middle">#middle</a></li>
+          
+          <li><a href="#method-i-sample">#sample</a></li>
+          
+          <li><a href="#method-i-samples">#samples</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">XRVG::Samplable</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Samplable.html">Samplable</a> module, based on <a
+href="FloatFunctor.html">FloatFunctor</a></p>
+
+<h1>Concept  </h1>
+
+<p>Basically allows advanced item computations from an continuous "Interval"
+object.  Is used by :</p>
+<ul><li>
+<p><a href="../Range.html">Range</a> for computing float values</p>
+</li><li>
+<p><a href="Curve.html">Curve</a> for computing points</p>
+</li><li>
+<p><a href="Palette.html">Palette</a> for computing colors</p>
+</li><li>
+<p>...</p>
+</li></ul>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="build-method" class="method-detail ">
+          <a name="method-c-build"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">build</span><span
+              class="method-args">( value )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>method to transform any object into samplable object</p>
+
+<p>used to add <a href="Attribute.html">Attribute</a> type :samplable</p>
+            
+
+            
+            <div class="method-source-code" id="build-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Samplable</span>.<span class="ruby-identifier">build</span>( <span class="ruby-identifier">value</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Roller</span>[*<span class="ruby-identifier">value</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Samplable</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Roller</span>[<span class="ruby-identifier">value</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- build-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- build-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="apply_sample-method" class="method-detail ">
+          <a name="method-i-apply_sample"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply_sample</span><span
+              class="method-args">( abs, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>to be overloaded if needed</p>
+            
+
+            
+            <div class="method-source-code" id="apply_sample-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_sample</span>( <span class="ruby-identifier">abs</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">abs</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- apply_sample-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply_sample-method -->
+
+      
+        <div id="apply_samples-method" class="method-detail ">
+          <a name="method-i-apply_samples"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply_samples</span><span
+              class="method-args">( inputs, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>to be overloaded if needed</p>
+
+<p>called by <a href="FloatFunctor.html">FloatFunctor</a> apply method</p>
+            
+
+            
+            <div class="method-source-code" id="apply_samples-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_samples</span>( <span class="ruby-identifier">inputs</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">inputs</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">abs</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apply_sample</span>( <span class="ruby-identifier">abs</span> ) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">inputs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">container</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apply_sample</span>( <span class="ruby-identifier">inputs</span>[<span class="ruby-value">0</span>] ); <span class="ruby-keyword">yield</span> <span class="ruby-identifier">container</span>;
+      <span class="ruby-identifier">inputs</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">abs</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apply_sample</span>( <span class="ruby-identifier">abs</span>, <span class="ruby-identifier">container</span> ) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- apply_samples-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply_samples-method -->
+
+      
+        <div id="mean-method" class="method-detail ">
+          <a name="method-i-mean"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mean</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alias for sample( 0.5 )</p>
+            
+
+            
+            <div class="method-source-code" id="mean-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mean</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sample</span>( <span class="ruby-value">0.5</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- mean-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Samplable.html#method-i-middle">middle</a>
+          </div>
+          
+
+          
+        </div><!-- mean-method -->
+
+      
+        <div id="middle-method" class="method-detail method-alias">
+          <a name="method-i-middle"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">middle</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alias for mean</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Samplable.html#method-i-mean">mean</a>
+          </div>
+          
+        </div><!-- middle-method -->
+
+      
+        <div id="sample-method" class="method-detail ">
+          <a name="method-i-sample"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sample</span><span
+              class="method-args">( abs )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to call float processing for one input</p>
+
+<p>is basically .<a href="http://abs">samples(</a>).pop</p>
+            
+
+            
+            <div class="method-source-code" id="sample-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sample</span>( <span class="ruby-identifier">abs</span> )
+  <span class="ruby-identifier">type</span> = <span class="ruby-value">:sample</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apply</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modify</span>( [<span class="ruby-identifier">abs</span>], <span class="ruby-identifier">type</span> ), <span class="ruby-identifier">type</span> ).<span class="ruby-identifier">pop</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sample-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sample-method -->
+
+      
+        <div id="samples-method" class="method-detail ">
+          <a name="method-i-samples"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">samples</span><span
+              class="method-args">( nsamples, &block )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>fundamental method of the module</p>
+
+<p>call the <a href="FloatFunctor.html">FloatFunctor</a> trigger method, with
+type :sample</p>
+
+<pre>(0.0..1.0).samples( 3 ) =&gt; [0.0, 0.5, 1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="samples-source">
+<pre>
+<span class="ruby-comment"># File lib/samplation.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">samples</span>( <span class="ruby-identifier">nsamples</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">trigger</span>( <span class="ruby-identifier">nsamples</span>, <span class="ruby-value">:sample</span>, &amp;<span class="ruby-identifier">block</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- samples-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- samples-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

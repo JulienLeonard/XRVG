@@ -1,0 +1,82 @@
+= XRVG -- X Ruby Vector Graphics
+
+Supporting XRVG version: 0.0.1
+
+This package contains XRVG, a Ruby vector graphic programming library.
+
+== Download
+
+The latest version of XRVG can be found at
+
+* http://rubyforge.org/projects/xrvg/
+
+== Installation
+
+=== GEM Installation
+
+Download and install XRVG with the following.
+
+   gem install xrvg
+
+=== Running the XRVG Test Suite
+
+TODO
+
+== Online Resources
+
+=== XRVG Reference
+
+* XRVG API Documentation http://xrvg.rubyforge.org/reference/index.html
+
+=== Tutorials
+
+* http://xrvg.rubyforge.org/XRVGTutorials.html
+
+=== Road Map
+
+TO BE DEFINED
+
+== Simple Example
+
+To be put in a .rb file
+  
+  require 'xrvg'
+  
+  render = SVGRender[ :filename, "test.svg" ]
+  render.add( Circle[] )
+  render.end
+
+== License
+
+XRVG is available under an MIT-style license.
+
+:include: LICENSE
+
+== Support
+
+The XRVG homepage is http://xrvg.rubyforge.org.  You can find the XRVG
+RubyForge page at http://rubyforge.org/projects/XRVG.
+
+Feel free to submit commits or feature requests.  If you send a patch,
+remember to update the corresponding unit tests.  If fact, I prefer
+new feature to be submitted in the form of new unit tests.
+
+For other information, feel free to ask on the ruby-talk mailing list
+(which is mirrored to comp.lang.ruby) or contact
+mailto:julien.leonard@ensta.org.
+
+----
+
+= Other stuff
+
+Author::   Julien Léonard <jl.julien.leonard@nospam@yahoo.com>
+Requires:: Ruby 1.9.0 or later
+License::  Copyright 2008-2015 by Julien Léonard.
+           Released under an MIT-style license.
+
+== Warranty
+
+This software is provided "as is" and without any express or
+implied warranties, including, without limitation, the implied
+warranties of merchantibility and fitness for a particular
+purpose.

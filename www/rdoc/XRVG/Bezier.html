@@ -1,0 +1,2376 @@
+<?xml version="1.0" encoding="IBM437"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>Class: XRVG::Bezier</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/bezier_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/bezier.rb">lib/bezier.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Curve</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-5B-5D">::[]</a></li>
+          
+          <li><a href="#method-c-intersections">::intersections</a></li>
+          
+          <li><a href="#method-c-line">::line</a></li>
+          
+          <li><a href="#method-c-multi">::multi</a></li>
+          
+          <li><a href="#method-c-raw">::raw</a></li>
+          
+          <li><a href="#method-c-raws">::raws</a></li>
+          
+          <li><a href="#method-c-single">::single</a></li>
+          
+          <li><a href="#method-c-vector">::vector</a></li>
+          
+          <li><a href="#method-c-vectorreg">::vectorreg</a></li>
+          
+          <li><a href="#method-c-vectors">::vectors</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-acc">#acc</a></li>
+          
+          <li><a href="#method-i-apply_sample">#apply_sample</a></li>
+          
+          <li><a href="#method-i-axesym">#axesym</a></li>
+          
+          <li><a href="#method-i-bezier">#bezier</a></li>
+          
+          <li><a href="#method-i-beziers">#beziers</a></li>
+          
+          <li><a href="#method-i-compute_length_interpolator">#compute_length_interpolator</a></li>
+          
+          <li><a href="#method-i-data">#data</a></li>
+          
+          <li><a href="#method-i-extsideframes">#extsideframes</a></li>
+          
+          <li><a href="#method-i-filter">#filter</a></li>
+          
+          <li><a href="#method-i-firstpoint">#firstpoint</a></li>
+          
+          <li><a href="#method-i-frame">#frame</a></li>
+          
+          <li><a href="#method-i-gdebug">#gdebug</a></li>
+          
+          <li><a href="#method-i-lastpoint">#lastpoint</a></li>
+          
+          <li><a href="#method-i-length">#length</a></li>
+          
+          <li><a href="#method-i-parameter_range">#parameter_range</a></li>
+          
+          <li><a href="#method-i-piece">#piece</a></li>
+          
+          <li><a href="#method-i-piecelengths">#piecelengths</a></li>
+          
+          <li><a href="#method-i-piecenumber">#piecenumber</a></li>
+          
+          <li><a href="#method-i-piecesideindices">#piecesideindices</a></li>
+          
+          <li><a href="#method-i-point">#point</a></li>
+          
+          <li><a href="#method-i-pointfromparameter">#pointfromparameter</a></li>
+          
+          <li><a href="#method-i-pointlist">#pointlist</a></li>
+          
+          <li><a href="#method-i-reverse">#reverse</a></li>
+          
+          <li><a href="#method-i-rotate">#rotate</a></li>
+          
+          <li><a href="#method-i-sampler">#sampler</a></li>
+          
+          <li><a href="#method-i-segmentparameters">#segmentparameters</a></li>
+          
+          <li><a href="#method-i-segmentparametersrec">#segmentparametersrec</a></li>
+          
+          <li><a href="#method-i-sideparameterranges">#sideparameterranges</a></li>
+          
+          <li><a href="#method-i-sides">#sides</a></li>
+          
+          <li><a href="#method-i-similar">#similar</a></li>
+          
+          <li><a href="#method-i-subbezier">#subbezier</a></li>
+          
+          <li><a href="#method-i-svg">#svg</a></li>
+          
+          <li><a href="#method-i-sym">#sym</a></li>
+          
+          <li><a href="#method-i-tangent">#tangent</a></li>
+          
+          <li><a href="#method-i-translate">#translate</a></li>
+          
+          <li><a href="#method-i-viewbox">#viewbox</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="Samplable.html">XRVG::Samplable</a></li>
+        
+        
+        
+          <li><a class="include" href="Splittable.html">XRVG::Splittable</a></li>
+        
+        
+        
+          <li><a class="include" href="ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../XRVG.html">XRVG</a></li>
+        
+          <li><a href="../XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+        
+          <li><a href="../XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+        
+          <li><a href="../XRVG/Attributable.html">XRVG::Attributable</a></li>
+        
+          <li><a href="../XRVG/Attribute.html">XRVG::Attribute</a></li>
+        
+          <li><a href="../XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+        
+          <li><a href="../XRVG/Bezier.html">XRVG::Bezier</a></li>
+        
+          <li><a href="../XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+        
+          <li><a href="../XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+        
+          <li><a href="../XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+        
+          <li><a href="../XRVG/Circle.html">XRVG::Circle</a></li>
+        
+          <li><a href="../XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+        
+          <li><a href="../XRVG/Color.html">XRVG::Color</a></li>
+        
+          <li><a href="../XRVG/Curve.html">XRVG::Curve</a></li>
+        
+          <li><a href="../XRVG/Filter.html">XRVG::Filter</a></li>
+        
+          <li><a href="../XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+        
+          <li><a href="../XRVG/Fitting.html">XRVG::Fitting</a></li>
+        
+          <li><a href="../XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+        
+          <li><a href="../XRVG/Frame.html">XRVG::Frame</a></li>
+        
+          <li><a href="../XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+        
+          <li><a href="../XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+        
+          <li><a href="../XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+        
+          <li><a href="../XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+        
+          <li><a href="../XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+        
+          <li><a href="../XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+        
+          <li><a href="../XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+        
+          <li><a href="../XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+        
+          <li><a href="../XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+        
+          <li><a href="../XRVG/Line.html">XRVG::Line</a></li>
+        
+          <li><a href="../XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+        
+          <li><a href="../XRVG/Offset.html">XRVG::Offset</a></li>
+        
+          <li><a href="../XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+        
+          <li><a href="../XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+        
+          <li><a href="../XRVG/Palette.html">XRVG::Palette</a></li>
+        
+          <li><a href="../XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+        
+          <li><a href="../XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+        
+          <li><a href="../XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+        
+          <li><a href="../XRVG/Render.html">XRVG::Render</a></li>
+        
+          <li><a href="../XRVG/Roller.html">XRVG::Roller</a></li>
+        
+          <li><a href="../XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+        
+          <li><a href="../XRVG/Samplable.html">XRVG::Samplable</a></li>
+        
+          <li><a href="../XRVG/Shape.html">XRVG::Shape</a></li>
+        
+          <li><a href="../XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+        
+          <li><a href="../XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+        
+          <li><a href="../XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+        
+          <li><a href="../XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+        
+          <li><a href="../XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+        
+          <li><a href="../XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+        
+          <li><a href="../XRVG/Splittable.html">XRVG::Splittable</a></li>
+        
+          <li><a href="../XRVG/Style.html">XRVG::Style</a></li>
+        
+          <li><a href="../XRVG/SyncS.html">XRVG::SyncS</a></li>
+        
+          <li><a href="../XRVG/Trace.html">XRVG::Trace</a></li>
+        
+          <li><a href="../XRVG/V2D.html">XRVG::V2D</a></li>
+        
+          <li><a href="../XRVG/V2DS.html">XRVG::V2DS</a></li>
+        
+          <li><a href="../Array.html">Array</a></li>
+        
+          <li><a href="../Float.html">Float</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+          <li><a href="../Range.html">Range</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">XRVG::Bezier</h1>
+
+    <div id="description" class="description">
+      
+<h1>Base class for cubic bezier curves</h1>
+
+<h2>Basics</h2>
+
+<p>See <a
+href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve">en.wikipedia.org/wiki/B%C3%A9zier_curve</a></p>
+
+<h2>Examples</h2>
+
+<p>Basically, a <a href="Bezier.html">Bezier</a> curve is a multi-pieces cubic
+bezier curve. As a first example, you can create bezier curves as follows :</p>
+
+<pre>b = Bezier[ :pieces, [[:raw, p1, pc1, pc2, p2]] ]; # raw description, as SVG
+b = Bezier[ :pieces, [[:vector, p1, v1, p2, v2]] ]; # more &quot;symetrical&quot; description.</pre>
+
+<p>For more extensive description, see <a
+href="http://xrvg.rubyforge.org/XRVGBezierCurve.html">xrvg.rubyforge.org/XRVGBezierCurve.html</a></p>
+
+<h2>Discussion</h2>
+
+<p>In <a href="../XRVG.html">XRVG</a>, bezier curves must be also viewed as a
+way to create smooth and non linear interpolation between values (see
+<tt>Interpolation</tt>)</p>
+
+<p>Other point : to run along a bezier curve, you can use two different
+parametrization :</p>
+<ul><li>
+<p>the curve generic one, that is "curviligne" abscissa, that is length</p>
+</li><li>
+<p>the bezier parameter, as bezier curves are parametrized curves. For
+multi-pieces curve, by extension, parameter goes from one integer value to
+the next one</p>
+</li></ul>
+
+<p>As <a href="Bezier.html">Bezier</a> class provides several methods with a
+parameter input, it is necessary to specify with parameter type you want to
+use ! For example, to compute a point from a bezier curve, <a
+href="Bezier.html">Bezier</a> class defines the point method as follows :</p>
+
+<pre>def point( t, parametertype=:length )</pre>
+
+<p>This is a general declaration : every method with a parameter input will
+propose such a kind of interface :</p>
+<ul><li>
+<p>t as <a href="../Float.html">Float</a> parameter value</p>
+</li><li>
+<p>parametertype, by default :length, that can have two values, :length or
+:parameter. :parameter is kept because is far faster than other indexation.</p>
+</li></ul>
+
+<h2>Attributes</h2>
+
+<pre>attribute :pieces</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="O">O</a></dt>
+          
+          <dd class="description"><p>bezier point, as</p>
+
+<pre>Bezier[:raw, V2D::O, V2D::O, V2D::O, V2D::O]</pre></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-c-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">( *args )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Initialize with the <a href="Attributable.html">Attributable</a> format</p>
+
+<p>Licit formats :</p>
+
+<pre>b = Bezier.new( :pieces, [BezierSpline[:raw, p1, pc1, pc2, p2]] )
+b = Bezier[ :pieces, [BezierSpline[:vector, p1, v1, p2, v2]] ]</pre>
+
+<p>However, prefer the use of the following builders</p>
+
+<pre>b = Bezier.vector( p1, v1, p2, v2 )
+b = Bezier.raw( p1, pc1, pc2, p2 )
+b = Bezier.single( :raw, p1, pc1, pc2, p2 )
+b = Bezier.multi( [[:raw, p1, pc1, pc2, p2], [:raw, p1, pc1, pc2, p2]] )</pre>
+
+<p>The two last syntaxes are provided as shortcuts, as used quite frequently,
+and must be used instead of :pieces attributable builder</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-operator">[]</span>( *<span class="ruby-identifier">args</span> )
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>( *<span class="ruby-identifier">args</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+
+      
+        <div id="intersections-method" class="method-detail ">
+          <a name="method-c-intersections"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">intersections</span><span
+              class="method-args">( c1, c2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a list of bezier params [a1,a2, b1, b2 ...] stating intersection
+points for each curve Algo:</p>
+
+<pre>- compute segment approximations of 2 curves, by keeping parameter values
+- for the moment, brute algorithm: try to match every segment of one curve with every of the other</pre>
+<ul><li>
+<p>for every match, dychotomie to get precise parameter value</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="intersections-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 518</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">intersections</span>( <span class="ruby-identifier">c1</span>, <span class="ruby-identifier">c2</span> )
+  <span class="ruby-identifier">samples</span> = <span class="ruby-constant">Range</span>.<span class="ruby-constant">O</span>.<span class="ruby-identifier">samples</span>( <span class="ruby-value">100</span> )
+  
+  <span class="ruby-comment"># sample curves</span>
+  <span class="ruby-identifier">vs</span> = []
+  [<span class="ruby-identifier">c1</span>,<span class="ruby-identifier">c2</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">subvs</span> = []
+    <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">subvs</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">t</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span> )]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">vs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subvs</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># detect segment intersections and keep corresponding coords</span>
+  <span class="ruby-identifier">rawresult</span> = []
+  <span class="ruby-identifier">vs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s01</span>, <span class="ruby-identifier">s02</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">vs</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s11</span>, <span class="ruby-identifier">s12</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">inter</span> = <span class="ruby-constant">V2DS</span>[<span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">s02</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">intersection</span>( <span class="ruby-constant">V2DS</span>[<span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">s12</span>[<span class="ruby-value">1</span>]] )
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">inter</span>
+        <span class="ruby-comment"># compute distances rapport</span>
+        <span class="ruby-identifier">r0</span> = (<span class="ruby-identifier">inter</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">s02</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">s01</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span>
+        <span class="ruby-identifier">r1</span> = (<span class="ruby-identifier">inter</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">s12</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">s11</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">r</span>
+        <span class="ruby-comment"># Trace(&quot;Bezier.intersections rapports r0 #{r0} r1 #{r1} s0 V2DS #{V2DS[s01[1], s02[1]].inspect} s1 V2DS #{V2DS[s11[1], s12[1]].inspect}&quot;)</span>
+        <span class="ruby-identifier">rawresult</span> <span class="ruby-operator">+=</span> [<span class="ruby-identifier">s01</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">s02</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r0</span>, <span class="ruby-identifier">s11</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">s12</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r1</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Trace(&quot;Bezier.intersections rawresult #{rawresult.inspect}&quot;)</span>
+
+  <span class="ruby-comment"># compute accurately coords</span>
+  <span class="ruby-comment"># for the moment, just return mean</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">rawresult</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span>, <span class="ruby-identifier">r12</span>, <span class="ruby-identifier">t3</span>, <span class="ruby-identifier">t4</span>, <span class="ruby-identifier">r34</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> [(<span class="ruby-identifier">t1</span><span class="ruby-operator">..</span><span class="ruby-identifier">t2</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">r12</span> ), (<span class="ruby-identifier">t3</span><span class="ruby-operator">..</span><span class="ruby-identifier">t4</span>).<span class="ruby-identifier">sample</span>( <span class="ruby-identifier">r34</span> )]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Trace(&quot;Bezier.intersections result #{result.inspect}&quot;)</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- intersections-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- intersections-method -->
+
+      
+        <div id="line-method" class="method-detail ">
+          <a name="method-c-line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">line</span><span
+              class="method-args">( p1 = V2D::O, p2 = V2D::X )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Uni <a href="Bezier.html">Bezier</a> builder to make a line</p>
+            
+
+            
+            <div class="method-source-code" id="line-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">line</span>( <span class="ruby-identifier">p1</span> = <span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span>, <span class="ruby-identifier">p2</span> = <span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">X</span> )
+  <span class="ruby-identifier">v</span> = (<span class="ruby-identifier">p2</span><span class="ruby-operator">-</span><span class="ruby-identifier">p1</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">vectorreg</span>( <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v</span> * <span class="ruby-value">-1.0</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- line-method -->
+
+      
+        <div id="multi-method" class="method-detail ">
+          <a name="method-c-multi"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">multi</span><span
+              class="method-args">( rawpieces )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Basic Multi <a href="Bezier.html">Bezier</a> builder</p>
+
+<p>raw pieces must be an array of arrays of the form [type, p1, p2, p3, p4] as
+defined for single</p>
+            
+
+            
+            <div class="method-source-code" id="multi-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">multi</span>( <span class="ruby-identifier">rawpieces</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">rawpieces</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-constant">BezierSpline</span>[*<span class="ruby-identifier">piece</span>]} )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- multi-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- multi-method -->
+
+      
+        <div id="raw-method" class="method-detail ">
+          <a name="method-c-raw"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">raw</span><span
+              class="method-args">( p1, pc1, pc2, p2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Uni <a href="Bezier.html">Bezier</a> builder in :raw format</p>
+            
+
+            
+            <div class="method-source-code" id="raw-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">raw</span>( <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span>, <span class="ruby-identifier">pc2</span>, <span class="ruby-identifier">p2</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>( <span class="ruby-value">:raw</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span>, <span class="ruby-identifier">pc2</span>, <span class="ruby-identifier">p2</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- raw-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- raw-method -->
+
+      
+        <div id="raws-method" class="method-detail ">
+          <a name="method-c-raws"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">raws</span><span
+              class="method-args">( *args )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>"regular" Multi <a href="Bezier.html">Bezier</a> :raw specification</p>
+
+<p>args is a list of points and control points as [p1, pc1, p2, pc2, p3, pc3]</p>
+
+<p>Beware that</p>
+
+<pre>Bezier.raw( p1, pc1, pc2, p2 ) == Bezier.raws( p1, pc1, p2, p2 + (p2-pc2))</pre>
+            
+
+            
+            <div class="method-source-code" id="raws-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">raws</span>( *<span class="ruby-identifier">args</span> )
+  <span class="ruby-identifier">rawpieces</span> = []
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pair1</span>, <span class="ruby-identifier">pair2</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span> = <span class="ruby-identifier">pair1</span> 
+    <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">pc2</span> = <span class="ruby-identifier">pair2</span>
+    <span class="ruby-identifier">rawpieces</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value">:raw</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span>, <span class="ruby-identifier">p2</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">p2</span><span class="ruby-operator">-</span><span class="ruby-identifier">pc2</span>), <span class="ruby-identifier">p2</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">multi</span>( <span class="ruby-identifier">rawpieces</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- raws-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- raws-method -->
+
+      
+        <div id="single-method" class="method-detail ">
+          <a name="method-c-single"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">single</span><span
+              class="method-args">( type, p1, p2, p3, p4 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Uni <a href="Bezier.html">Bezier</a> builder</p>
+
+<p>type can be :raw or :vector</p>
+            
+
+            
+            <div class="method-source-code" id="single-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">p3</span>, <span class="ruby-identifier">p4</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, [<span class="ruby-constant">BezierSpline</span>[<span class="ruby-identifier">type</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">p3</span>, <span class="ruby-identifier">p4</span>]] )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- single-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- single-method -->
+
+      
+        <div id="vector-method" class="method-detail ">
+          <a name="method-c-vector"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">vector</span><span
+              class="method-args">( p1, v1, p2, v2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Uni <a href="Bezier.html">Bezier</a> builder in :vector format</p>
+            
+
+            
+            <div class="method-source-code" id="vector-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">vector</span>( <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v2</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>( <span class="ruby-value">:vector</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v2</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- vector-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- vector-method -->
+
+      
+        <div id="vectorreg-method" class="method-detail ">
+          <a name="method-c-vectorreg"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">vectorreg</span><span
+              class="method-args">( p1, v1, p2, v2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Uni <a href="Bezier.html">Bezier</a> builder in :vector format, with vector
+length normalized at 1/3 dist between points</p>
+            
+
+            
+            <div class="method-source-code" id="vectorreg-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">vectorreg</span>( <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v2</span> )
+  <span class="ruby-identifier">d</span> = (<span class="ruby-identifier">p1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p2</span>).<span class="ruby-identifier">r</span>
+  <span class="ruby-identifier">v1</span> = <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">norm</span> * <span class="ruby-identifier">d</span><span class="ruby-operator">/</span><span class="ruby-value">3.0</span>
+  <span class="ruby-identifier">v2</span> = <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">norm</span> * <span class="ruby-identifier">d</span><span class="ruby-operator">/</span><span class="ruby-value">3.0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">vector</span>( <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v2</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- vectorreg-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- vectorreg-method -->
+
+      
+        <div id="vectors-method" class="method-detail ">
+          <a name="method-c-vectors"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">vectors</span><span
+              class="method-args">( *args )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>"regular" Multi <a href="Bezier.html">Bezier</a> :vector specification</p>
+
+<p>args is a list of points and control points as [p1, v1, p2, v2, p3, v3]</p>
+
+<p>Beware that</p>
+
+<pre>Bezier.vector( p1, v1, p2, v2 ) == Bezier.vectors( p1, v1, p2, -v2)</pre>
+            
+
+            
+            <div class="method-source-code" id="vectors-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">vectors</span>( *<span class="ruby-identifier">args</span> )
+  <span class="ruby-identifier">rawpieces</span> = []
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pair1</span>, <span class="ruby-identifier">pair2</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span> = <span class="ruby-identifier">pair1</span> 
+    <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">v2</span> = <span class="ruby-identifier">pair2</span>
+    <span class="ruby-identifier">rawpieces</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value">:vector</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-operator">-</span><span class="ruby-identifier">v2</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">multi</span>( <span class="ruby-identifier">rawpieces</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- vectors-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- vectors-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+</span><span
+              class="method-args">( other )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="Bezier.html">Bezier</a> curve concatenation</p>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>( <span class="ruby-identifier">other</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pieces</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">pieces</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-method -->
+
+      
+        <div id="acc-method" class="method-detail ">
+          <a name="method-i-acc"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">acc</span><span
+              class="method-args">( t, container=nil, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute acceleration at curviligne abscissa or parameter t</p>
+
+<p>curve method redefinition</p>
+            
+
+            
+            <div class="method-source-code" id="acc-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">acc</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parametertype</span>=<span class="ruby-value">:length</span> )
+  <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">parametertype</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">acc</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- acc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- acc-method -->
+
+      
+        <div id="apply_sample-method" class="method-detail method-alias">
+          <a name="method-i-apply_sample"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply_sample</span><span
+              class="method-args">( t, container=nil, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Bezier.html#method-i-point">point</a>
+          </div>
+          
+        </div><!-- apply_sample-method -->
+
+      
+        <div id="axesym-method" class="method-detail ">
+          <a name="method-i-axesym"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">axesym</span><span
+              class="method-args">( point, v )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>axis symetry</p>
+            
+
+            
+            <div class="method-source-code" id="axesym-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 388</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">axesym</span>( <span class="ruby-identifier">point</span>, <span class="ruby-identifier">v</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">axesym</span>( <span class="ruby-identifier">point</span>, <span class="ruby-identifier">v</span> ) } )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- axesym-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- axesym-method -->
+
+      
+        <div id="bezier-method" class="method-detail ">
+          <a name="method-i-bezier"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bezier</span><span
+              class="method-args">( index )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to retrieve a piece as an <a href="Bezier.html">Bezier</a>
+object</p>
+            
+
+            
+            <div class="method-source-code" id="bezier-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bezier</span>( <span class="ruby-identifier">index</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>( *<span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">index</span> ).<span class="ruby-identifier">data</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bezier-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bezier-method -->
+
+      
+        <div id="beziers-method" class="method-detail ">
+          <a name="method-i-beziers"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">beziers</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to build <a href="Bezier.html">Bezier</a> objects from each
+piece</p>
+            
+
+            
+            <div class="method-source-code" id="beziers-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">beziers</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pieces</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">single</span>( *<span class="ruby-identifier">piece</span>.<span class="ruby-identifier">data</span> ) }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- beziers-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- beziers-method -->
+
+      
+        <div id="compute_length_interpolator-method" class="method-detail ">
+          <a name="method-i-compute_length_interpolator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">compute_length_interpolator</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>overload <a href="ParametricLength.html">ParametricLength</a> method, to
+use linear segmentation</p>
+            
+
+            
+            <div class="method-source-code" id="compute_length_interpolator-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 760</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compute_length_interpolator</span>()
+  <span class="ruby-comment"># puts &quot;compute_length_interpolator bezier enter&quot;</span>
+  <span class="ruby-identifier">sum</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">sums</span> = [<span class="ruby-value">0.0</span>]
+  <span class="ruby-identifier">p</span> = <span class="ruby-identifier">firstpoint</span>()
+  <span class="ruby-identifier">segmentparameters</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">newpoint</span> = <span class="ruby-identifier">pointfromparameter</span>( <span class="ruby-identifier">t</span> )
+    <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">newpoint</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p</span>).<span class="ruby-identifier">r</span>()
+    <span class="ruby-comment"># puts &quot;compute_length_interpolator t #{t} p #{p.inspect} newpoint #{newpoint.inspect} sum #{sum}&quot;</span>
+    <span class="ruby-identifier">sums</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sum</span>
+    <span class="ruby-identifier">p</span> = <span class="ruby-identifier">newpoint</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">load_length_interpolator</span>( <span class="ruby-identifier">segmentparameters</span>, <span class="ruby-identifier">sums</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- compute_length_interpolator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- compute_length_interpolator-method -->
+
+      
+        <div id="data-method" class="method-detail ">
+          <a name="method-i-data"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">data</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to retrieve data list of a bezier</p>
+            
+
+            
+            <div class="method-source-code" id="data-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pieces</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">data</span> }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- data-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- data-method -->
+
+      
+        <div id="extsideframes-method" class="method-detail ">
+          <a name="method-i-extsideframes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">extsideframes</span><span
+              class="method-args">( t1, t2, f1, f2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>curve method utilitaries to compute frame side extremities</p>
+            
+
+            
+            <div class="method-source-code" id="extsideframes-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 631</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extsideframes</span>( <span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-identifier">f2</span> )
+  <span class="ruby-comment"># puts &quot;extsideframes enter&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@extsideframes_cache</span>
+    <span class="ruby-ivar">@extsideframes_cache</span> = {}
+  <span class="ruby-keyword">end</span>
+  [<span class="ruby-identifier">t1</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-value">:left</span>, <span class="ruby-identifier">t2</span>, <span class="ruby-identifier">f2</span>, <span class="ruby-value">:right</span>].<span class="ruby-identifier">foreach</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">f</span>, <span class="ruby-identifier">side</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@extsideframes_cache</span>[<span class="ruby-node">&quot;#{t}side&quot;</span>]
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">center</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">center</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">vector</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">vector</span>.<span class="ruby-identifier">y</span> = <span class="ruby-ivar">@extsideframes_cache</span>[<span class="ruby-node">&quot;#{t}side&quot;</span>]
+      <span class="ruby-comment"># f.center.y = @extsideframes_cache[&quot;#{t}side&quot;][1]</span>
+      <span class="ruby-comment"># f.vector.x = @extsideframes_cache[&quot;#{t}side&quot;][2]</span>
+      <span class="ruby-comment"># f.vector.y = @extsideframes_cache[&quot;#{t}side&quot;][3]</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">t</span>, <span class="ruby-value">:parameter</span>, <span class="ruby-identifier">side</span> )
+      <span class="ruby-comment"># puts &quot;extsideframes pieceindex #{pieceindex} t #{t}&quot;</span>
+      <span class="ruby-identifier">point</span>    = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">center</span> )
+      <span class="ruby-identifier">tangent</span>  = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">vector</span> )
+      <span class="ruby-identifier">rotation</span> = <span class="ruby-keyword">nil</span>; <span class="ruby-comment">#self.rotation( nil, tangent )</span>
+      <span class="ruby-identifier">scale</span>    = <span class="ruby-keyword">nil</span>; <span class="ruby-comment">#self.scale( nil, tangent )</span>
+      <span class="ruby-comment">#@extsideframes_cache[&quot;#{t}side&quot;] = [f.center.x, f.center.y, f.vector.x, f.vector.y]</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- extsideframes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- extsideframes-method -->
+
+      
+        <div id="filter-method" class="method-detail ">
+          <a name="method-i-filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filter</span><span
+              class="method-args">(type=:point, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>filter, sampler methods</p>
+
+<p>just a shortcut to define easily specific sampler on bezier curve</p>
+
+<p>TODO : must be defined on <a href="Curve.html">Curve</a> interface !!</p>
+            
+
+            
+            <div class="method-source-code" id="filter-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 735</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filter</span>(<span class="ruby-identifier">type</span>=<span class="ruby-value">:point</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">type</span>, &amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">addfilter</span>( (<span class="ruby-value">0.0</span><span class="ruby-operator">..</span><span class="ruby-value">1.0</span>) )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- filter-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Bezier.html#method-i-sampler">sampler</a>
+          </div>
+          
+
+          
+        </div><!-- filter-method -->
+
+      
+        <div id="firstpoint-method" class="method-detail ">
+          <a name="method-i-firstpoint"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">firstpoint</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to get curve first point</p>
+            
+
+            
+            <div class="method-source-code" id="firstpoint-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">firstpoint</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pointlist</span>()[<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- firstpoint-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- firstpoint-method -->
+
+      
+        <div id="frame-method" class="method-detail ">
+          <a name="method-i-frame"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">frame</span><span
+              class="method-args">( t, container=nil, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>curve method redefinition to factorize parametermapping</p>
+            
+
+            
+            <div class="method-source-code" id="frame-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parametertype</span>=<span class="ruby-value">:length</span> )
+  <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">parametertype</span> )
+  <span class="ruby-identifier">containerpoint</span>   = <span class="ruby-identifier">container</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">container</span>.<span class="ruby-identifier">center</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">containertangent</span> = <span class="ruby-identifier">container</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">container</span>.<span class="ruby-identifier">vector</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">point</span>    = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">containerpoint</span> )
+  <span class="ruby-identifier">tangent</span>  = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">containertangent</span> )
+  <span class="ruby-identifier">rotation</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rotation</span>( <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">tangent</span> )
+  <span class="ruby-identifier">scale</span>    = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scale</span>( <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">tangent</span> )
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">container</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">container</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Frame</span>[ <span class="ruby-value">:center</span>, <span class="ruby-identifier">point</span>, <span class="ruby-value">:vector</span>, <span class="ruby-identifier">tangent</span>, <span class="ruby-value">:rotation</span>, <span class="ruby-identifier">rotation</span>, <span class="ruby-value">:scale</span>, <span class="ruby-identifier">scale</span> ]
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- frame-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- frame-method -->
+
+      
+        <div id="gdebug-method" class="method-detail ">
+          <a name="method-i-gdebug"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gdebug</span><span
+              class="method-args">(render)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Display <a href="Bezier.html">Bezier</a> curve decorated with points and
+control points</p>
+            
+
+            
+            <div class="method-source-code" id="gdebug-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gdebug</span>(<span class="ruby-identifier">render</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pieces</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">gdebug</span>(<span class="ruby-identifier">render</span>)}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- gdebug-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gdebug-method -->
+
+      
+        <div id="lastpoint-method" class="method-detail ">
+          <a name="method-i-lastpoint"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lastpoint</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to get curve last point</p>
+            
+
+            
+            <div class="method-source-code" id="lastpoint-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lastpoint</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pointlist</span>()[<span class="ruby-value">-1</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- lastpoint-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lastpoint-method -->
+
+      
+        <div id="length-method" class="method-detail ">
+          <a name="method-i-length"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">length</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the length of the bezier curve</p>
+
+<p>simply add pieces lengths</p>
+            
+
+            
+            <div class="method-source-code" id="length-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 481</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@length</span>
+    <span class="ruby-identifier">compute_length</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@length</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- length-method -->
+
+      
+        <div id="parameter_range-method" class="method-detail ">
+          <a name="method-i-parameter_range"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parameter_range</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parameter_range-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 751</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parameter_range</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-value">0.0</span><span class="ruby-operator">..</span><span class="ruby-identifier">piecenumber</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- parameter_range-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parameter_range-method -->
+
+      
+        <div id="piece-method" class="method-detail ">
+          <a name="method-i-piece"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">piece</span><span
+              class="method-args">( index, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return piece of index "index",as BezierSpline object</p>
+
+<p>index can be</p>
+<ul><li>
+<p>integer : in that case, simple return @<a href="http://index">pieces</a></p>
+</li><li>
+<p>float   : in that case, use second default argument</p>
+</li></ul>
+
+<p>this method must actually be very rarely called, as usually we want to
+compute something with index, and in that case we  want to delegate
+computation to a BezierSpline, with parameter mapping parametermapping</p>
+            
+
+            
+            <div class="method-source-code" id="piece-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">piece</span>( <span class="ruby-identifier">index</span>, <span class="ruby-identifier">parametertype</span>=<span class="ruby-value">:length</span> )
+  <span class="ruby-comment"># puts &quot;piece enter index #{index} parametertype #{parametertype}&quot;</span>
+  <span class="ruby-identifier">pieceindex</span> = <span class="ruby-identifier">index</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Float</span>
+    <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">index</span>, <span class="ruby-identifier">parametertype</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@pieces</span>[ <span class="ruby-identifier">pieceindex</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- piece-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- piece-method -->
+
+      
+        <div id="piecelengths-method" class="method-detail ">
+          <a name="method-i-piecelengths"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">piecelengths</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>utilitary method for interbezier</p>
+
+<p>return list of piece lengths relatives to total bezier lengths, and
+cumulated</p>
+
+<pre>Bezier.new( :pieces, [piece1, piece2] ).piecelengths; =&gt; [0.0, piece1.length / bezier.length, 1.0]</pre>
+            
+
+            
+            <div class="method-source-code" id="piecelengths-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 497</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">piecelengths</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@piecelengths</span>
+    <span class="ruby-identifier">sum</span> = <span class="ruby-value">0.0</span>
+    <span class="ruby-ivar">@piecelengths</span> = [<span class="ruby-value">0.0</span>]
+    <span class="ruby-identifier">pieces</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">lengthfromparameter</span>((<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>).<span class="ruby-identifier">to_f</span>)
+      <span class="ruby-ivar">@piecelengths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sum</span>
+    <span class="ruby-keyword">end</span>
+     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@piecelengths</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">1.0</span>
+       <span class="ruby-ivar">@piecelengths</span>[<span class="ruby-value">-1</span>] = <span class="ruby-value">1.0</span>
+     <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@piecelengths</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- piecelengths-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- piecelengths-method -->
+
+      
+        <div id="piecenumber-method" class="method-detail ">
+          <a name="method-i-piecenumber"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">piecenumber</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return number of pieces</p>
+            
+
+            
+            <div class="method-source-code" id="piecenumber-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">piecenumber</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- piecenumber-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- piecenumber-method -->
+
+      
+        <div id="piecesideindices-method" class="method-detail ">
+          <a name="method-i-piecesideindices"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">piecesideindices</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return parameters corresponding to sides must be so a list of "int"
+parameters (as uncontinuity in pieces tangent  can only be between pieces)</p>
+            
+
+            
+            <div class="method-source-code" id="piecesideindices-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 563</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">piecesideindices</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@piecesideindices</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@piecesideindices</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">p0</span>, <span class="ruby-identifier">v0</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">v1</span> = <span class="ruby-identifier">piece</span>(<span class="ruby-value">0</span>).<span class="ruby-identifier">pointlist</span>(<span class="ruby-value">:vector</span>)
+  <span class="ruby-comment"># puts &quot;piecenumber #{piecenumber}&quot;</span>
+  <span class="ruby-identifier">lastp</span> = <span class="ruby-identifier">p1</span>
+  <span class="ruby-identifier">pieces</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cpiece</span>,<span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">d0</span>, <span class="ruby-identifier">fv</span>, <span class="ruby-identifier">d1</span>, <span class="ruby-identifier">fv1</span> = <span class="ruby-identifier">cpiece</span>.<span class="ruby-identifier">pointlist</span>(<span class="ruby-value">:vector</span>)
+    <span class="ruby-comment"># puts &quot;fv #{fv.inspect} v1 #{v1.inspect}&quot;</span>
+    <span class="ruby-comment"># puts &quot;(fv * -1.0).norm #{(fv * -1.0).norm.inspect} v1.norm #{v1.norm.inspect}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> (<span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( (<span class="ruby-identifier">fv</span> * <span class="ruby-value">-1.0</span>).<span class="ruby-identifier">norm</span>, <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">norm</span>, <span class="ruby-value">0.01</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">fv</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>( <span class="ruby-value">0.0</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>( <span class="ruby-value">0.0</span>))
+      <span class="ruby-comment"># puts &quot;new side #{result[-1]} #{index}&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">v1</span> = <span class="ruby-identifier">fv1</span>
+    <span class="ruby-identifier">lastp</span> = <span class="ruby-identifier">d1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># puts &quot;v0 #{v0.inspect} v1 #{v1.inspect}&quot;</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( <span class="ruby-identifier">p0</span>, <span class="ruby-identifier">lastp</span> ))
+    <span class="ruby-keyword">if</span> (<span class="ruby-constant">V2D</span>.<span class="ruby-identifier">vequal?</span>( (<span class="ruby-identifier">v0</span> * <span class="ruby-value">-1.0</span>).<span class="ruby-identifier">norm</span>, <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">norm</span>, <span class="ruby-value">0.01</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">v0</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>( <span class="ruby-value">0.0</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>( <span class="ruby-value">0.0</span>))
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">v0</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>(<span class="ruby-value">0.0</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">v1</span>.<span class="ruby-identifier">r</span>.<span class="ruby-identifier">fequal?</span>( <span class="ruby-value">0.0</span>))
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;WARNING: parametersides: tangent null&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">result</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">result</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">piecenumber</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">result</span> = [<span class="ruby-value">0</span>,<span class="ruby-identifier">piecenumber</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span> 
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">piecenumber</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">result</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">piecenumber</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># puts &quot;piecesideindices result #{result.inspect}&quot;</span>
+  <span class="ruby-ivar">@piecesideindices</span> = <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- piecesideindices-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- piecesideindices-method -->
+
+      
+        <div id="point-method" class="method-detail ">
+          <a name="method-i-point"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">point</span><span
+              class="method-args">( t, container=nil, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute a point at curviligne abscissa or parameter t</p>
+
+<p>curve method redefinition</p>
+            
+
+            
+            <div class="method-source-code" id="point-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parametertype</span>=<span class="ruby-value">:length</span> )
+  <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">parametertype</span> )
+  <span class="ruby-comment"># puts &quot;Bezier point pieceindex #{pieceindex} t #{t} piecenumber #{piecenumber}&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- point-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Bezier.html#method-i-apply_sample">apply_sample</a>
+          </div>
+          
+
+          
+        </div><!-- point-method -->
+
+      
+        <div id="pointfromparameter-method" class="method-detail ">
+          <a name="method-i-pointfromparameter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pointfromparameter</span><span
+              class="method-args">( t, container=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="pointfromparameter-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 755</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pointfromparameter</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">point</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>, <span class="ruby-value">:parameter</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- pointfromparameter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pointfromparameter-method -->
+
+      
+        <div id="pointlist-method" class="method-detail ">
+          <a name="method-i-pointlist"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pointlist</span><span
+              class="method-args">( type=:raw )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>generic method to return points list of a curve</p>
+
+<pre>b = Bezier[ :pieces, [[:raw, p1, pc1, pc2, p2], [:raw, p2, pc2b, pc3, p3]] ]
+b.pointlist        #=&gt; equiv to b.pointlist(:raw) 
+b.pointlist(:raw)  #=&gt; [p1, pc1, pc2, p2, p2, pc2b, pc3, p3]</pre>
+
+<p>if you want to get a particular piece pointlist, do</p>
+
+<pre>b.piece( t ).pointlist(nil|:raw|:vector)</pre>
+
+<p>TODO : result must be cached by type</p>
+            
+
+            
+            <div class="method-source-code" id="pointlist-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pointlist</span>( <span class="ruby-identifier">type</span>=<span class="ruby-value">:raw</span> )
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">pointlist</span>(<span class="ruby-identifier">type</span>)}
+  <span class="ruby-comment"># Trace(&quot;Bezier.pointlist result #{result.inspect}&quot;)</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- pointlist-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pointlist-method -->
+
+      
+        <div id="reverse-method" class="method-detail ">
+          <a name="method-i-reverse"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reverse</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a new <a href="Bezier.html">Bezier</a> curve reversed from current
+one</p>
+
+<p>simply reverse BezierSpline pieces, both internally and in the :pieces list</p>
+            
+
+            
+            <div class="method-source-code" id="reverse-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse</span>
+  <span class="ruby-identifier">newpieces</span> = <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">reverse</span>()}
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">newpieces</span>.<span class="ruby-identifier">reverse</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- reverse-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reverse-method -->
+
+      
+        <div id="rotate-method" class="method-detail ">
+          <a name="method-i-rotate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rotate</span><span
+              class="method-args">( angle, center=V2D::O )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>rotate the <a href="Bezier.html">Bezier</a> curve, by rotating its points</p>
+            
+
+            
+            <div class="method-source-code" id="rotate-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 378</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rotate</span>( <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">center</span>=<span class="ruby-constant">V2D</span><span class="ruby-operator">::</span><span class="ruby-constant">O</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">rotate</span>( <span class="ruby-identifier">angle</span>, <span class="ruby-identifier">center</span> ) } )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rotate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rotate-method -->
+
+      
+        <div id="sampler-method" class="method-detail method-alias">
+          <a name="method-i-sampler"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sampler</span><span
+              class="method-args">(type=:point, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>alias apply_split  subbezier</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Bezier.html#method-i-filter">filter</a>
+          </div>
+          
+        </div><!-- sampler-method -->
+
+      
+        <div id="segmentparameters-method" class="method-detail ">
+          <a name="method-i-segmentparameters"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">segmentparameters</span><span
+              class="method-args">( error = 0.2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="segmentparameters-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 659</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">segmentparameters</span>( <span class="ruby-identifier">error</span> = <span class="ruby-value">0.2</span> )
+  <span class="ruby-keyword">return</span> (<span class="ruby-value">0.0</span><span class="ruby-operator">..</span><span class="ruby-identifier">piecenumber</span>.<span class="ruby-identifier">to_f</span>).<span class="ruby-identifier">samples</span>( <span class="ruby-value">129</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- segmentparameters-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- segmentparameters-method -->
+
+      
+        <div id="segmentparametersrec-method" class="method-detail ">
+          <a name="method-i-segmentparametersrec"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">segmentparametersrec</span><span
+              class="method-args">( abs1, abs2, cresult, error, f1, f2 )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="segmentparametersrec-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 665</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">segmentparametersrec</span>( <span class="ruby-identifier">abs1</span>, <span class="ruby-identifier">abs2</span>, <span class="ruby-identifier">cresult</span>, <span class="ruby-identifier">error</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-identifier">f2</span> )
+  <span class="ruby-identifier">extsideframes</span>( <span class="ruby-identifier">abs1</span>, <span class="ruby-identifier">abs2</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-identifier">f2</span> )
+  <span class="ruby-comment"># puts &quot;segmentparametersrec front abs1 #{abs1} abs2 #{abs2} f1 #{f1.inspect} f2 #{f2.inspect}&quot;</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">deviation1</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">angle</span>( <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">vector</span>, (<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">center</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">center</span>))
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">deviation1</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+    <span class="ruby-identifier">deviation1</span> <span class="ruby-operator">-=</span> (<span class="ruby-value">2.0</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">deviation1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-operator">-</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+    <span class="ruby-identifier">deviation1</span> <span class="ruby-operator">+=</span> (<span class="ruby-value">2.0</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">deviation2</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">angle</span>( <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">vector</span>, (<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">center</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">center</span>))
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">deviation2</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+    <span class="ruby-identifier">deviation2</span> <span class="ruby-operator">-=</span> (<span class="ruby-value">2.0</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">deviation2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-operator">-</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+    <span class="ruby-identifier">deviation2</span> <span class="ruby-operator">+=</span> (<span class="ruby-value">2.0</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">deviation1</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">crossproduct</span>( <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">vector</span>, (<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">center</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">center</span>))
+  <span class="ruby-identifier">deviation2</span> = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">crossproduct</span>( <span class="ruby-identifier">f2</span>.<span class="ruby-identifier">vector</span>, (<span class="ruby-identifier">f2</span>.<span class="ruby-identifier">center</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">center</span>))
+ 
+  <span class="ruby-comment"># puts &quot;segmentparametersrec deviation1 #{deviation1} deviation2 #{deviation2}&quot;</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">deviation1</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">deviation2</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span> <span class="ruby-keyword">and</span> ( <span class="ruby-identifier">abs1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">abs2</span>).<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.01</span>)
+    <span class="ruby-identifier">mean</span> = (<span class="ruby-identifier">abs1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">abs2</span>)<span class="ruby-operator">/</span><span class="ruby-value">2.0</span>
+    <span class="ruby-identifier">cresult</span> = <span class="ruby-identifier">segmentparametersrec</span>(<span class="ruby-identifier">abs1</span>, <span class="ruby-identifier">mean</span>, <span class="ruby-identifier">cresult</span>, <span class="ruby-identifier">error</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-identifier">f2</span> )
+    <span class="ruby-identifier">cresult</span> = <span class="ruby-identifier">segmentparametersrec</span>(<span class="ruby-identifier">mean</span>, <span class="ruby-identifier">abs2</span>, <span class="ruby-identifier">cresult</span>, <span class="ruby-identifier">error</span>, <span class="ruby-identifier">f1</span>, <span class="ruby-identifier">f2</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">cresult</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">abs2</span>
+  <span class="ruby-keyword">end</span>    
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">cresult</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- segmentparametersrec-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- segmentparametersrec-method -->
+
+      
+        <div id="sideparameterranges-method" class="method-detail ">
+          <a name="method-i-sideparameterranges"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sideparameterranges</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>used to compute parameter ranges for sides Note: for the moment, divide
+first side if continuous with last and close curve</p>
+            
+
+            
+            <div class="method-source-code" id="sideparameterranges-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 615</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sideparameterranges</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">indices</span> = <span class="ruby-identifier">piecesideindices</span>
+  <span class="ruby-identifier">indices</span>.<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i1</span>, <span class="ruby-identifier">i2</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">indices</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">piecenumber</span>
+      <span class="ruby-identifier">i1</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">i1</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">..</span><span class="ruby-identifier">i2</span>.<span class="ruby-identifier">to_f</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># puts &quot;sideparameterranges result #{result.inspect}&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sideparameterranges-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sideparameterranges-method -->
+
+      
+        <div id="sides-method" class="method-detail ">
+          <a name="method-i-sides"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sides</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>shortcut method to build <a href="Bezier.html">Bezier</a> objects from each
+not regular part</p>
+            
+
+            
+            <div class="method-source-code" id="sides-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sides</span>
+  <span class="ruby-identifier">result</span> = []
+
+  <span class="ruby-identifier">piecesideindices</span>().<span class="ruby-identifier">pairs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i1</span>, <span class="ruby-identifier">i2</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Bezier</span>[ <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">pieces</span>[<span class="ruby-identifier">i1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">pieces</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">i2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>] ]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Bezier</span>[ <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">pieces</span>[<span class="ruby-identifier">i1</span><span class="ruby-operator">..</span><span class="ruby-identifier">i2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>] ]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sides-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sides-method -->
+
+      
+        <div id="similar-method" class="method-detail ">
+          <a name="method-i-similar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">similar</span><span
+              class="method-args">( pointrange )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>"Similitude" geometric transformation</p>
+
+<p>See <a
+href="http://en.wikipedia.org/wiki/Similitude_%28geometry%29">en.wikipedia.org/wiki/Similitude_%28geometry%29</a></p>
+
+<p>Similtude geometric transformation is (firspoint..lastpoint) -&gt;
+pointrange</p>
+
+<p>TODO : method must be put in <a href="Curve.html">Curve</a> interface</p>
+            
+
+            
+            <div class="method-source-code" id="similar-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">similar</span>( <span class="ruby-identifier">pointrange</span> )
+  <span class="ruby-identifier">oldRepere</span> = [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">firstpoint</span>,  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lastpoint</span> <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">firstpoint</span>]
+  <span class="ruby-identifier">newRepere</span> = [<span class="ruby-identifier">pointrange</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">pointrange</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">pointrange</span>.<span class="ruby-identifier">begin</span>]
+  <span class="ruby-identifier">rotation</span>    = <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">angle</span>( <span class="ruby-identifier">newRepere</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">oldRepere</span>[<span class="ruby-value">1</span>] )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">oldRepere</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">r</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+    <span class="ruby-constant">Kernel</span><span class="ruby-operator">::</span><span class="ruby-identifier">raise</span>(<span class="ruby-string">&quot;similar error : bezier is length 0&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">scale</span>       = <span class="ruby-identifier">newRepere</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">r</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">oldRepere</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">r</span>
+  <span class="ruby-identifier">newpoints</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pointlist</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">oldpoint</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">oldvector</span> = <span class="ruby-identifier">oldpoint</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">oldRepere</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">newvector</span> = <span class="ruby-identifier">oldvector</span>.<span class="ruby-identifier">rotate</span>( <span class="ruby-identifier">rotation</span> ) * <span class="ruby-identifier">scale</span>
+    <span class="ruby-identifier">newpoints</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">newRepere</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">newvector</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">splines</span> = []
+  <span class="ruby-identifier">newpoints</span>.<span class="ruby-identifier">foreach</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">p3</span>, <span class="ruby-identifier">p4</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">splines</span>.<span class="ruby-identifier">push</span>( <span class="ruby-constant">BezierSpline</span>[<span class="ruby-value">:raw</span>, <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>, <span class="ruby-identifier">p3</span>, <span class="ruby-identifier">p4</span>] )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>[ <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">splines</span> ]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- similar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- similar-method -->
+
+      
+        <div id="subbezier-method" class="method-detail ">
+          <a name="method-i-subbezier"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">subbezier</span><span
+              class="method-args">( t1, t2)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute the sub curve between abscissa t1 and t2</p>
+
+<p>may result in a multi-pieces <a href="Bezier.html">Bezier</a></p>
+
+<p>Note: special modulo effect to deal with closed bezier curve</p>
+
+<p>TODO: improve code (bas design)</p>
+            
+
+            
+            <div class="method-source-code" id="subbezier-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subbezier</span>( <span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span>)
+  <span class="ruby-comment"># return Bezier.new( :pieces, self.subpieces( t1, t2 ) )</span>
+  <span class="ruby-identifier">ranges</span> = (<span class="ruby-value">0.0</span><span class="ruby-operator">..</span><span class="ruby-value">1.0</span>).<span class="ruby-identifier">modulos</span>( (<span class="ruby-identifier">t1</span><span class="ruby-operator">..</span><span class="ruby-identifier">t2</span>) )
+  <span class="ruby-comment"># Trace(&quot;Bezier::subbezier t1 #{t1} t2 #{t2} ranges #{ranges.inspect}&quot;)</span>
+  <span class="ruby-identifier">pieces</span> = []
+  <span class="ruby-identifier">ranges</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">range</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">range</span> = <span class="ruby-identifier">range</span>.<span class="ruby-identifier">sort</span>
+    <span class="ruby-identifier">pieces</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">subpieces</span>( <span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">range</span>.<span class="ruby-identifier">end</span> )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">bezier</span> = <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-identifier">pieces</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">t1</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t2</span>
+    <span class="ruby-identifier">bezier</span> = <span class="ruby-identifier">bezier</span>.<span class="ruby-identifier">reverse</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">bezier</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- subbezier-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- subbezier-method -->
+
+      
+        <div id="svg-method" class="method-detail ">
+          <a name="method-i-svg"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">svg</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the svg description of the curve</p>
+
+<p>if firstpoint == lastpoint, curve is considered as closed</p>
+            
+
+            
+            <div class="method-source-code" id="svg-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 441</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">svg</span>()
+  <span class="ruby-comment"># Trace(&quot;Bezier::svg #{self.inspect}&quot;)</span>
+  <span class="ruby-identifier">path</span>     = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">previous</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pieces</span>().<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">p1</span>, <span class="ruby-identifier">pc1</span>, <span class="ruby-identifier">pc2</span>, <span class="ruby-identifier">p2</span> = <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">pointlist</span>
+    <span class="ruby-comment"># Trace(&quot;previous #{previous.inspect} p1 #{p1.inspect}&quot;)</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">previous</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">not</span> (<span class="ruby-identifier">previous</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">p1</span>).<span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0.0000001</span>
+      <span class="ruby-comment"># Trace(&quot;svg bezier not equal =&gt; M&quot;)</span>
+      <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;M #{p1.x},#{p1.y}&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">previous</span> = <span class="ruby-identifier">p2</span>
+    <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;C #{pc1.x},#{pc1.y} #{pc2.x},#{pc2.y} #{p2.x},#{p2.y}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">firstpoint</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lastpoint</span>
+    <span class="ruby-identifier">path</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; z&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;&lt;path d=\&quot;#{path}\&quot;/&gt;&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- svg-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- svg-method -->
+
+      
+        <div id="sym-method" class="method-detail ">
+          <a name="method-i-sym"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sym</span><span
+              class="method-args">( center )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>central symetry</p>
+            
+
+            
+            <div class="method-source-code" id="sym-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 383</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sym</span>( <span class="ruby-identifier">center</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">sym</span>( <span class="ruby-identifier">center</span> ) } )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sym-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sym-method -->
+
+      
+        <div id="tangent-method" class="method-detail ">
+          <a name="method-i-tangent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tangent</span><span
+              class="method-args">( t, container=nil, parametertype=:length )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>compute tangent at curviligne abscissa or parameter t</p>
+
+<p>curve method redefinition</p>
+            
+
+            
+            <div class="method-source-code" id="tangent-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tangent</span> ( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parametertype</span>=<span class="ruby-value">:length</span> )
+  <span class="ruby-identifier">pieceindex</span>, <span class="ruby-identifier">t</span> = <span class="ruby-identifier">parametermapping</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">parametertype</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">piece</span>( <span class="ruby-identifier">pieceindex</span> ).<span class="ruby-identifier">tangent</span>( <span class="ruby-identifier">t</span>, <span class="ruby-identifier">container</span> )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- tangent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tangent-method -->
+
+      
+        <div id="translate-method" class="method-detail ">
+          <a name="method-i-translate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">translate</span><span
+              class="method-args">( v )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>translate the <a href="Bezier.html">Bezier</a> curve, by translating its
+points</p>
+            
+
+            
+            <div class="method-source-code" id="translate-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">translate</span>( <span class="ruby-identifier">v</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Bezier</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value">:pieces</span>, <span class="ruby-ivar">@pieces</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">piece</span><span class="ruby-operator">|</span> <span class="ruby-identifier">piece</span>.<span class="ruby-identifier">translate</span>( <span class="ruby-identifier">v</span> ) } )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- translate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- translate-method -->
+
+      
+        <div id="viewbox-method" class="method-detail ">
+          <a name="method-i-viewbox"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">viewbox</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>overload Curve::viewbox</p>
+            
+
+            
+            <div class="method-source-code" id="viewbox-source">
+<pre>
+<span class="ruby-comment"># File lib/bezier.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">viewbox</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">V2D</span>.<span class="ruby-identifier">viewbox</span>( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pointlist</span>() )
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- viewbox-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- viewbox-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

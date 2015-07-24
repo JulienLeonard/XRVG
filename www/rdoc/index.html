@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=IBM437" http-equiv="Content-Type" />
+
+  <title>XRVG API documentation</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>XRVG API documentation</h1>
+
+  
+  <div id="main">
+    
+
+<p>Supporting <a href="XRVG.html">XRVG</a> version: 0.0.1</p>
+
+<p>This package contains <a href="XRVG.html">XRVG</a>, a Ruby vector graphic
+programming library.</p>
+
+<h2>Download</h2>
+
+<p>The latest version of <a href="XRVG.html">XRVG</a> can be found at</p>
+<ul><li>
+<p><a
+href="http://rubyforge.org/projects/xrvg/">rubyforge.org/projects/xrvg/</a></p>
+</li></ul>
+
+<h2>Installation</h2>
+
+<h3>GEM Installation</h3>
+
+<p>Download and install <a href="XRVG.html">XRVG</a> with the following.</p>
+
+<pre>gem install xrvg</pre>
+
+<h3>Running the <a href="XRVG.html">XRVG</a> Test Suite</h3>
+
+<p>TODO</p>
+
+<h2>Online Resources</h2>
+
+<h3><a href="XRVG.html">XRVG</a> Reference</h3>
+<ul><li>
+<p><a href="XRVG.html">XRVG</a> API Documentation <a
+href="http://xrvg.rubyforge.org/reference/index.html">xrvg.rubyforge.org/reference/index.html</a></p>
+</li></ul>
+
+<h3>Tutorials</h3>
+<ul><li>
+<p><a
+href="http://xrvg.rubyforge.org/XRVGTutorials.html">xrvg.rubyforge.org/XRVGTutorials.html</a></p>
+</li></ul>
+
+<h3>Road Map</h3>
+
+<p>TO BE DEFINED</p>
+
+<h2>Simple Example</h2>
+
+<p>To be put in a .rb file</p>
+
+<pre>require 'xrvg'
+
+render = SVGRender[ :filename, &quot;test.svg&quot; ]
+render.add( Circle[] )
+render.end</pre>
+
+<h2>License</h2>
+
+<p><a href="XRVG.html">XRVG</a> is available under an MIT-style license.</p>
+
+<p>Copyright (c) 2008-2015 Julien Léonard</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<h2>Support</h2>
+
+<p>The <a href="XRVG.html">XRVG</a> homepage is <a
+href="http://xrvg.rubyforge.org.">xrvg.rubyforge.org.</a>  You can find the
+<a href="XRVG.html">XRVG</a> RubyForge page at <a
+href="http://rubyforge.org/projects/XRVG.">rubyforge.org/projects/XRVG.</a></p>
+
+<p>Feel free to submit commits or feature requests.  If you send a patch,
+remember to update the corresponding unit tests.  If fact, I prefer new
+feature to be submitted in the form of new unit tests.</p>
+
+<p>For other information, feel free to ask on the ruby-talk mailing list
+(which is mirrored to comp.lang.ruby) or contact <a
+href="mailto:julien.leonard@ensta.org.">julien.leonard@ensta.org.</a></p>
+<hr style="height: 2px">
+
+<h1>Other stuff</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Author</p></td>
+<td>
+<p>Julien Léonard &lt;jl.julien.leonard@nospam@yahoo.com&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>Requires</p></td>
+<td>
+<p>Ruby 1.9.0 or later</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>Copyright 2008-2015 by Julien Léonard. Released under an MIT-style license.</p>
+</td></tr></table>
+
+<h2>Warranty</h2>
+
+<p>This software is provided "as is" and without any express or implied
+warranties, including, without limitation, the implied warranties of
+merchantibility and fitness for a particular purpose.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="README.html">README</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="XRVG.html">XRVG</a></li>
+    
+    <li class="class"><a href="XRVG/AlternateFilter.html">XRVG::AlternateFilter</a></li>
+    
+    <li class="class"><a href="XRVG/ArcBezier.html">XRVG::ArcBezier</a></li>
+    
+    <li class="module"><a href="XRVG/Attributable.html">XRVG::Attributable</a></li>
+    
+    <li class="class"><a href="XRVG/Attribute.html">XRVG::Attribute</a></li>
+    
+    <li class="class"><a href="XRVG/AttributeMotifIterator.html">XRVG::AttributeMotifIterator</a></li>
+    
+    <li class="class"><a href="XRVG/Bezier.html">XRVG::Bezier</a></li>
+    
+    <li class="class"><a href="XRVG/BezierBuilder.html">XRVG::BezierBuilder</a></li>
+    
+    <li class="class"><a href="XRVG/BezierLevel.html">XRVG::BezierLevel</a></li>
+    
+    <li class="class"><a href="XRVG/BezierMotif.html">XRVG::BezierMotif</a></li>
+    
+    <li class="class"><a href="XRVG/Circle.html">XRVG::Circle</a></li>
+    
+    <li class="class"><a href="XRVG/ClosureBezier.html">XRVG::ClosureBezier</a></li>
+    
+    <li class="class"><a href="XRVG/Color.html">XRVG::Color</a></li>
+    
+    <li class="class"><a href="XRVG/Curve.html">XRVG::Curve</a></li>
+    
+    <li class="class"><a href="XRVG/Filter.html">XRVG::Filter</a></li>
+    
+    <li class="class"><a href="XRVG/FitBezierBuilder.html">XRVG::FitBezierBuilder</a></li>
+    
+    <li class="class"><a href="XRVG/Fitting.html">XRVG::Fitting</a></li>
+    
+    <li class="module"><a href="XRVG/FloatFunctor.html">XRVG::FloatFunctor</a></li>
+    
+    <li class="class"><a href="XRVG/Frame.html">XRVG::Frame</a></li>
+    
+    <li class="class"><a href="XRVG/Fuseau.html">XRVG::Fuseau</a></li>
+    
+    <li class="class"><a href="XRVG/FuseauVariety.html">XRVG::FuseauVariety</a></li>
+    
+    <li class="class"><a href="XRVG/GSpiral.html">XRVG::GSpiral</a></li>
+    
+    <li class="class"><a href="XRVG/GeoFullFilter.html">XRVG::GeoFullFilter</a></li>
+    
+    <li class="module"><a href="XRVG/GeoVariety.html">XRVG::GeoVariety</a></li>
+    
+    <li class="class"><a href="XRVG/GradientBezier.html">XRVG::GradientBezier</a></li>
+    
+    <li class="class"><a href="XRVG/InterBezier.html">XRVG::InterBezier</a></li>
+    
+    <li class="module"><a href="XRVG/Interpolation.html">XRVG::Interpolation</a></li>
+    
+    <li class="class"><a href="XRVG/Interpolator.html">XRVG::Interpolator</a></li>
+    
+    <li class="class"><a href="XRVG/Line.html">XRVG::Line</a></li>
+    
+    <li class="class"><a href="XRVG/LinearBezier.html">XRVG::LinearBezier</a></li>
+    
+    <li class="class"><a href="XRVG/Offset.html">XRVG::Offset</a></li>
+    
+    <li class="class"><a href="XRVG/OffsetVariety.html">XRVG::OffsetVariety</a></li>
+    
+    <li class="class"><a href="XRVG/Ondulation.html">XRVG::Ondulation</a></li>
+    
+    <li class="class"><a href="XRVG/Palette.html">XRVG::Palette</a></li>
+    
+    <li class="module"><a href="XRVG/ParametricLength.html">XRVG::ParametricLength</a></li>
+    
+    <li class="class"><a href="XRVG/PicBezier.html">XRVG::PicBezier</a></li>
+    
+    <li class="class"><a href="XRVG/RandomFilter.html">XRVG::RandomFilter</a></li>
+    
+    <li class="class"><a href="XRVG/Render.html">XRVG::Render</a></li>
+    
+    <li class="class"><a href="XRVG/Roller.html">XRVG::Roller</a></li>
+    
+    <li class="class"><a href="XRVG/SVGRender.html">XRVG::SVGRender</a></li>
+    
+    <li class="module"><a href="XRVG/Samplable.html">XRVG::Samplable</a></li>
+    
+    <li class="class"><a href="XRVG/Shape.html">XRVG::Shape</a></li>
+    
+    <li class="class"><a href="XRVG/ShuffleFilter.html">XRVG::ShuffleFilter</a></li>
+    
+    <li class="class"><a href="XRVG/SimilarMotifIterator.html">XRVG::SimilarMotifIterator</a></li>
+    
+    <li class="class"><a href="XRVG/SimpleBezier.html">XRVG::SimpleBezier</a></li>
+    
+    <li class="class"><a href="XRVG/SortFilter.html">XRVG::SortFilter</a></li>
+    
+    <li class="class"><a href="XRVG/SpiralLinear.html">XRVG::SpiralLinear</a></li>
+    
+    <li class="class"><a href="XRVG/SpiralLog.html">XRVG::SpiralLog</a></li>
+    
+    <li class="module"><a href="XRVG/Splittable.html">XRVG::Splittable</a></li>
+    
+    <li class="class"><a href="XRVG/Style.html">XRVG::Style</a></li>
+    
+    <li class="class"><a href="XRVG/SyncS.html">XRVG::SyncS</a></li>
+    
+    <li class="class"><a href="XRVG/Trace.html">XRVG::Trace</a></li>
+    
+    <li class="class"><a href="XRVG/V2D.html">XRVG::V2D</a></li>
+    
+    <li class="class"><a href="XRVG/V2DS.html">XRVG::V2DS</a></li>
+    
+    <li class="class"><a href="Array.html">Array</a></li>
+    
+    <li class="class"><a href="Float.html">Float</a></li>
+    
+    <li class="class"><a href="Object.html">Object</a></li>
+    
+    <li class="class"><a href="Range.html">Range</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="Range.html#method-c-Angle">::Angle &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-c-O">::O &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-5B-5D">::[] &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/SyncS.html#method-c-5B-5D">::[] &mdash; XRVG::SyncS</a></li>
+    
+      <li><a href="XRVG/BezierBuilder.html#method-c-5B-5D">::[] &mdash; XRVG::BezierBuilder</a></li>
+    
+      <li><a href="Object.html#method-c-5B-5D">::[] &mdash; Object</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-c-5B-5D">::[] &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-5B-5D">::[] &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-5B-5D">::[] &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/SVGRender.html#method-c-5B-5D">::[] &mdash; XRVG::SVGRender</a></li>
+    
+      <li><a href="XRVG/Trace.html#method-c-activate">::activate &mdash; XRVG::Trace</a></li>
+    
+      <li><a href="XRVG/Trace.html#method-c-active-3F">::active? &mdash; XRVG::Trace</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-adaptative_compute">::adaptative_compute &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="XRVG/Attribute.html#method-c-addtype">::addtype &mdash; XRVG::Attribute</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-angle">::angle &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-bezierpiece">::bezierpiece &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-black">::black &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-blue">::blue &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/BezierBuilder.html#method-c-build">::build &mdash; XRVG::BezierBuilder</a></li>
+    
+      <li><a href="XRVG/BezierMotif.html#method-c-build">::build &mdash; XRVG::BezierMotif</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-c-build">::build &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="XRVG/BezierLevel.html#method-c-build">::build &mdash; XRVG::BezierLevel</a></li>
+    
+      <li><a href="XRVG/FitBezierBuilder.html#method-c-build">::build &mdash; XRVG::FitBezierBuilder</a></li>
+    
+      <li><a href="XRVG/LinearBezier.html#method-c-buildwithangle">::buildwithangle &mdash; XRVG::LinearBezier</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-compute">::compute &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-crossproduct">::crossproduct &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-c-diameter">::diameter &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-error">::error &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="Float.html#method-c-floatlist_include-3F">::floatlist_include? &mdash; Float</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-c-fromtangent">::fromtangent &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="Range.html#method-c-generate">::generate &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-green">::green &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-grey">::grey &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-hsl">::hsl &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-hsla">::hsla &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-hsv">::hsv &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-hsva">::hsva &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Trace.html#method-c-inhibit">::inhibit &mdash; XRVG::Trace</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-intersections">::intersections &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-iterate">::iterate &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-line">::line &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/BezierBuilder.html#method-c-lissage">::lissage &mdash; XRVG::BezierBuilder</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-multi">::multi &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-c-new">::new &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/SyncS.html#method-c-new">::new &mdash; XRVG::SyncS</a></li>
+    
+      <li><a href="XRVG/Filter.html#method-c-new">::new &mdash; XRVG::Filter</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-new">::new &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/FuseauVariety.html#method-c-new">::new &mdash; XRVG::FuseauVariety</a></li>
+    
+      <li><a href="XRVG/OffsetVariety.html#method-c-new">::new &mdash; XRVG::OffsetVariety</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-c-new">::new &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-c-new">::new &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-orange">::orange &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-polar">::polar &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-rand">::rand &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rand">::rand &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-raw">::raw &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-raws">::raws &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-red">::red &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Fitting.html#method-c-renormalize">::renormalize &mdash; XRVG::Fitting</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rgb2h">::rgb2h &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rgb2hsl">::rgb2hsl &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rgb2hsv">::rgb2hsv &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rgb2sl">::rgb2sl &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-rgb2sv">::rgb2sv &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-c-sameside-3F">::sameside? &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-single">::single &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-size">::size &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="Float.html#method-c-sort_float_list">::sort_float_list &mdash; Float</a></li>
+    
+      <li><a href="Range.html#method-c-sym">::sym &mdash; Range</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-c-tangent">::tangent &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="XRVG/Attribute.html#method-c-typebuilder">::typebuilder &mdash; XRVG::Attribute</a></li>
+    
+      <li><a href="XRVG/Attribute.html#method-c-typekey-3F">::typekey? &mdash; XRVG::Attribute</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-vector">::vector &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-vectorreg">::vectorreg &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-c-vectors">::vectors &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-vequal-3F">::vequal? &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-c-viewbox">::viewbox &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-white">::white &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Filter.html#method-c-with">::with &mdash; XRVG::Filter</a></li>
+    
+      <li><a href="XRVG/Color.html#method-c-yellow">::yellow &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-2A">#* &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-2A">#* &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-2B">#+ &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-2B">#+ &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-2B">#+ &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-2D">#- &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-2D-40">#-@ &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-2F">#/ &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-3C-3D-3E">#<=> &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Frame.html#method-i-3D-3D">#== &mdash; XRVG::Frame</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-3D-3D">#== &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG.html#method-i-Trace">#Trace &mdash; XRVG</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-5B-5D">#[] &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-a">#a &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-a-3D">#a= &mdash; XRVG::Color</a></li>
+    
+      <li><a href="Range.html#method-i-abscissa">#abscissa &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-acc">#acc &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-acc">#acc &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-acc">#acc &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-acc">#acc &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-acc">#acc &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-acc_normal">#acc_normal &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/SVGRender.html#method-i-add">#add &mdash; XRVG::SVGRender</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-addfilter">#addfilter &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/SyncS.html#method-i-addfilter">#addfilter &mdash; XRVG::SyncS</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-alternate">#alternate &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Fuseau.html#method-i-ampl">#ampl &mdash; XRVG::Fuseau</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-angle">#angle &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-apply">#apply &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-apply_sample">#apply_sample &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-apply_sample">#apply_sample &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-apply_sample">#apply_sample &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-i-apply_sample">#apply_sample &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-apply_sample">#apply_sample &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-apply_sample">#apply_sample &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-apply_samples">#apply_samples &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="XRVG/GradientBezier.html#method-i-apply_samples">#apply_samples &mdash; XRVG::GradientBezier</a></li>
+    
+      <li><a href="XRVG/Splittable.html#method-i-apply_split">#apply_split &mdash; XRVG::Splittable</a></li>
+    
+      <li><a href="XRVG/Splittable.html#method-i-apply_splits">#apply_splits &mdash; XRVG::Splittable</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-applyhash">#applyhash &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-axesym">#axesym &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-axesym">#axesym &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-b">#b &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-b-3D">#b= &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/RandomFilter.html#method-i-basictransform">#basictransform &mdash; XRVG::RandomFilter</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-bezier">#bezier &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-bezier">#bezier &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-bezier">#bezier &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/GeoVariety.html#method-i-bezier">#bezier &mdash; XRVG::GeoVariety</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-beziers">#beziers &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-build_indices">#build_indices &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-build_interpolators">#build_interpolators &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="Array.html#method-i-choice">#choice &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-color">#color &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="Range.html#method-i-complement">#complement &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-complement">#complement &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/SyncS.html#method-i-compute">#compute &mdash; XRVG::SyncS</a></li>
+    
+      <li><a href="XRVG/LinearBezier.html#method-i-compute">#compute &mdash; XRVG::LinearBezier</a></li>
+    
+      <li><a href="XRVG/AttributeMotifIterator.html#method-i-compute">#compute &mdash; XRVG::AttributeMotifIterator</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-compute">#compute &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Ondulation.html#method-i-compute">#compute &mdash; XRVG::Ondulation</a></li>
+    
+      <li><a href="XRVG/PicBezier.html#method-i-compute">#compute &mdash; XRVG::PicBezier</a></li>
+    
+      <li><a href="XRVG/ArcBezier.html#method-i-compute">#compute &mdash; XRVG::ArcBezier</a></li>
+    
+      <li><a href="XRVG/SimilarMotifIterator.html#method-i-compute">#compute &mdash; XRVG::SimilarMotifIterator</a></li>
+    
+      <li><a href="XRVG/ClosureBezier.html#method-i-compute">#compute &mdash; XRVG::ClosureBezier</a></li>
+    
+      <li><a href="XRVG/SimpleBezier.html#method-i-compute">#compute &mdash; XRVG::SimpleBezier</a></li>
+    
+      <li><a href="XRVG/BezierBuilder.html#method-i-compute">#compute &mdash; XRVG::BezierBuilder</a></li>
+    
+      <li><a href="XRVG/Ondulation.html#method-i-compute_arc">#compute_arc &mdash; XRVG::Ondulation</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-compute_bezier">#compute_bezier &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Ondulation.html#method-i-compute_interpol">#compute_interpol &mdash; XRVG::Ondulation</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-compute_length_interpolator">#compute_length_interpolator &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-compute_maxangle">#compute_maxangle &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/SpiralLinear.html#method-i-compute_maxangle">#compute_maxangle &mdash; XRVG::SpiralLinear</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-i-compute_maxangle">#compute_maxangle &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-i-compute_radius">#compute_radius &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-compute_radius">#compute_radius &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/SpiralLinear.html#method-i-compute_radius">#compute_radius &mdash; XRVG::SpiralLinear</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-compute_simplebezier">#compute_simplebezier &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-contour">#contour &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-contour">#contour &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-coords">#coords &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-curvature">#curvature &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-cx">#cx &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-cy">#cy &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-data">#data &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-default_style">#default_style &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-default_style">#default_style &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-extsideframes">#extsideframes &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="Float.html#method-i-fequal-3F">#fequal? &mdash; Float</a></li>
+    
+      <li><a href="XRVG/SVGRender.html#method-i-fill">#fill &mdash; XRVG::SVGRender</a></li>
+    
+      <li><a href="XRVG/Style.html#method-i-fillopacity">#fillopacity &mdash; XRVG::Style</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-filter">#filter &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-filter">#filter &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-firstpoint">#firstpoint &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="Array.html#method-i-flattenonce">#flattenonce &mdash; Array</a></li>
+    
+      <li><a href="Array.html#method-i-foreach">#foreach &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-format255">#format255 &mdash; XRVG::Color</a></li>
+    
+      <li><a href="Array.html#method-i-forpattern">#forpattern &mdash; Array</a></li>
+    
+      <li><a href="Array.html#method-i-forzip">#forzip &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-frame">#frame &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-frame">#frame &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-frames">#frames &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-framev">#framev &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-g">#g &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-g-3D">#g= &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-gdebug">#gdebug &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-generate">#generate &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-geo">#geo &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-geofull">#geofull &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-getcurve">#getcurve &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="Array.html#method-i-half">#half &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-hsla">#hsla &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-hsva">#hsva &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-hue">#hue &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-i-init_interpolation_structures">#init_interpolation_structures &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-inner_product">#inner_product &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-i-interpolate">#interpolate &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-interpolate">#interpolate &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-interpolate">#interpolate &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-interpolators">#interpolators &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-interpoltype">#interpoltype &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-interpoltype-3D">#interpoltype= &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-i-intersect-3F">#intersect? &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-i-intersection">#intersection &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-isLeft">#isLeft &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-lastpoint">#lastpoint &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-i-left">#left &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/ParametricLength.html#method-i-length">#length &mdash; XRVG::ParametricLength</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-length">#length &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-length">#length &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-length">#length &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-length">#length &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-length">#length &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-lightness">#lightness &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/GeoVariety.html#method-i-line">#line &mdash; XRVG::GeoVariety</a></li>
+    
+      <li><a href="XRVG/OffsetVariety.html#method-i-line">#line &mdash; XRVG::OffsetVariety</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-i-line">#line &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/FuseauVariety.html#method-i-line">#line &mdash; XRVG::FuseauVariety</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-linear">#linear &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/ParametricLength.html#method-i-load_length_interpolator">#load_length_interpolator &mdash; XRVG::ParametricLength</a></li>
+    
+      <li><a href="Range.html#method-i-max">#max &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-mean">#mean &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="Array.html#method-i-mean">#mean &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-middle">#middle &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="Range.html#method-i-min">#min &mdash; Range</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-modify">#modify &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="Range.html#method-i-modulo">#modulo &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-i-modulos">#modulos &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-i-multisamples">#multisamples &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Roller.html#method-i-next">#next &mdash; XRVG::Roller</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-norm">#norm &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-normal">#normal &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-normals">#normals &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-i-nsamples">#nsamples &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-ortho">#ortho &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="Array.html#method-i-pairs">#pairs &mdash; Array</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-parameter_range">#parameter_range &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-parameter_range">#parameter_range &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/ParametricLength.html#method-i-parameter_range">#parameter_range &mdash; XRVG::ParametricLength</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-piece">#piece &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-piecelengths">#piecelengths &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-piecenumber">#piecenumber &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-piecesideindices">#piecesideindices &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-point">#point &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/GeoVariety.html#method-i-point">#point &mdash; XRVG::GeoVariety</a></li>
+    
+      <li><a href="XRVG/OffsetVariety.html#method-i-point">#point &mdash; XRVG::OffsetVariety</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-point">#point &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-point">#point &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/FuseauVariety.html#method-i-point">#point &mdash; XRVG::FuseauVariety</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-point">#point &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-point">#point &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/InterBezier.html#method-i-point">#point &mdash; XRVG::InterBezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-pointfromparameter">#pointfromparameter &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-pointfromparameter">#pointfromparameter &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/ParametricLength.html#method-i-pointfromparameter">#pointfromparameter &mdash; XRVG::ParametricLength</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-pointlist">#pointlist &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Offset.html#method-i-points">#points &mdash; XRVG::Offset</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-points">#points &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-points">#points &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-process">#process &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-r">#r &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-r">#r &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-r-3D">#r= &mdash; XRVG::Color</a></li>
+    
+      <li><a href="Range.html#method-i-rand">#rand &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-i-randgauss">#randgauss &mdash; Range</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-random">#random &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="Array.html#method-i-range">#range &mdash; Array</a></li>
+    
+      <li><a href="XRVG/RandomFilter.html#method-i-rawtransforms">#rawtransforms &mdash; XRVG::RandomFilter</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-refpoints">#refpoints &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="Range.html#method-i-resize">#resize &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-i-reverse">#reverse &mdash; Range</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-reverse">#reverse &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-reverse">#reverse &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-reverse">#reverse &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/Palette.html#method-i-reverse">#reverse &mdash; XRVG::Palette</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-rgba">#rgba &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/V2DS.html#method-i-right">#right &mdash; XRVG::V2DS</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-rotate">#rotate &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-rotate">#rotate &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="Array.html#method-i-rotate">#rotate &mdash; Array</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-rotate">#rotate &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-rotation">#rotation &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="Array.html#method-i-rotations">#rotations &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-sample">#sample &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-samplelist">#samplelist &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-sampler">#sampler &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/GradientBezier.html#method-i-samples">#samples &mdash; XRVG::GradientBezier</a></li>
+    
+      <li><a href="XRVG/Samplable.html#method-i-samples">#samples &mdash; XRVG::Samplable</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-saturation">#saturation &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-scale">#scale &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-scale">#scale &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-segmentparameters">#segmentparameters &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-segmentparametersrec">#segmentparametersrec &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-shuffle">#shuffle &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="Array.html#method-i-shuffle">#shuffle &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-sideparameterranges">#sideparameterranges &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-sides">#sides &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-similar">#similar &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Interpolation.html#method-i-simplebezier">#simplebezier &mdash; XRVG::Interpolation</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-sin">#sin &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-size">#size &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="Range.html#method-i-size">#size &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-size">#size &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="Range.html#method-i-sort">#sort &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Splittable.html#method-i-split">#split &mdash; XRVG::Splittable</a></li>
+    
+      <li><a href="XRVG/Splittable.html#method-i-splits">#splits &mdash; XRVG::Splittable</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-ssort">#ssort &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/SVGRender.html#method-i-stroke">#stroke &mdash; XRVG::SVGRender</a></li>
+    
+      <li><a href="XRVG/Style.html#method-i-strokeopacity">#strokeopacity &mdash; XRVG::Style</a></li>
+    
+      <li><a href="Array.html#method-i-sub">#sub &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-subbezier">#subbezier &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-succ">#succ &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="Array.html#method-i-sum">#sum &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-surface">#surface &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-svg">#svg &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-svg">#svg &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-svg">#svg &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-svg">#svg &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-svg">#svg &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-svg">#svg &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/Style.html#method-i-svgfill">#svgfill &mdash; XRVG::Style</a></li>
+    
+      <li><a href="XRVG/Style.html#method-i-svgline">#svgline &mdash; XRVG::Style</a></li>
+    
+      <li><a href="XRVG/Style.html#method-i-svgstroke">#svgstroke &mdash; XRVG::Style</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-sym">#sym &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-sym">#sym &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="Range.html#method-i-sym">#sym &mdash; Range</a></li>
+    
+      <li><a href="Range.html#method-i-symend">#symend &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-tangent">#tangent &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/SpiralLog.html#method-i-tangent">#tangent &mdash; XRVG::SpiralLog</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-tangent">#tangent &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-tangent">#tangent &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-tangent">#tangent &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-tangent">#tangent &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-tangent0">#tangent0 &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-tangent0_angle">#tangent0_angle &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-tangent0_length">#tangent0_length &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="XRVG/Curve.html#method-i-tangents">#tangents &mdash; XRVG::Curve</a></li>
+    
+      <li><a href="Range.html#method-i-transform">#transform &mdash; Range</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-transform">#transform &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="XRVG/Filter.html#method-i-transform">#transform &mdash; XRVG::Filter</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-transforms">#transforms &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="Range.html#method-i-translate">#translate &mdash; Range</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-translate">#translate &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-translate">#translate &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-translate">#translate &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/FloatFunctor.html#method-i-trigger">#trigger &mdash; XRVG::FloatFunctor</a></li>
+    
+      <li><a href="Range.html#method-i-trim">#trim &mdash; Range</a></li>
+    
+      <li><a href="Array.html#method-i-triplets">#triplets &mdash; Array</a></li>
+    
+      <li><a href="Array.html#method-i-uplets">#uplets &mdash; Array</a></li>
+    
+      <li><a href="XRVG/Color.html#method-i-value">#value &mdash; XRVG::Color</a></li>
+    
+      <li><a href="XRVG/Bezier.html#method-i-viewbox">#viewbox &mdash; XRVG::Bezier</a></li>
+    
+      <li><a href="XRVG/Line.html#method-i-viewbox">#viewbox &mdash; XRVG::Line</a></li>
+    
+      <li><a href="XRVG/GSpiral.html#method-i-viewbox">#viewbox &mdash; XRVG::GSpiral</a></li>
+    
+      <li><a href="XRVG/Circle.html#method-i-viewbox">#viewbox &mdash; XRVG::Circle</a></li>
+    
+      <li><a href="XRVG/Shape.html#method-i-viewbox">#viewbox &mdash; XRVG::Shape</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-xy-3D">#xy= &mdash; XRVG::V2D</a></li>
+    
+      <li><a href="XRVG/V2D.html#method-i-xyorder">#xyorder &mdash; XRVG::V2D</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
