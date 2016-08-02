@@ -165,7 +165,7 @@ module Attributable
 	end
 	init_value = value
       else
-	if attr.default_value == nil
+	if attr.default_value.nil?
 	  raise( "Attributable::initialize for class #{self} : attribute #{symbol} is required : attribute defs #{self.class.attributes.inspect}" )
 	end
 	default_value = attr.default_value

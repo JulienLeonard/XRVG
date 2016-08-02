@@ -445,7 +445,7 @@ class Bezier < Curve
     self.pieces().each do |piece|
       p1, pc1, pc2, p2 = piece.pointlist
       # Trace("previous #{previous.inspect} p1 #{p1.inspect}")
-      if previous == nil or not (previous - p1).r <= 0.0000001
+      if previous.nil? or not (previous - p1).r <= 0.0000001
 	# Trace("svg bezier not equal => M")
 	path += "M #{p1.x},#{p1.y}"
       end
