@@ -156,49 +156,7 @@ Rake::GemPackageTask.new(GEM_SPEC) do |pkg|
   # pkg.need_tar = true
 end
 #---
-desc "Upload website to RubyForge. " +
-  "scp will prompt for your RubyForge password."
-task "publish-website" => ["rdoc"] do
-  rubyforge_path = "/var/www/gforge-projects/#{UNIX_NAME}/"
-  sh "scp -r #{WEBSITE_DIR}/* " +
-    "#{RUBYFORGE_USER}@rubyforge.org:#{rubyforge_path}",
-    :verbose => true
-end
-#---
-task "rubyforge-setup" do
-  unless File.exist?(File.join(ENV["HOME"], ".rubyforge"))
-    puts "rubyforge will ask you to edit its config.yml now."
-    puts "Please set the `username' and `password' entries"
-    puts "to your RubyForge username and RubyForge password!"
-    puts "Press ENTER to continue."
-    $stdin.gets
-    sh "rubyforge setup", :verbose => true
-  end
-end
 
-task "rubyforge-login" => ["rubyforge-setup"] do
-  # Note: We assume that username and password were set in
-  # rubyforge's config.yml.
-  sh "rubyforge login", :verbose => true
-end
-
-task "publish-packages" => ["package", "rubyforge-login"] do
-  # Upload packages under pkg/ to RubyForge
-  # This task makes some assumptions:
-  # * You have already created a package on the "Files" tab on the
-  #   RubyForge project page. See pkg_name variable below.
-  # * You made entries under package_ids and group_ids for this
-  #   project in rubyforge's config.yml.  If not, eventually read
-  #   "rubyforge --help" and then run "rubyforge setup".
-  pkg_name = ENV["PKG_NAME"] || UNIX_NAME
-  cmd = "rubyforge add_release #{UNIX_NAME} #{pkg_name} " +
-        "#{PROJECT_VERSION} #{UNIX_NAME}-#{PROJECT_VERSION}"
-  cd "pkg" do
-  sh(cmd + ".gem", :verbose => true)
-    sh(cmd + ".tgz", :verbose => true)
-    sh(cmd + ".zip", :verbose => true)
-  end
-end
 #---
 # The "prepare-release" task makes sure your tests run, and then generates
 # files for a new release.
@@ -210,24 +168,6 @@ task "prepare-release" => ["clobber"] do
   Rake::Task["package"].invoke
 end
 
-# The "publish" task is the overarching task for the whole project. It
-# builds a release and then publishes it to RubyForge.
-desc "Publish new release of #{PROJECT}"
-task "publish" => ["prepare-release"] do
-  puts "Uploading documentation..."
-  Rake::Task["publish-website"].invoke
-  puts "Checking for rubyforge command..."
-  `rubyforge --help`
-  if $? == 0
-    puts "Uploading packages..."
-    Rake::Task["publish-packages"].invoke
-    puts "Release done!"
-  else
-    puts "Can't invoke rubyforge command."
-    puts "Either install rubyforge with 'gem install rubyforge'"
-    puts "and retry or upload the package files manually!"
-  end
-end
 #---
 # $ rake -T
 # rake clean            # Remove any temporary products.
