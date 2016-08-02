@@ -1,3 +1,0 @@
-#!/bin/sh
-
-java -cp ../lib/pureimage.jar jp.ne.cappuccino.keisuken.tools.pureimage.FontCreator Shift_JIS.tbl "‚³‚´‚È‚Ý–¾’©Regular" $1 sazanami-mincho-$1.fnt
