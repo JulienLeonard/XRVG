@@ -145,14 +145,9 @@ end
 # $ rake -T
 # rake clean            # Remove any temporary products.
 # rake clobber          # Remove any generated file.
-# rake clobber_package  # Remove package products
 # rake clobber_rdoc     # Remove rdoc products
-# rake package          # Build all the packages
 # rake prepare-release  # Run tests, generate RDoc and create packages.
-# rake publish          # Publish new release of MyProject
-# rake publish-website  # Upload website to RubyForge. scp will prompt for your RubyForge password.
 # rake rdoc             # Build the rdoc HTML Files
-# rake repackage        # Force a rebuild of the package files
 # rake rerdoc           # Force a rebuild of the RDOC files
 # rake test             # Run tests for test
 #---
