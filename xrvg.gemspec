@@ -10,6 +10,8 @@ Gem::Specification.new do |s|
   s.email = 'julien.leonard@nospam@ensta.org'
   s.homepage = 'http://xrvg.rubyforge.org/'
 
+  s.license = 'MIT'
+
   s.files = Dir['lib/*.rb', 'examples/*.rb',
                 'Rakefile', 'LICENSE',
                 'README']
