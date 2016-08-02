@@ -1,3 +1,0 @@
-require 'xrvg'
-include XRVG
-
