@@ -2,7 +2,6 @@
 require "rake/testtask"
 require "rake/clean"
 require "rake/rdoctask"
-require "rake/gempackagetask"
 #---
 # The name of your project
 PROJECT = "XRVG"
@@ -129,33 +128,7 @@ Rake::RDocTask.new("rdoc") do |t|
   t.main = GENERAL_RDOC_OPTS["--main"]
   t.rdoc_dir = RDOC_HTML_DIR
 end
-#---
-GEM_SPEC = Gem::Specification.new do |s|
-  s.name = UNIX_NAME
-  s.version = PROJECT_VERSION
-  s.summary = PROJECT_SUMMARY
-  s.rubyforge_project = UNIX_NAME
-  s.homepage = "http://#{UNIX_NAME}.rubyforge.org/"
-  s.author = MY_NAME
-  s.email = MY_EMAIL
-  s.files = DIST_FILES
-  s.test_files = TEST_FILES
-  s.executables = BIN_FILES.map { |fn| File.basename(fn) }
-  s.has_rdoc = true
-  s.extra_rdoc_files = RDOC_FILES
-  s.rdoc_options = GENERAL_RDOC_OPTS.to_a.flatten
-  if HAVE_EXT
-    s.extensions = EXTCONF_FILES
-    s.require_paths << EXT_DIR
-  end
-end
 
-# Now we can generate the package-related tasks.
-Rake::GemPackageTask.new(GEM_SPEC) do |pkg|
-  # pkg.need_zip = true
-  # pkg.need_tar = true
-end
-#---
 
 #---
 # The "prepare-release" task makes sure your tests run, and then generates
