@@ -190,9 +190,7 @@ class V2D
     if type == :cartesien
       return [self.x, self.y]
     elsif type == :polar
-      if @polarcoords == nil
-	@polarcoords = [self.r, self.angle]
-      end
+      @polarcoords ||= [self.r, self.angle]
       return @polarcoords
     else
       Kernel.raise( "Unknown coord type #{type}" )      

@@ -86,7 +86,7 @@ module ParametricLength
 
   def length_interpolator() #:nodoc:
     # puts "length_interpolator enter"
-    if @length_interpolator == nil
+    if not defined? @length_interpolator
       self.compute_length_interpolator()
     end
     return @length_interpolator
@@ -94,7 +94,7 @@ module ParametricLength
 
   def abs_interpolator() #:nodoc:
     # puts "abs_interpolator enter"
-    if @abs_interpolator == nil
+    if not defined? @abs_interpolator
       self.compute_length_interpolator()
     end
     return @abs_interpolator

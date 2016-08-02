@@ -60,7 +60,7 @@ module Interpolation
     #puts "interpolate indices #{@indices.inspect}"
     #puts "interpolate values #{@values.inspect}"
 
-    if not @indices
+    if not defined? @indices
       build_indices
     end
     

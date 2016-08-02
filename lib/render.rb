@@ -57,6 +57,7 @@ class SVGRender < Render
     @layers  = {}
     @defs    = ""
     @ngradients = 0
+    @sortlayers = nil
     if @filename.length == 0
       @filename = $0.split(".")[0..-2].join(".") + ".svg"
       Trace("filename is #{filename}")
@@ -152,10 +153,6 @@ class SVGRender < Render
     return result
   end
 
-  def viewbox #:nodoc:
-    return @viewbox
-  end
-
   def size #:nodoc:
     xmin, ymin, xmax, ymax  = viewbox
     return [xmax - xmin, ymax - ymin]
@@ -164,7 +161,7 @@ class SVGRender < Render
   def refresh_viewbox (object) #:nodoc:
     newviewbox = object.viewbox
     if newviewbox.length > 0
-      if @viewbox == nil
+      if viewbox.nil?
 	@viewbox = newviewbox
       else
 	newxmin, newymin, newxmax, newymax = newviewbox

@@ -113,7 +113,7 @@ class BezierSpline #:nodoc:
       result = V2D[0.0,0.0]
     end
     
-    if not @factors
+    if not defined? @factors
       compute_factors
     end
 
@@ -133,7 +133,7 @@ class BezierSpline #:nodoc:
       result = V2D[0.0,0.0]
     end
 
-    if not @factors
+    if not defined? @factors
       compute_factors
     end
 
@@ -150,7 +150,7 @@ class BezierSpline #:nodoc:
       result = V2D[0.0,0.0]
     end
 
-    if not @factors
+    if not defined? @factors
       compute_factors
     end
 

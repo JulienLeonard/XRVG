@@ -25,14 +25,16 @@ module FloatFunctor
 #  essential recursivity chaining  method
 # -------------------------------------------------------------
 
+  attr_reader :subfilter
+
   # building recursivity method
   #
   # is private => no for Array
   def addfilter( newfilter )
-    if not @subfilter
+    if not subfilter
       @subfilter = newfilter
     else
-      @subfilter.addfilter( newfilter )
+      subfilter.addfilter( newfilter )
     end
     return self
   end
@@ -69,8 +71,8 @@ module FloatFunctor
   #
   # must not be overloaded
   def modify( inputs, type )
-    if @subfilter
-      inputs = @subfilter.modify( inputs, type )
+    if subfilter
+      inputs = subfilter.modify( inputs, type )
     end
     result = self.transforms( inputs, type )
     return result    

@@ -53,10 +53,7 @@ class GSpiral < Curve
   end
 
   def maxangle
-    if not @maxangle
-      @maxangle = self.compute_maxangle( @r0, @angle0, @curvature )
-    end
-    return @maxangle
+    @maxangle ||= self.compute_maxangle( @r0, @angle0, @curvature )
   end
 
   def pointfromparameter( parameter, container )
@@ -97,10 +94,7 @@ class GSpiral < Curve
   end
 
   def bezier
-    if not @bezier
-      @bezier = self.compute_bezier
-    end
-    return @bezier
+    @bezier ||= self.compute_bezier
   end
 
   def refpoints

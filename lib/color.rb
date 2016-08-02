@@ -475,7 +475,7 @@ class Palette
   # overloading to reset interpolators if interpoltype changes
   def interpoltype=(value)
     @interpoltype = value
-    if @interpolators
+    if defined? @interpolators
       self.build_interpolators
     end
   end
