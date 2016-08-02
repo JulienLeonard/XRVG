@@ -4,7 +4,7 @@ require "rake/clean"
 require 'bundler/gem_tasks'
 require "rdoc/task"
 
-CLEAN.include("test/**/*.svg")
+CLEAN.include("test/**/*.svg", "*.svg")
 
 # Run the tests if rake is invoked without arguments.
 task "default" => ["test"]
