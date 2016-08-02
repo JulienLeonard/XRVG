@@ -1,7 +1,7 @@
 # Rakefile
 require "rake/testtask"
 require "rake/clean"
-require "rake/rdoctask"
+require "rdoc/task"
 #---
 # The name of your project
 PROJECT = "XRVG"
