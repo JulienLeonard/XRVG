@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'render'
 
-class SVGRenderTest  < Test::Unit::TestCase
+class SVGRenderTest  < Minitest::Test
 
   def test_render
     if File.exist?( "svgrender.svg" ) 

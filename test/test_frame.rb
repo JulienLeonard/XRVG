@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'frame'
 require 'geometry2D'
 
-class FrameTest < Test::Unit::TestCase
+class FrameTest < Minitest::Test
   
   def test_frame1
     frame1 = Frame[ :center, V2D[0.0,0.0], :vector, V2D[1.0,0.0], :rotation, 0.0, :scale, 1.0 ]

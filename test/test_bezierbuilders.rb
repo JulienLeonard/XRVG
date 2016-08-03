@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'bezierbuilders'
 
 
-class BezierBuilderTest < Test::Unit::TestCase
+class BezierBuilderTest < Minitest::Test
 
   def test_abstract
     assert_raise(NotImplementedError){BezierBuilder.new.compute}
@@ -16,7 +16,7 @@ class BezierBuilderTest < Test::Unit::TestCase
 
 end
 
-class SimilarMotifIteratorTest < Test::Unit::TestCase
+class SimilarMotifIteratorTest < Minitest::Test
 
   def test_all
     bezier = Bezier.multi( [[:vector, V2D::O, V2D::X, V2D::X, V2D::X]] )
@@ -27,7 +27,7 @@ class SimilarMotifIteratorTest < Test::Unit::TestCase
   end
 end
 
-class AttributeMotifIteratorTest < Test::Unit::TestCase
+class AttributeMotifIteratorTest < Minitest::Test
 
   def test_all
     require 'beziermotifs'
@@ -74,7 +74,7 @@ class AttributeMotifIteratorTest < Test::Unit::TestCase
 
 end
 
-class FitBezierBuilderTest < Test::Unit::TestCase
+class FitBezierBuilderTest < Minitest::Test
 
   def test_all
     bezier = Bezier.raw( V2D[0.0, 0.0], V2D[100.0, 0.0], V2D[0.0, 100.0], V2D[100.0, 100.0] )
@@ -84,7 +84,7 @@ class FitBezierBuilderTest < Test::Unit::TestCase
   end
 end
 
-class CircleTest < Test::Unit::TestCase
+class CircleTest < Minitest::Test
 
   def test_bezier
     assert_equal( 4, Circle[].bezier.piecenumber )

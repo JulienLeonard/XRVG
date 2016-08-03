@@ -1,3 +1,0 @@
-#!/bin/sh
-
-java -cp ../lib/pureimage.jar jp.ne.cappuccino.keisuken.tools.pureimage.FontCreator Shift_JIS.tbl "Ç≥Ç¥Ç»Ç›ÉSÉVÉbÉNRegular" $1 sazanami-gothic-$1.fnt

@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 # require 'XRVG'
 # include XRVG
 
-class SpiralTest < Test::Unit::TestCase
+class SpiralTest < Minitest::Test
 
   def test_abstract1
     assert_raise(NotImplementedError) {GSpiral.new.compute_radius( 0.0,0.0,0.0,0.0)}

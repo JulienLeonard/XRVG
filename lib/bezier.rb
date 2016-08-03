@@ -143,7 +143,7 @@ class Bezier < Curve
     # puts "piece enter index #{index} parametertype #{parametertype}"
     pieceindex = index
     if index.is_a? Float
-      pieceindex, t = self.parametermapping( index, parametertype )
+      pieceindex, _t = self.parametermapping( index, parametertype )
     end
     return @pieces[ pieceindex ]
   end
@@ -445,7 +445,7 @@ class Bezier < Curve
     self.pieces().each do |piece|
       p1, pc1, pc2, p2 = piece.pointlist
       # Trace("previous #{previous.inspect} p1 #{p1.inspect}")
-      if previous == nil or not (previous - p1).r <= 0.0000001
+      if previous.nil? or not (previous - p1).r <= 0.0000001
 	# Trace("svg bezier not equal => M")
 	path += "M #{p1.x},#{p1.y}"
       end
@@ -479,7 +479,7 @@ class Bezier < Curve
   #
   # simply add pieces lengths
   def length
-    if not @length
+    if not defined? @length
       compute_length
     end
     return @length
@@ -495,7 +495,7 @@ class Bezier < Curve
   # return list of piece lengths relatives to total bezier lengths, and cumulated
   #  Bezier.new( :pieces, [piece1, piece2] ).piecelengths; => [0.0, piece1.length / bezier.length, 1.0]
   def piecelengths
-    if not @piecelengths
+    if not defined? @piecelengths
       sum = 0.0
       @piecelengths = [0.0]
       pieces.each_with_index do |piece,i|
@@ -561,53 +561,51 @@ class Bezier < Curve
     # must be so a list of "int" parameters (as uncontinuity in pieces tangent 
     # can only be between pieces)
     def piecesideindices()
-      if @piecesideindices
-	return @piecesideindices
-      end
-      result = []
-      p0, v0, p1, v1 = piece(0).pointlist(:vector)
-      # puts "piecenumber #{piecenumber}"
-      lastp = p1
-      pieces[1..-1].each_with_index do |cpiece,index|
-	d0, fv, d1, fv1 = cpiece.pointlist(:vector)
-	# puts "fv #{fv.inspect} v1 #{v1.inspect}"
-	# puts "(fv * -1.0).norm #{(fv * -1.0).norm.inspect} v1.norm #{v1.norm.inspect}"
-	if not (V2D.vequal?( (fv * -1.0).norm, v1.norm, 0.01) or fv.r.fequal?( 0.0) || v1.r.fequal?( 0.0))
-	  # puts "new side #{result[-1]} #{index}"
-	  if result.length == 0
-	    result << 0
-	  end
-	  result << index + 1
-	end
-	v1 = fv1
-	lastp = d1
-      end
+      @piecesideindices ||=
+        begin
+          result = []
+          p0, v0, p1, v1 = piece(0).pointlist(:vector)
+          # puts "piecenumber #{piecenumber}"
+          lastp = p1
+          pieces[1..-1].each_with_index do |cpiece,index|
+            _d0, fv, d1, fv1 = cpiece.pointlist(:vector)
+            # puts "fv #{fv.inspect} v1 #{v1.inspect}"
+            # puts "(fv * -1.0).norm #{(fv * -1.0).norm.inspect} v1.norm #{v1.norm.inspect}"
+            if not (V2D.vequal?( (fv * -1.0).norm, v1.norm, 0.01) or fv.r.fequal?( 0.0) || v1.r.fequal?( 0.0))
+              # puts "new side #{result[-1]} #{index}"
+              if result.length == 0
+                result << 0
+              end
+              result << index + 1
+            end
+            v1 = fv1
+            lastp = d1
+          end
 
-      # puts "v0 #{v0.inspect} v1 #{v1.inspect}"
-      if (V2D.vequal?( p0, lastp ))
-	if (V2D.vequal?( (v0 * -1.0).norm, v1.norm, 0.01) or v0.r.fequal?( 0.0) || v1.r.fequal?( 0.0))
-	  if (v0.r.fequal?(0.0) or v1.r.fequal?( 0.0))
-	    puts "WARNING: parametersides: tangent null"
-	  end
+          # puts "v0 #{v0.inspect} v1 #{v1.inspect}"
+          if (V2D.vequal?( p0, lastp ))
+            if (V2D.vequal?( (v0 * -1.0).norm, v1.norm, 0.01) or v0.r.fequal?( 0.0) || v1.r.fequal?( 0.0))
+              if (v0.r.fequal?(0.0) or v1.r.fequal?( 0.0))
+                puts "WARNING: parametersides: tangent null"
+              end
 
-	  if (result.length > 0)
-	    result[0] = result[-1] - piecenumber
-	  else
-	    result = [0,piecenumber]
-	  end
-	else 
-	  result << piecenumber
-	end
-      else
-	if (result.length == 0)
-	  result << 0
-	end
-	result << piecenumber
-      end
-
-      # puts "piecesideindices result #{result.inspect}"
-      @piecesideindices = result
-      return result
+              if (result.length > 0)
+                result[0] = result[-1] - piecenumber
+              else
+                result = [0,piecenumber]
+              end
+            else 
+              result << piecenumber
+            end
+          else
+            if (result.length == 0)
+              result << 0
+            end
+            result << piecenumber
+          end
+          # puts "piecesideindices result #{result.inspect}"
+          result
+        end
     end
 
     # used to compute parameter ranges for sides
@@ -630,9 +628,7 @@ class Bezier < Curve
     # curve method utilitaries to compute frame side extremities
     def extsideframes( t1, t2, f1, f2 )
       # puts "extsideframes enter"
-      if not @extsideframes_cache
-	@extsideframes_cache = {}
-      end
+      @extsideframes_cache ||= {}
       [t1, f1, :left, t2, f2, :right].foreach do |t, f, side|
 	if @extsideframes_cache["#{t}side"]
 	  f.center.x, f.center.y, f.vector.x, f.vector.y = @extsideframes_cache["#{t}side"]
@@ -640,12 +636,12 @@ class Bezier < Curve
 	  # f.vector.x = @extsideframes_cache["#{t}side"][2]
 	  # f.vector.y = @extsideframes_cache["#{t}side"][3]
 	else
-	  pieceindex, t = parametermapping( t, :parameter, side )
+	  # pieceindex, t = parametermapping( t, :parameter, side )
 	  # puts "extsideframes pieceindex #{pieceindex} t #{t}"
-	  point    = self.piece( pieceindex ).point( t, f.center )
-	  tangent  = self.piece( pieceindex ).tangent( t, f.vector )
-	  rotation = nil; #self.rotation( nil, tangent )
-	  scale    = nil; #self.scale( nil, tangent )
+	  # point    = self.piece( pieceindex ).point( t, f.center )
+	  # tangent  = self.piece( pieceindex ).tangent( t, f.vector )
+	  # rotation = nil; #self.rotation( nil, tangent )
+	  # scale    = nil; #self.scale( nil, tangent )
 	  #@extsideframes_cache["#{t}side"] = [f.center.x, f.center.y, f.vector.x, f.vector.y]
 	end
       end
@@ -698,26 +694,24 @@ if true
 
   def segmentparameters( error = 0.01 )
     # puts "segmentparameters enter #{self}"
-    if @segmentparameters
-      return @segmentparameters
-    end
-    sideranges = self.sideparameterranges
-    rootvalues = []
-    sideranges.each do |range|
-      sublist = range.samples( 5 )
-      rootvalues += sublist
-    end
+    @segmentparameters ||=
+      begin
+        sideranges = self.sideparameterranges
+        rootvalues = []
+        sideranges.each do |range|
+          sublist = range.samples( 5 )
+          rootvalues += sublist
+        end
 
-    result = [0.0]
-    f1 = Frame[:center, V2D[], :vector, V2D[], :rotation, nil, :scale, nil]
-    f2 = Frame[:center, V2D[], :vector, V2D[], :rotation, nil, :scale, nil]
-    rootvalues.pairs do |r1, r2|
-      result = segmentparametersrec( r1, r2, result, error, f1, f2 )
-    end
-
-    @segmentparameters = result
-    # puts "segmentparameters #{segmentparameters.length} #{segmentparameters.inspect}"
-    return result
+        result = [0.0]
+        f1 = Frame[:center, V2D[], :vector, V2D[], :rotation, nil, :scale, nil]
+        f2 = Frame[:center, V2D[], :vector, V2D[], :rotation, nil, :scale, nil]
+        rootvalues.pairs do |r1, r2|
+          result = segmentparametersrec( r1, r2, result, error, f1, f2 )
+        end
+        result
+        # puts "segmentparameters #{segmentparameters.length} #{segmentparameters.inspect}"
+      end
   end
 end
 

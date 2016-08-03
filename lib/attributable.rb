@@ -78,11 +78,11 @@ module Attributable
 
   module ClassMethods #:nodoc:
     def init_attributes
-      if not @attributes
-	@attributes = {}
-	newattributes = (self.superclass.ancestors.include? Attributable) ? self.superclass.attributes : {}
-	@attributes = @attributes.merge( newattributes )
-      end
+      @attributes ||=
+        begin
+          newattributes = (self.superclass.ancestors.include? Attributable) ? self.superclass.attributes : {}
+          {}.merge( newattributes )
+        end
     end
 
     def add_attribute( attribute )
@@ -165,7 +165,7 @@ module Attributable
 	end
 	init_value = value
       else
-	if attr.default_value == nil
+	if attr.default_value.nil?
 	  raise( "Attributable::initialize for class #{self} : attribute #{symbol} is required : attribute defs #{self.class.attributes.inspect}" )
 	end
 	default_value = attr.default_value

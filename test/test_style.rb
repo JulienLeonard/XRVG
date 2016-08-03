@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'style'
 
-class StyleTest < Test::Unit::TestCase
+class StyleTest < Minitest::Test
 
   def test_svgline
     style = Style.new(:fill, "red", :stroke, "none")

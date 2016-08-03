@@ -2,9 +2,6 @@
 #
 # Please refer to README for XRVG introduction
 
-# XRVG version (used in rakefile)
-XRVG_VERSION = "0.0.85"
-
 # XRVG namespace
 module XRVG
 end

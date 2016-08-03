@@ -134,26 +134,17 @@ class Curve < Shape
   end
 
   def tangent0
-    if not @tangent0
-      @tangent0 = self.tangent( 0.0 )
-    end
-    return @tangent0
+    @tangent0 ||= self.tangent( 0.0 )
   end
 
   # TODO : must be cached in vector
   def tangent0_angle
-    if not @tangent0_angle
-      @tangent0_angle = self.tangent0.angle
-    end
-    return @tangent0_angle
+    @tangent0_angle ||= self.tangent0.angle
   end
 
   # TODO : must be cached in vector
   def tangent0_length
-    if not @tangent0_length
-      @tangent0_length = self.tangent0.r
-    end
-    return @tangent0_length
+    @tangent0_length ||= self.tangent0.r
   end
   
   # compute frame vector at abscissa t, that is [curve.point( t ), curve.tangent( t ) ]
@@ -241,13 +232,14 @@ class Line < Curve
 
   # return the total length of the polyline
   def length
-    if not @length
-      @length = 0.0
-      @points.pairs do |p1, p2|
-	@length += (p1 - p2).r
+    @length ||=
+      begin
+        length = 0.0
+        @points.pairs do |p1, p2|
+          length += (p1 - p2).r
+        end
+        length
       end
-    end
-    return @length
   end
 
   # compute line point at abscissa
@@ -346,10 +338,7 @@ class Circle < Curve
 
   # compute length of the circle
   def length
-    if not @length
-      @length = 2.0 * Math::PI * self.radius
-    end
-    return @length
+    @length ||= 2.0 * Math::PI * self.radius
   end
 
   # shortcut method to retun center.x

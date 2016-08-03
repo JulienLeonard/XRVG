@@ -1,7 +1,7 @@
 require 'shape'
-require 'test/unit'
+require 'test_helper'
 
-class ShapeTest < Test::Unit::TestCase
+class ShapeTest < Minitest::Test
 
   def test_abstract
     assert_raise(NotImplementedError){Shape[].contour}
@@ -15,7 +15,7 @@ class ShapeTest < Test::Unit::TestCase
 
 end
 
-class CurveTest < Test::Unit::TestCase
+class CurveTest < Minitest::Test
 
   def test_abstract
     assert_raise(NotImplementedError){Curve[].contour}
@@ -35,7 +35,7 @@ class CurveTest < Test::Unit::TestCase
 end
 
 
-class LineTest <  Test::Unit::TestCase
+class LineTest <  Minitest::Test
   @@line = Line[ :points, [ V2D[ 0.0, 0.0], V2D[ 0.0, 1.0] ] ]
   
   def test_point
@@ -126,7 +126,7 @@ class LineTest <  Test::Unit::TestCase
   
 end
 
-class CircleTest < Test::Unit::TestCase
+class CircleTest < Minitest::Test
 
   def test_default
     circle = Circle[]

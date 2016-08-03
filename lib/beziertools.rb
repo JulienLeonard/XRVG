@@ -70,14 +70,11 @@ module Interpolation
 
   def compute_simplebezier
     points = self.samplelist.foreach(2).map { |index, value| V2D[index,value] }
-    @simplebezier = SimpleBezier[ :support, points ]
+    SimpleBezier[ :support, points ]
   end
   
   def getcurve
-    if not @simplebezier
-      self.compute_simplebezier
-    end
-    return @simplebezier
+    @simplebezier ||= self.compute_simplebezier
   end
 
   def simplebezier( dindex )

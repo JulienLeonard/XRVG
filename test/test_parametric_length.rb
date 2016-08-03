@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'bezier'
 
-class ParametricLengthTest < Test::Unit::TestCase
+class ParametricLengthTest < Minitest::Test
 
   class A
     include ParametricLength

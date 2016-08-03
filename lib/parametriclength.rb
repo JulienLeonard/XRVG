@@ -45,7 +45,6 @@ module ParametricLength
     @length = samplelist[-2]
 
     # Trace("compute_length_interpolator: samplelist #{samplelist.inspect}")
-    length_interpolator = nil
     if @length == 0.0
       newsamplelist = [0.0,0.0,0.0,1.0]
       invsamplelist = [0.0,0.0,1.0,0.0]
@@ -71,7 +70,6 @@ module ParametricLength
       abscissas = [0.0]
       values    = [0.0]
     else
-      sum = 0.0
       lengths.each do |clength|
 	values << clength/@length
       end
@@ -86,7 +84,7 @@ module ParametricLength
 
   def length_interpolator() #:nodoc:
     # puts "length_interpolator enter"
-    if @length_interpolator == nil
+    if not defined? @length_interpolator
       self.compute_length_interpolator()
     end
     return @length_interpolator
@@ -94,7 +92,7 @@ module ParametricLength
 
   def abs_interpolator() #:nodoc:
     # puts "abs_interpolator enter"
-    if @abs_interpolator == nil
+    if not defined? @abs_interpolator
       self.compute_length_interpolator()
     end
     return @abs_interpolator

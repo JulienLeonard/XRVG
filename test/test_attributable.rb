@@ -1,4 +1,4 @@
-require 'test/unit'
+require 'test_helper'
 require 'attributable'
 require 'utils'
 include XRVG
@@ -22,10 +22,10 @@ class AttrClass1
 end
 
 # Test class
-class AttributableTest < Test::Unit::TestCase
+class AttributableTest < Minitest::Test
 
   def test_object
-    object = Object[]
+    Object[]
   end
 
   

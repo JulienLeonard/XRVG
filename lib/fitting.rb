@@ -104,7 +104,6 @@ class Fitting
       elsif (error < maxerror || niter > maxiter)
 	break
       end
-      perror = error
       niter += 1
     end
     return [bezier, error]
@@ -112,7 +111,7 @@ class Fitting
 
   # algo comes from http://www.tinaja.com/glib/bezdist.pdf
   def Fitting.renormalize( bezier, coeffs, pointlist, parameters )
-    a3, a2, a1, a0 = coeffs
+    a3, a2, a1, _a0 = coeffs
     dxdu = Proc.new {|u| 3.0*a3.x*u**2 + 2.0*a2.x*u + a1.x}
     dydu = Proc.new {|u| 3.0*a3.y*u**2 + 2.0*a2.y*u + a1.y}
     container = V2D[]
@@ -164,7 +163,6 @@ class Fitting
     p0 = pointlist[0]
     p1 = pointlist[-1]
 
-    sumt0 = parameters.map{ |t| t**0.0 }.sum
     sumt1 = parameters.map{ |t| t**1.0 }.sum
     sumt2 = parameters.map{ |t| t**2.0 }.sum
     sumt3 = parameters.map{ |t| t**3.0 }.sum

@@ -1,9 +1,9 @@
-require 'test/unit'
+require 'test_helper'
 require 'xrvg'
 include XRVG
 
 
-class StringTest < Test::Unit::TestCase
+class StringTest < Minitest::Test
 
   def test_subreplace
     alpha  = "1"
@@ -15,7 +15,7 @@ class StringTest < Test::Unit::TestCase
 end
 
 
-class ArrayTest < Test::Unit::TestCase
+class ArrayTest < Minitest::Test
 
   def test_pairs
     a = [ 1, 2, 3]
@@ -131,7 +131,7 @@ class ArrayTest < Test::Unit::TestCase
   end
 end
 
-class FloatTest < Test::Unit::TestCase
+class FloatTest < Minitest::Test
 
   def test_interpol
     assert_equal( 2.3, ( 2.0..3.0 ).sample( 0.3 ) )
@@ -158,7 +158,7 @@ class FloatTest < Test::Unit::TestCase
 
 end
 
-class RangeTest  < Test::Unit::TestCase
+class RangeTest  < Minitest::Test
   
   def test_samples
     assert_equal( [0.0, 0.5, 1.0], (0.0..1.0).samples(3))
@@ -290,7 +290,7 @@ class SampleClass
   end
 end
 
-class SampleTest < Test::Unit::TestCase
+class SampleTest < Minitest::Test
 
   def test_samples
     assert_equal( [0.0, 1.0, 2.0], (0.0..2.0).samples(3))

@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'geometry2D.rb'
 
 # Test class
-class V2DTest < Test::Unit::TestCase
+class V2DTest < Minitest::Test
   
   def test_indice
     s = V2D[0,1]

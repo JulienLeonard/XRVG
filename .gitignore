@@ -1,0 +1,4 @@
+html/
+pkg/
+Gemfile.lock
+svgrender.svg

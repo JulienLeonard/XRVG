@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'color'
 
 
-class ColorTest < Test::Unit::TestCase
+class ColorTest < Minitest::Test
   
   def test_color
     color = Color[0.1, 0.2, 0.3, 0.4]
@@ -76,7 +76,6 @@ class ColorTest < Test::Unit::TestCase
   def test_hsl
     black = Color[0.0, 0.0, 0.0, 1.0]
     white = Color[1.0, 1.0, 1.0, 1.0]
-    red   = Color[1.0, 0.0, 0.0, 1.0]
     assert_equal( black, Color.hsla( 0.0, 0.0, 0.0, 1.0 ) )
     assert_equal( white, Color.hsla( 0.0, 0.0, 1.0, 1.0 ) )
     assert_equal( white, Color.hsla( 0.0, 1.0, 1.0, 1.0 ) )
@@ -119,7 +118,7 @@ class ColorTest < Test::Unit::TestCase
 end
 
 
-class PaletteTest < Test::Unit::TestCase
+class PaletteTest < Minitest::Test
 
   def test_palette
     palette = Palette.new( :colorlist, [ 0.0, Color.black, 1.0, Color.white ] )
@@ -157,7 +156,7 @@ class PaletteTest < Test::Unit::TestCase
 
 end
 
-class GradientTest < Test::Unit::TestCase
+class GradientTest < Minitest::Test
 
   def test_gradient
     assert_raise(NotImplementedError) {Gradient[ :colorlist, [0.0, Color.black, 1.0, Color.white]].defsvg}
