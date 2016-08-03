@@ -1,8 +1,9 @@
-require 'xrvg'
+$LOAD_PATH << 'lib'
+require 'xrvg/version'
 
 Gem::Specification.new do |s|
   s.name = 'xrvg'
-  s.version = XRVG_VERSION
+  s.version = XRVG::VERSION
 
   s.summary = 'Ruby vector graphics library'
 
