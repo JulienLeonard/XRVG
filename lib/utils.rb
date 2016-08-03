@@ -228,7 +228,6 @@ class Range
   # ratios sum must be equal to 1.0
   def multisamples( nsamples, ratios )
     ratiosum  = ratios.sum
-    samplesum = nsamples.sum
     ratios = ratios.map {|ratio| ratio / ratiosum}
     
     rratios = ratios

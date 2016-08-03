@@ -35,7 +35,6 @@ class InterBezier
     newbezierlist = []
     beziers.each do |bezier|
       newpieces = []
-      initlengths = lengthH[ bezier ]
       alllengths.pairs do |l1, l2| 
 	newpieces += bezier.subbezier( l1, l2 ).pieces
       end

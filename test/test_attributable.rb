@@ -25,7 +25,7 @@ end
 class AttributableTest < Test::Unit::TestCase
 
   def test_object
-    object = Object[]
+    Object[]
   end
 
   

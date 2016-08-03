@@ -143,7 +143,7 @@ class Bezier < Curve
     # puts "piece enter index #{index} parametertype #{parametertype}"
     pieceindex = index
     if index.is_a? Float
-      pieceindex, t = self.parametermapping( index, parametertype )
+      pieceindex, _t = self.parametermapping( index, parametertype )
     end
     return @pieces[ pieceindex ]
   end
@@ -568,7 +568,7 @@ class Bezier < Curve
           # puts "piecenumber #{piecenumber}"
           lastp = p1
           pieces[1..-1].each_with_index do |cpiece,index|
-            d0, fv, d1, fv1 = cpiece.pointlist(:vector)
+            _d0, fv, d1, fv1 = cpiece.pointlist(:vector)
             # puts "fv #{fv.inspect} v1 #{v1.inspect}"
             # puts "(fv * -1.0).norm #{(fv * -1.0).norm.inspect} v1.norm #{v1.norm.inspect}"
             if not (V2D.vequal?( (fv * -1.0).norm, v1.norm, 0.01) or fv.r.fequal?( 0.0) || v1.r.fequal?( 0.0))
@@ -636,12 +636,12 @@ class Bezier < Curve
 	  # f.vector.x = @extsideframes_cache["#{t}side"][2]
 	  # f.vector.y = @extsideframes_cache["#{t}side"][3]
 	else
-	  pieceindex, t = parametermapping( t, :parameter, side )
+	  # pieceindex, t = parametermapping( t, :parameter, side )
 	  # puts "extsideframes pieceindex #{pieceindex} t #{t}"
-	  point    = self.piece( pieceindex ).point( t, f.center )
-	  tangent  = self.piece( pieceindex ).tangent( t, f.vector )
-	  rotation = nil; #self.rotation( nil, tangent )
-	  scale    = nil; #self.scale( nil, tangent )
+	  # point    = self.piece( pieceindex ).point( t, f.center )
+	  # tangent  = self.piece( pieceindex ).tangent( t, f.vector )
+	  # rotation = nil; #self.rotation( nil, tangent )
+	  # scale    = nil; #self.scale( nil, tangent )
 	  #@extsideframes_cache["#{t}side"] = [f.center.x, f.center.y, f.vector.x, f.vector.y]
 	end
       end

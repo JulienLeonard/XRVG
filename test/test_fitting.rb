@@ -14,21 +14,21 @@ class FittingTest < Test::Unit::TestCase
   def test_base2
     bezier = Bezier.raw( V2D[0.0, 0.0], V2D[100.0, 0.0], V2D[0.0, 100.0], V2D[100.0, 100.0] )
     points = bezier.samples( 15 )
-    fit, error  = Fitting.adaptative_compute( points, 0.01 )
+    fit, _error  = Fitting.adaptative_compute( points, 0.01 )
     assert_equal( 1, fit.piecenumber )
   end
 
   def test_base3
     bezier = Bezier.raw( V2D[0.0, 0.0], V2D[100.0, 0.0], V2D[0.0, 100.0], V2D[100.0, 100.0] )
     points = bezier.samples( 15 )
-    fit, error  = Fitting.adaptative_compute( points, 0.001 )
+    fit, _error  = Fitting.adaptative_compute( points, 0.001 )
     assert_equal( 3, fit.piecenumber )
   end
 
 
   def test_limit
     points = [V2D[0.0, 0.0]] * 10
-    fit, error  = Fitting.adaptative_compute( points, 0.01 )
+    fit, _error  = Fitting.adaptative_compute( points, 0.01 )
     assert_equal( 1, fit.piecenumber )
   end
 

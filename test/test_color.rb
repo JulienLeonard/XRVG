@@ -76,7 +76,6 @@ class ColorTest < Test::Unit::TestCase
   def test_hsl
     black = Color[0.0, 0.0, 0.0, 1.0]
     white = Color[1.0, 1.0, 1.0, 1.0]
-    red   = Color[1.0, 0.0, 0.0, 1.0]
     assert_equal( black, Color.hsla( 0.0, 0.0, 0.0, 1.0 ) )
     assert_equal( white, Color.hsla( 0.0, 0.0, 1.0, 1.0 ) )
     assert_equal( white, Color.hsla( 0.0, 1.0, 1.0, 1.0 ) )

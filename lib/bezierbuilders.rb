@@ -145,7 +145,6 @@ class AttributeMotifIterator < BezierBuilder
     end
     self.curvesampler.splits( self.nmotifs ).each_with_index do |subbezier,index|
       pair = [subbezier.firstpoint, subbezier.lastpoint]
-      p1, p2 = pair
       args = [:support, pair]
       attrvalues.foreach do |name, values|
 	args += [name, values[index]]

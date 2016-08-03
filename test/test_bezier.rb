@@ -290,9 +290,9 @@ class BezierTest < Test::Unit::TestCase
     c1 = Ondulation[ :support, LinearBezier[], :freq, 1, :ampl, 2.0 ]
     c2 = Ondulation[ :support, LinearBezier[], :freq, 1, :ampl, -2.0 ]
     c  = ClosureBezier[ :bezierlist, [c1, c2.reverse] ]
-    # assert_equal( 2, c.sides.length )
+    assert_equal( 2, c.sides.length )
 
-    sub = c1.subbezier( 0.5, 0.6 )
+    # sub = c1.subbezier( 0.5, 0.6 )
     # assert_equal( 2, (sub + LinearBezier[ :support, [sub.lastpoint, sub.firstpoint] ]).sides.length )
   end
 
