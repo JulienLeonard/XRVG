@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'interbezier.rb'
 
 # Test class
-class InterBezierTest < Test::Unit::TestCase
+class InterBezierTest < Minitest::Test
   
   def test_base
     bezier1 = Bezier.raw( V2D::O, V2D::X, V2D::O, V2D::X  )
@@ -16,7 +16,7 @@ end
 
 
 # Test class
-class GradientBezierTest < Test::Unit::TestCase
+class GradientBezierTest < Minitest::Test
   
   def test_base
     bezier1 = Bezier.raw( V2D::O, V2D::X, V2D::O, V2D::X  )

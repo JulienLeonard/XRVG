@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'test_helper'
 require 'xrvg'
 include XRVG
 
-class STest < Test::Unit::TestCase
+class STest < Minitest::Test
 
   def test_sin
     [[0.0,0.0], (0.0..1.0).sin().samples( 2 )].forzip do |exp, real|
@@ -20,7 +20,7 @@ class STest < Test::Unit::TestCase
   end
 end
 
-class SyncTest < Test::Unit::TestCase
+class SyncTest < Minitest::Test
 
   def test_samples
     assert_equal( [0.0, 1.0, 0.5, 0.5, 1.0, 0.0], SyncS[(0.0..1.0), (1.0..0.0)].samples(3))
@@ -39,7 +39,7 @@ class SyncTest < Test::Unit::TestCase
 
 end
 
-class RollerTest < Test::Unit::TestCase
+class RollerTest < Minitest::Test
 
   def test_roller
     assert_equal( ["a", "b", "a"], Roller["a","b"].samples(3))
@@ -64,7 +64,7 @@ class RollerTest < Test::Unit::TestCase
 
 end
 
-class RandomTest < Test::Unit::TestCase
+class RandomTest < Minitest::Test
 
   def test_random
     result = Range.O.random(:mindiff,0.0).samples( 3 )

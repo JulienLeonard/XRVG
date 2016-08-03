@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'bezier'
 
-class BezierTest < Test::Unit::TestCase
+class BezierTest < Minitest::Test
 
   @@piece = [ :raw, V2D[0.0, 1.0], V2D[1.0, 1.0], V2D[0.0, 0.0], V2D[1.0, 0.0] ]
   @@bezier = Bezier.single( *@@piece )

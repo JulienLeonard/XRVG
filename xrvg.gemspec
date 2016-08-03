@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'xrvg'
   s.has_rdoc = true
 
-  s.add_development_dependency('test-unit', ['~> 3.2'])
+  s.add_development_dependency('minitest', ['~> 5.4'])
   s.add_development_dependency('rake', ['~> 11.1'])
 
   s.require_paths = ['lib']

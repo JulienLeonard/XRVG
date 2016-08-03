@@ -12,6 +12,7 @@ task "default" => ["test"]
 test_task_name = "test"
 Rake::TestTask.new(test_task_name) do |t|
   t.test_files = FileList["test/test_*.rb"]
+  t.ruby_opts += ['-Itest']
   t.libs = ['lib']
 end
 

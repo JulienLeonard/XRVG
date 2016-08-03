@@ -1,4 +1,4 @@
-require 'test/unit'
+require 'test_helper'
 require 'geovariety'
 
 
@@ -6,7 +6,7 @@ class GeoVarietor
   include GeoVariety
 end
 
-class GeoVarietyTest < Test::Unit::TestCase
+class GeoVarietyTest < Minitest::Test
 
   def test_abstract
     assert_raise(NotImplementedError){GeoVarietor[].point(V2D::O)}
@@ -14,7 +14,7 @@ class GeoVarietyTest < Test::Unit::TestCase
   end
 end
 
-class InterBezierTest2 < Test::Unit::TestCase
+class InterBezierTest2 < Minitest::Test
 
   def test_point
     bezier1 = Bezier.raw( V2D::O, V2D::X, V2D::O, V2D::X  )
@@ -51,7 +51,7 @@ class InterBezierTest2 < Test::Unit::TestCase
 end
 
 
-class OffsetVarietyTest < Test::Unit::TestCase
+class OffsetVarietyTest < Minitest::Test
 
   def test_point
     offsetvariety = OffsetVariety[ :support, LinearBezier.buildwithangle( 0.0 ), :ampl, 1.0 ]
@@ -77,7 +77,7 @@ class OffsetVarietyTest < Test::Unit::TestCase
   end
 end
 
-class FuseauVarietyTest < Test::Unit::TestCase
+class FuseauVarietyTest < Minitest::Test
 
   def test_point
     offsetvariety = FuseauVariety[ :support, LinearBezier.buildwithangle( 0.0 ), :ampl, 1.0 ]

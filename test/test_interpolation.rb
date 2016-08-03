@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'interpolation'
 
-class InterpolatorTest < Test::Unit::TestCase
+class InterpolatorTest < Minitest::Test
   
   def test_interpolator
     interpolator = Interpolator[ :samplelist, [0.0,0.0, 1.0,2.0, 2.0,0.0, 3.0,2.0]]

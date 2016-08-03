@@ -1,7 +1,7 @@
 require 'beziertools'
-require 'test/unit'
+require 'test_helper'
 
-class SimpleBezierTest < Test::Unit::TestCase
+class SimpleBezierTest < Minitest::Test
   def test_all
     bezier = SimpleBezier[ :support, [V2D::O,V2D::X, V2D::X+V2D::Y] ]
     assert_equal( V2D::O, bezier.firstpoint )
@@ -18,7 +18,7 @@ class SimpleBezierTest < Test::Unit::TestCase
 
 end
 
-class ClosureTest < Test::Unit::TestCase
+class ClosureTest < Minitest::Test
 
   def test_all
     bezier = SimpleBezier[ :support, [V2D::O, V2D::X, V2D::X+V2D::Y] ]
@@ -29,7 +29,7 @@ class ClosureTest < Test::Unit::TestCase
 
 end
 
-class OffestTest < Test::Unit::TestCase
+class OffestTest < Minitest::Test
 
   def test_all
     bezier = LinearBezier.buildwithangle( 0.0 )
@@ -54,7 +54,7 @@ class OffestTest < Test::Unit::TestCase
 
 end
     
-class FuseauTest < Test::Unit::TestCase
+class FuseauTest < Minitest::Test
 
   def test_all
     bezier = LinearBezier.buildwithangle( 0.0 )
@@ -65,7 +65,7 @@ class FuseauTest < Test::Unit::TestCase
 
 end
 
-class BezierLevelTest < Test::Unit::TestCase
+class BezierLevelTest < Minitest::Test
 
   def test_all
     offset = BezierLevel[ :samplelist, [0.0,0.0, 1.0,1.0]]
@@ -75,7 +75,7 @@ class BezierLevelTest < Test::Unit::TestCase
 
 end
 
-class OndulationTest < Test::Unit::TestCase
+class OndulationTest < Minitest::Test
 
   def test_all
     bezier = LinearBezier.buildwithangle( 0.0 )

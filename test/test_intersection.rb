@@ -1,9 +1,9 @@
-require 'test/unit'
+require 'test_helper'
 require 'xrvg'
 include XRVG
 
 
-class V2DExtTest < Test::Unit::TestCase
+class V2DExtTest < Minitest::Test
 
   def test_isLeft
     p0 = V2D::O
@@ -15,7 +15,7 @@ class V2DExtTest < Test::Unit::TestCase
 end
 
 
-class V2DSTest < Test::Unit::TestCase
+class V2DSTest < Minitest::Test
 
   def test_intersect
     assert_equal( true, V2DS[ V2D[ 0.0, 0.5 ], V2D[ 1.0, -0.5 ] ].intersect?( V2DS[ V2D::X, V2D::O ] ))

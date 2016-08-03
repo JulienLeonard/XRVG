@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'test_helper'
 require 'fitting'
 
-class FittingTest < Test::Unit::TestCase
+class FittingTest < Minitest::Test
 
   def test_base
     bezier = Bezier.raw( V2D[0.0, 0.0], V2D[100.0, 0.0], V2D[0.0, 100.0], V2D[100.0, 100.0] )
